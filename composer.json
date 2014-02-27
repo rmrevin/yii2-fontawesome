@@ -1,0 +1,28 @@
+{
+	"name": "rmrevin/yii2-fontawesome",
+	"description": "Font Awesome Asset Bundle for Yii2",
+	"keywords": ["yii", "font", "awesome", "asset", "bundle"],
+	"type": "yii2-extension",
+	"license": "GPL v3",
+	"minimum-stability": "dev",
+	"support": {
+		"issues": "https://github.com/rmrevin/yii2-fontawesome/issues",
+		"source": "https://github.com/rmrevin/yii2-fontawesome"
+	},
+	"authors": [
+		{
+			"name": "Roman Revin",
+			"email": "xgismox@gmail.com",
+			"homepage": "http://rmrevin.ru/"
+		}
+	],
+	"require": {
+		"yiisoft/yii2": "dev-master",
+		"fortawesome/font-awesome": "v4.0.3"
+	},
+	"autoload": {
+		"psr-4": {
+			"rmrevin\\yii\\fontawesome\\": ""
+		}
+	}
+}
