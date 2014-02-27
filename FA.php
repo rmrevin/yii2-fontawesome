@@ -16,6 +16,6 @@ class FA
 	{
 		Html::addCssClass($options, 'fa fa-' . $name);
 
-		return Html::tag('i', $options);
+		return Html::tag('i', null, $options);
 	}
 }
