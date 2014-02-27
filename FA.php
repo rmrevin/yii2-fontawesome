@@ -12,8 +12,10 @@ use yii\helpers\Html;
 class FA
 {
 
-	public static function icon($name)
+	public static function icon($name, $options = [])
 	{
-		return Html::tag('i', ['class' => 'fa fa-' . $name]);
+		Html::addCssClass($options, 'fa fa-' . $name);
+
+		return Html::tag('i', $options);
 	}
 }
