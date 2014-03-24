@@ -1,15 +1,13 @@
 <?php
 /**
- * FontAwesomeAsset.php
+ * AssetBundle.php
  * @author Revin Roman
  * @link http://phptime.ru
  */
 
 namespace rmrevin\yii\fontawesome;
 
-use yii\web\AssetBundle;
-
-class FontAwesomeAsset extends AssetBundle
+class AssetBundle extends \yii\web\AssetBundle
 {
 	public $sourcePath = '@vendor/fortawesome/font-awesome';
 	public $css = [
