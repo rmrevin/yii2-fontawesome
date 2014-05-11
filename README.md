@@ -46,7 +46,11 @@ Helper
 
 use rmrevin\yii\fontawesome\FA;
 
-echo FA::icon('home'); // <i class="fa fa-home"></i>
-echo FA::icon('arrow-left', ['class'=>'big']); // <i class="big fa fa-arrow-left"></i>
+echo FA::icon('home');
+// <i class="fa fa-home"></i>
+echo FA::icon('arrow-left', ['class' => 'big', 'data-role' => 'arrow']);
+// <i class="big fa fa-arrow-left" data-role="arrow"></i>
+echo Html::submitButton(Yii::t('app', '{check} Save', ['check' => FA::icon('check')]));
+// <button type="submit"><i class="fa fa-check"></i> Save</button>
 
 ```
