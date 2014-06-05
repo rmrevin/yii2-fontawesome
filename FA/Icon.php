@@ -14,8 +14,13 @@ use yii\helpers\Html;
 class Icon
 {
 
+	/** @var array */
 	private $options = [];
 
+	/**
+	 * @param string $name
+	 * @param array $options
+	 */
 	public function __construct($name, $options = [])
 	{
 		Html::addCssClass($options, 'fa fa-' . $name);
@@ -23,51 +28,84 @@ class Icon
 		$this->options = $options;
 	}
 
+	/**
+	 * @return string
+	 */
 	public function __toString()
 	{
 		return Html::tag('i', null, $this->options);
 	}
 
+	/**
+	 * @return self
+	 */
 	public function inverse()
 	{
 		return $this->addCssClass('fa-inverse');
 	}
 
+	/**
+	 * @return self
+	 */
 	public function spin()
 	{
 		return $this->addCssClass('fa-spin');
 	}
 
+	/**
+	 * @return self
+	 */
 	public function fixed_width()
 	{
 		return $this->addCssClass('fa-fw');
 	}
 
+	/**
+	 * @return self
+	 */
 	public function ul()
 	{
 		return $this->addCssClass('fa-ul');
 	}
 
+	/**
+	 * @return self
+	 */
 	public function li()
 	{
 		return $this->addCssClass('fa-li');
 	}
 
+	/**
+	 * @return self
+	 */
 	public function border()
 	{
 		return $this->addCssClass('fa-border');
 	}
 
+	/**
+	 * @return self
+	 */
 	public function pull_left()
 	{
 		return $this->addCssClass('pull-left');
 	}
 
+	/**
+	 * @return self
+	 */
 	public function pull_right()
 	{
 		return $this->addCssClass('pull-right');
 	}
 
+	/**
+	 * @param string $value
+	 * @param bool $validate_value
+	 * @return self
+	 * @throws \rmrevin\yii\fontawesome\FAException
+	 */
 	public function size($value, $validate_value = true)
 	{
 		if ($validate_value === true && !in_array($value, [FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X])) {
@@ -77,6 +115,12 @@ class Icon
 		return $this->addCssClass('fa-' . $value);
 	}
 
+	/**
+	 * @param string $value
+	 * @param bool $validate_value
+	 * @return self
+	 * @throws \rmrevin\yii\fontawesome\FAException
+	 */
 	public function rotate($value, $validate_value = true)
 	{
 		if ($validate_value === true && !in_array($value, [FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_180])) {
@@ -86,6 +130,12 @@ class Icon
 		return $this->addCssClass('fa-rotate-' . $value);
 	}
 
+	/**
+	 * @param string $value
+	 * @param bool $validate_value
+	 * @return self
+	 * @throws \rmrevin\yii\fontawesome\FAException
+	 */
 	public function flip($value, $validate_value = true)
 	{
 		if ($validate_value === true && !in_array($value, [FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL])) {

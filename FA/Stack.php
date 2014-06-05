@@ -21,6 +21,9 @@ class Stack
 	/** @var Icon */
 	private $icon_back;
 
+	/**
+	 * @param array $options
+	 */
 	public function __construct($options = [])
 	{
 		Html::addCssClass($options, 'fa-stack');
@@ -28,6 +31,9 @@ class Stack
 		$this->options = $options;
 	}
 
+	/**
+	 * @return string
+	 */
 	public function __toString()
 	{
 		$icon_back = $this->icon_back instanceof Icon ? $this->icon_back->addCssClass('fa-stack-2x') : null;

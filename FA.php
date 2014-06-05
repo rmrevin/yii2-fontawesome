@@ -10,14 +10,23 @@ namespace rmrevin\yii\fontawesome;
 class FA
 {
 
+	/**
+	 * @param string $name
+	 * @param array $options
+	 * @return FA\Icon
+	 */
 	public static function icon($name, $options = [])
 	{
-		return new Icon($name, $options);
+		return new FA\Icon($name, $options);
 	}
 
+	/**
+	 * @param array $options
+	 * @return FA\Stack
+	 */
 	public static function stack($options = [])
 	{
-		return new Stack($options);
+		return new FA\Stack($options);
 	}
 
 	const SIZE_LARGE = 'lg';
