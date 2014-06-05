@@ -7,15 +7,29 @@
 
 namespace rmrevin\yii\fontawesome;
 
-use yii\helpers\Html;
-
 class FA
 {
 
 	public static function icon($name, $options = [])
 	{
-		Html::addCssClass($options, 'fa fa-' . $name);
-
-		return Html::tag('i', null, $options);
+		return new Icon($name, $options);
 	}
+
+	public static function stack($options = [])
+	{
+		return new Stack($options);
+	}
+
+	const SIZE_LARGE = 'lg';
+	const SIZE_2X = '2x';
+	const SIZE_3X = '3x';
+	const SIZE_4X = '4x';
+	const SIZE_5X = '5x';
+
+	const ROTATE_90 = 90;
+	const ROTATE_180 = 180;
+	const ROTATE_270 = 270;
+
+	const FLIP_HORIZONTAL = 'horizontal';
+	const FLIP_VERTICAL = 'vertical';
 }
