@@ -86,8 +86,8 @@ echo FA::stack()->icon('twitter')->on('square-o');
 // </span>
 
 echo FA::stack(['data-role' => 'stacked-icon'])
-     ->on(new FA\Icon('square')->inverse())
-     ->icon(new FA\Icon('cog')->spin());
+     ->on((new FA\Icon('square'))->inverse())
+     ->icon((new FA\Icon('cog'))->spin());
 // <span class="fa-stack" data-role="stacked-icon">
 //   <i class="fa fa-square-o fa-inverse fa-stack-2x"></i>
 //   <i class="fa fa-cog fa-spin fa-stack-1x"></i>
