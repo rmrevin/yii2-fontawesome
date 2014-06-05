@@ -3,7 +3,7 @@
 	"description": "Font Awesome Asset Bundle for Yii2",
 	"keywords": ["yii", "font", "awesome", "asset", "bundle"],
 	"type": "yii2-extension",
-	"license": "GPL v3",
+	"license": "GPL-3.0",
 	"minimum-stability": "dev",
 	"support": {
 		"issues": "https://github.com/rmrevin/yii2-fontawesome/issues",
