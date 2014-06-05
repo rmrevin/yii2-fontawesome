@@ -18,7 +18,7 @@
 	],
 	"require": {
 		"yiisoft/yii2": "*",
-		"fortawesome/font-awesome": "v4.1.*"
+		"fortawesome/font-awesome": "4.1.*"
 	},
 	"autoload": {
 		"psr-4": {
