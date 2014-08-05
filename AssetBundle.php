@@ -1,12 +1,15 @@
 <?php
 /**
  * AssetBundle.php
- * @author Revin Roman
- * @link http://phptime.ru
+ * @author Revin Roman http://phptime.ru
  */
 
 namespace rmrevin\yii\fontawesome;
 
+/**
+ * Class AssetBundle
+ * @package rmrevin\yii\fontawesome
+ */
 class AssetBundle extends \yii\web\AssetBundle
 {
 

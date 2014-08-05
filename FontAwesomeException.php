@@ -1,16 +1,18 @@
 <?php
 /**
- * FA.php
+ * FontAwesomeException.php
  * @author Revin Roman http://phptime.ru
  */
 
 namespace rmrevin\yii\fontawesome;
 
+use yii\base\Exception;
+
 /**
- * Class FA
+ * Class FontAwesomeException
  * @package rmrevin\yii\fontawesome
  */
-class FA extends FontAwesome
+class FontAwesomeException extends Exception
 {
 
-}
+} 

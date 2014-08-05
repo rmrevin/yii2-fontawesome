@@ -1,14 +1,17 @@
 <?php
 /**
  * Stack.php
- * @author Revin Roman
- * @link http://phptime.ru
+ * @author Revin Roman http://phptime.ru
  */
 
-namespace rmrevin\yii\fontawesome\FA;
+namespace rmrevin\yii\fontawesome\component;
 
 use yii\helpers\Html;
 
+/**
+ * Class Stack
+ * @package rmrevin\yii\fontawesome\component
+ */
 class Stack
 {
 
