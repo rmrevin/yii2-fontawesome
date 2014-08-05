@@ -6,8 +6,8 @@
 
 namespace rmrevin\yii\fontawesome\component;
 
-use rmrevin\yii\fontawesome\Exception;
 use rmrevin\yii\fontawesome\FA;
+use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 
 /**
@@ -107,7 +107,7 @@ class Icon
      * @param string $value
      * @param bool $validate_value
      * @return self
-     * @throws \rmrevin\yii\fontawesome\Exception
+     * @throws InvalidConfigException
      */
     public function size($value, $validate_value = true)
     {
@@ -116,7 +116,7 @@ class Icon
                 [FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X]
             )
         ) {
-            throw new Exception('FA::size() - invalid value. Use one of the constants: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X.');
+            throw new InvalidConfigException('FA::size() - invalid value. Use one of the constants: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X.');
         }
 
         return $this->addCssClass('fa-' . $value);
@@ -126,12 +126,12 @@ class Icon
      * @param string $value
      * @param bool $validate_value
      * @return self
-     * @throws \rmrevin\yii\fontawesome\Exception
+     * @throws InvalidConfigException
      */
     public function rotate($value, $validate_value = true)
     {
         if ($validate_value === true && !in_array($value, [FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270])) {
-            throw new Exception('FA::rotate() - invalid value. Use one of the constants: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270.');
+            throw new InvalidConfigException('FA::rotate() - invalid value. Use one of the constants: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270.');
         }
 
         return $this->addCssClass('fa-rotate-' . $value);
@@ -141,12 +141,12 @@ class Icon
      * @param string $value
      * @param bool $validate_value
      * @return self
-     * @throws \rmrevin\yii\fontawesome\Exception
+     * @throws InvalidConfigException
      */
     public function flip($value, $validate_value = true)
     {
         if ($validate_value === true && !in_array($value, [FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL])) {
-            throw new Exception('FA::flip() - invalid value. Use one of the constants: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL.');
+            throw new InvalidConfigException('FA::flip() - invalid value. Use one of the constants: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL.');
         }
 
         return $this->addCssClass('fa-flip-' . $value);

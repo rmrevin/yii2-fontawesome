@@ -109,7 +109,7 @@ class MainTest extends TestCase
     public function testIconSizeExceptions()
     {
         $this->setExpectedException(
-            'rmrevin\yii\fontawesome\Exception',
+            'yii\base\InvalidConfigException',
             'FA::size() - invalid value. Use one of the constants: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X.'
         );
         FA::icon('cog')
@@ -119,7 +119,7 @@ class MainTest extends TestCase
     public function testIconRotateExceptions()
     {
         $this->setExpectedException(
-            'rmrevin\yii\fontawesome\Exception',
+            'yii\base\InvalidConfigException',
             'FA::rotate() - invalid value. Use one of the constants: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270.'
         );
         FA::icon('cog')
@@ -129,7 +129,7 @@ class MainTest extends TestCase
     public function testIconFlipExceptions()
     {
         $this->setExpectedException(
-            'rmrevin\yii\fontawesome\Exception',
+            'yii\base\InvalidConfigException',
             'FA::flip() - invalid value. Use one of the constants: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL.'
         );
         FA::icon('cog')
