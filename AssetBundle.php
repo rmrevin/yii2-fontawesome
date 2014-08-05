@@ -13,9 +13,9 @@ namespace rmrevin\yii\fontawesome;
 class AssetBundle extends \yii\web\AssetBundle
 {
 
-	public $sourcePath = '@vendor/fortawesome/font-awesome';
+    public $sourcePath = '@vendor/fortawesome/font-awesome';
 
-	public $css = [
-		'css/font-awesome.min.css',
-	];
+    public $css = [
+        'css/font-awesome.min.css',
+    ];
 } 

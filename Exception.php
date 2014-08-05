@@ -6,13 +6,11 @@
 
 namespace rmrevin\yii\fontawesome;
 
-use yii\base\Exception;
-
 /**
- * Class FontAwesomeException
+ * Class Exception
  * @package rmrevin\yii\fontawesome
  */
-class FontAwesomeException extends Exception
+class Exception extends \yii\base\Exception
 {
 
 } 

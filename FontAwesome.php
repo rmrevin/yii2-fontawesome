@@ -13,35 +13,35 @@ namespace rmrevin\yii\fontawesome;
 class FontAwesome
 {
 
-	/**
-	 * @param string $name
-	 * @param array $options
-	 * @return component\Icon
-	 */
-	public static function icon($name, $options = [])
-	{
-		return new component\Icon($name, $options);
-	}
+    /**
+     * @param string $name
+     * @param array $options
+     * @return component\Icon
+     */
+    public static function icon($name, $options = [])
+    {
+        return new component\Icon($name, $options);
+    }
 
-	/**
-	 * @param array $options
-	 * @return component\Stack
-	 */
-	public static function stack($options = [])
-	{
-		return new component\Stack($options);
-	}
+    /**
+     * @param array $options
+     * @return component\Stack
+     */
+    public static function stack($options = [])
+    {
+        return new component\Stack($options);
+    }
 
-	const SIZE_LARGE = 'lg';
-	const SIZE_2X = '2x';
-	const SIZE_3X = '3x';
-	const SIZE_4X = '4x';
-	const SIZE_5X = '5x';
+    const SIZE_LARGE = 'lg';
+    const SIZE_2X = '2x';
+    const SIZE_3X = '3x';
+    const SIZE_4X = '4x';
+    const SIZE_5X = '5x';
 
-	const ROTATE_90 = 90;
-	const ROTATE_180 = 180;
-	const ROTATE_270 = 270;
+    const ROTATE_90 = 90;
+    const ROTATE_180 = 180;
+    const ROTATE_270 = 270;
 
-	const FLIP_HORIZONTAL = 'horizontal';
-	const FLIP_VERTICAL = 'vertical';
+    const FLIP_HORIZONTAL = 'horizontal';
+    const FLIP_VERTICAL = 'vertical';
 }
