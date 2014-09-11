@@ -1,6 +1,8 @@
 Yii 2 Font Awesome Asset Bundle
 ===============================
 
+[![Dependency Status](https://www.versioneye.com/user/projects/54119b799e16229fe00000da/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54119b799e16229fe00000da)
+
 Installation
 ------------
 Add in `composer.json`:
