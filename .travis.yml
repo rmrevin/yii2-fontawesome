@@ -28,6 +28,5 @@ script:
   - phpunit --verbose --coverage-clover=coverage/coverage.clover
 
 after_script:
-  - pwd
   - wget https://scrutinizer-ci.com/ocular.phar
   - php ocular.phar code-coverage:upload --format=php-clover coverage/coverage.clover
