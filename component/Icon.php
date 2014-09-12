@@ -104,50 +104,48 @@ class Icon
 
     /**
      * @param string $value
-     * @param bool $validate_value
      * @return self
      * @throws yii\base\InvalidConfigException
      */
-    public function size($value, $validate_value = true)
+    public function size($value)
     {
-        if ($validate_value === true && !in_array(
-                $value,
-                [FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X],
-                true
-            )
-        ) {
-            throw new yii\base\InvalidConfigException('FA::size() - invalid value. Use one of the constants: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X.');
-        }
+        $this->_checkValue(
+            $value,
+            [FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X],
+            'FA::size() - invalid value. Use one of the constants: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X.'
+        );
 
         return $this->addCssClass('fa-' . $value);
     }
 
     /**
      * @param string $value
-     * @param bool $validate_value
      * @return self
      * @throws yii\base\InvalidConfigException
      */
-    public function rotate($value, $validate_value = true)
+    public function rotate($value)
     {
-        if ($validate_value === true && !in_array($value, [FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270], true)) {
-            throw new yii\base\InvalidConfigException('FA::rotate() - invalid value. Use one of the constants: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270.');
-        }
+        $this->_checkValue(
+            $value,
+            [FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270],
+            'FA::rotate() - invalid value. Use one of the constants: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270.'
+        );
 
         return $this->addCssClass('fa-rotate-' . $value);
     }
 
     /**
      * @param string $value
-     * @param bool $validate_value
      * @return self
      * @throws yii\base\InvalidConfigException
      */
-    public function flip($value, $validate_value = true)
+    public function flip($value)
     {
-        if ($validate_value === true && !in_array($value, [FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL], true)) {
-            throw new yii\base\InvalidConfigException('FA::flip() - invalid value. Use one of the constants: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL.');
-        }
+        $this->_checkValue(
+            $value,
+            [FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL],
+            'FA::flip() - invalid value. Use one of the constants: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL.'
+        );
 
         return $this->addCssClass('fa-flip-' . $value);
     }
@@ -161,5 +159,18 @@ class Icon
         yii\helpers\Html::addCssClass($this->options, $class);
 
         return $this;
+    }
+
+    /**
+     * @param mixed $needle
+     * @param array $haystack
+     * @param string $message
+     * @throws yii\base\InvalidConfigException
+     */
+    private function _checkValue($needle, $haystack, $message)
+    {
+        if (!in_array($needle, $haystack, true)) {
+            throw new yii\base\InvalidConfigException($message);
+        }
     }
 }
