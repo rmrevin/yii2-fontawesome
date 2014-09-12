@@ -39,19 +39,7 @@ class Stack
      */
     public function __toString()
     {
-        $icon_back = $this->icon_back instanceof Icon
-            ? $this->icon_back->addCssClass('fa-stack-2x')
-            : null;
-
-        $icon_front = $this->icon_front instanceof Icon
-            ? $this->icon_front->addCssClass('fa-stack-1x')
-            : null;
-
-        return yii\helpers\Html::tag(
-            'span',
-            $icon_back . $icon_front,
-            $this->options
-        );
+        return $this->render();
     }
 
     /**
@@ -84,5 +72,25 @@ class Stack
         $this->icon_back = $icon;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function render()
+    {
+        $icon_back = $this->icon_back instanceof Icon
+            ? $this->icon_back->addCssClass('fa-stack-2x')
+            : null;
+
+        $icon_front = $this->icon_front instanceof Icon
+            ? $this->icon_front->addCssClass('fa-stack-1x')
+            : null;
+
+        return yii\helpers\Html::tag(
+            'span',
+            $icon_back . $icon_front,
+            $this->options
+        );
     }
 }

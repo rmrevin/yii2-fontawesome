@@ -2,6 +2,9 @@ build:
     environment:
         php:
             version: 5.5.12
+    tests:
+        override:
+            command: phpunit
 filter:
     excluded_paths:
         - tests/*

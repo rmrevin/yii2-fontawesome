@@ -35,7 +35,7 @@ class Icon
      */
     public function __toString()
     {
-        return yii\helpers\Html::tag('i', null, $this->options);
+        return $this->render();
     }
 
     /**
@@ -172,5 +172,13 @@ class Icon
         if (!in_array($needle, $haystack, true)) {
             throw new yii\base\InvalidConfigException($message);
         }
+    }
+
+    /**
+     * @return string
+     */
+    public function render()
+    {
+        return yii\helpers\Html::tag('i', null, $this->options);
     }
 }
