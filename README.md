@@ -18,7 +18,7 @@ Add in `composer.json`:
 ```
 {
     "require": {
-        "rmrevin/yii2-fontawesome": "2.3.0"
+        "rmrevin/yii2-fontawesome": "2.4.2"
     }
 }
 ```
