@@ -4,7 +4,16 @@ build:
             version: 5.5.12
     tests:
         override:
-            command: phpunit
+            - phpunit
+checks:
+    php:
+        code_rating: true
+        duplication: true
+tools:
+    php_sim: true
+    php_pdepend: true
+    php_analyzer: true
+    external_code_coverage: true
 filter:
     excluded_paths:
         - tests/*
