@@ -1,0 +1,17 @@
+build:
+    environment:
+        php:
+            version: 5.5.12
+    tests:
+        override:
+            - ./run-tests.sh
+            -
+                command: phpunit --coverage-clover=coverage/coverage.clover
+                coverage:
+                    file: coverage/coverage.clover
+                    format: php-clover
+tools:
+    external_code_coverage: true
+filter:
+    excluded_paths:
+        - tests/*
