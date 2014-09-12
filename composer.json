@@ -1,6 +1,6 @@
 {
 	"name": "rmrevin/yii2-fontawesome",
-	"description": "Font Awesome Asset Bundle for Yii2",
+	"description": "Asset Bundle for Yii2 with Font Awesome",
 	"keywords": ["yii", "font", "awesome", "asset", "bundle"],
 	"type": "yii2-extension",
 	"license": "MIT",
