@@ -40,41 +40,35 @@ class MainTest extends TestCase
         );
 
         $this->assertEquals(
-            (string)FA::stack()->icon('cog'),
+            (string)FA::stack()
+                ->icon('cog'),
             '<span class="fa-stack"><i class="fa fa-cog fa-stack-1x"></i></span>'
         );
 
         $this->assertEquals(
-            (string)FA::stack()->on('square-o'),
+            (string)FA::stack()
+                ->on('square-o'),
             '<span class="fa-stack"><i class="fa fa-square-o fa-stack-2x"></i></span>'
         );
 
         $this->assertEquals(
-            (string)FA::stack()->icon('cog')->on('square-o'),
+            (string)FA::stack()
+                ->icon('cog')
+                ->on('square-o'),
             '<span class="fa-stack"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-cog fa-stack-1x"></i></span>'
         );
 
         $this->assertEquals(
-            (string)FA::stack(
-                [
-                    'data-role' => 'stack'
-                ]
-            )->icon(
-                    'cog',
-                    [
-                        'data-role' => 'icon',
-                    ]
-                )->on(
-                    'square-o',
-                    [
-                        'data-role' => 'background'
-                    ]
-                ),
+            (string)FA::stack(['data-role' => 'stack'])
+                ->icon('cog', ['data-role' => 'icon',])
+                ->on('square-o', ['data-role' => 'background']),
             '<span class="fa-stack" data-role="stack"><i class="fa fa-square-o fa-stack-2x" data-role="background"></i><i class="fa fa-cog fa-stack-1x" data-role="icon"></i></span>'
         );
 
         $this->assertEquals(
-            (string)FA::stack()->icon((new Icon('cog'))->spin())->on((new Icon('square-o'))->size(FA::SIZE_3X)),
+            (string)FA::stack()
+                ->icon((new Icon('cog'))->spin())
+                ->on((new Icon('square-o'))->size(FA::SIZE_3X)),
             '<span class="fa-stack"><i class="fa fa-square-o fa-3x fa-stack-2x"></i><i class="fa fa-cog fa-spin fa-stack-1x"></i></span>'
         );
     }
@@ -106,7 +100,7 @@ class MainTest extends TestCase
         $this->assertEquals(FA::icon('cog')->flip(FA::FLIP_VERTICAL), '<i class="fa fa-cog fa-flip-vertical"></i>');
     }
 
-    public function testIconSizeExceptions()
+    public function testIconSizeException()
     {
         $this->setExpectedException(
             'yii\base\InvalidConfigException',
@@ -116,7 +110,7 @@ class MainTest extends TestCase
             ->size('badvalue');
     }
 
-    public function testIconRotateExceptions()
+    public function testIconRotateException()
     {
         $this->setExpectedException(
             'yii\base\InvalidConfigException',
@@ -126,7 +120,7 @@ class MainTest extends TestCase
             ->rotate('badvalue');
     }
 
-    public function testIconFlipExceptions()
+    public function testIconFlipException()
     {
         $this->setExpectedException(
             'yii\base\InvalidConfigException',

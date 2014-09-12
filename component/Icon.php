@@ -7,8 +7,7 @@
 namespace rmrevin\yii\fontawesome\component;
 
 use rmrevin\yii\fontawesome\FA;
-use yii\base\InvalidConfigException;
-use yii\helpers\Html;
+use yii;
 
 /**
  * Class Icon
@@ -26,7 +25,7 @@ class Icon
      */
     public function __construct($name, $options = [])
     {
-        Html::addCssClass($options, 'fa fa-' . $name);
+        yii\helpers\Html::addCssClass($options, 'fa fa-' . $name);
 
         $this->options = $options;
     }
@@ -36,7 +35,7 @@ class Icon
      */
     public function __toString()
     {
-        return Html::tag('i', null, $this->options);
+        return yii\helpers\Html::tag('i', null, $this->options);
     }
 
     /**
@@ -107,16 +106,17 @@ class Icon
      * @param string $value
      * @param bool $validate_value
      * @return self
-     * @throws InvalidConfigException
+     * @throws yii\base\InvalidConfigException
      */
     public function size($value, $validate_value = true)
     {
         if ($validate_value === true && !in_array(
                 $value,
-                [FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X]
+                [FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X],
+                true
             )
         ) {
-            throw new InvalidConfigException('FA::size() - invalid value. Use one of the constants: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X.');
+            throw new yii\base\InvalidConfigException('FA::size() - invalid value. Use one of the constants: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X.');
         }
 
         return $this->addCssClass('fa-' . $value);
@@ -126,12 +126,12 @@ class Icon
      * @param string $value
      * @param bool $validate_value
      * @return self
-     * @throws InvalidConfigException
+     * @throws yii\base\InvalidConfigException
      */
     public function rotate($value, $validate_value = true)
     {
-        if ($validate_value === true && !in_array($value, [FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270])) {
-            throw new InvalidConfigException('FA::rotate() - invalid value. Use one of the constants: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270.');
+        if ($validate_value === true && !in_array($value, [FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270], true)) {
+            throw new yii\base\InvalidConfigException('FA::rotate() - invalid value. Use one of the constants: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270.');
         }
 
         return $this->addCssClass('fa-rotate-' . $value);
@@ -141,12 +141,12 @@ class Icon
      * @param string $value
      * @param bool $validate_value
      * @return self
-     * @throws InvalidConfigException
+     * @throws yii\base\InvalidConfigException
      */
     public function flip($value, $validate_value = true)
     {
-        if ($validate_value === true && !in_array($value, [FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL])) {
-            throw new InvalidConfigException('FA::flip() - invalid value. Use one of the constants: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL.');
+        if ($validate_value === true && !in_array($value, [FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL], true)) {
+            throw new yii\base\InvalidConfigException('FA::flip() - invalid value. Use one of the constants: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL.');
         }
 
         return $this->addCssClass('fa-flip-' . $value);
@@ -158,8 +158,8 @@ class Icon
      */
     public function addCssClass($class)
     {
-        Html::addCssClass($this->options, $class);
+        yii\helpers\Html::addCssClass($this->options, $class);
 
         return $this;
     }
-} 
+}

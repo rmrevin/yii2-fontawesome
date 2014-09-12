@@ -12,5 +12,4 @@ namespace rmrevin\yii\fontawesome;
  */
 class FA extends FontAwesome
 {
-
 }

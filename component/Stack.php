@@ -6,7 +6,7 @@
 
 namespace rmrevin\yii\fontawesome\component;
 
-use yii\helpers\Html;
+use yii;
 
 /**
  * Class Stack
@@ -15,69 +15,74 @@ use yii\helpers\Html;
 class Stack
 {
 
-	/** @var array */
-	private $options = [];
+    /** @var array */
+    private $options = [];
 
-	/** @var Icon */
-	private $icon_front;
+    /** @var Icon */
+    private $icon_front;
 
-	/** @var Icon */
-	private $icon_back;
+    /** @var Icon */
+    private $icon_back;
 
-	/**
-	 * @param array $options
-	 */
-	public function __construct($options = [])
-	{
-		Html::addCssClass($options, 'fa-stack');
+    /**
+     * @param array $options
+     */
+    public function __construct($options = [])
+    {
+        yii\helpers\Html::addCssClass($options, 'fa-stack');
 
-		$this->options = $options;
-	}
+        $this->options = $options;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function __toString()
-	{
-		$icon_back = $this->icon_back instanceof Icon ? $this->icon_back->addCssClass('fa-stack-2x') : null;
-		$icon_front = $this->icon_front instanceof Icon ? $this->icon_front->addCssClass('fa-stack-1x') : null;
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        $icon_back = $this->icon_back instanceof Icon
+            ? $this->icon_back->addCssClass('fa-stack-2x')
+            : null;
 
-		return Html::tag(
-			'span',
-			$icon_back . $icon_front,
-			$this->options
-		);
-	}
+        $icon_front = $this->icon_front instanceof Icon
+            ? $this->icon_front->addCssClass('fa-stack-1x')
+            : null;
 
-	/**
-	 * @param string|Icon $icon
-	 * @param array $options
-	 * @return self
-	 */
-	public function icon($icon, $options = [])
-	{
-		if (is_string($icon)) {
-			$icon = new Icon($icon, $options);
-		}
+        return yii\helpers\Html::tag(
+            'span',
+            $icon_back . $icon_front,
+            $this->options
+        );
+    }
 
-		$this->icon_front = $icon;
+    /**
+     * @param string|Icon $icon
+     * @param array $options
+     * @return self
+     */
+    public function icon($icon, $options = [])
+    {
+        if (is_string($icon)) {
+            $icon = new Icon($icon, $options);
+        }
 
-		return $this;
-	}
+        $this->icon_front = $icon;
 
-	/**
-	 * @param string|Icon $icon
-	 * @param array $options
-	 * @return self
-	 */
-	public function on($icon, $options = [])
-	{
-		if (is_string($icon)) {
-			$icon = new Icon($icon, $options);
-		}
+        return $this;
+    }
 
-		$this->icon_back = $icon;
+    /**
+     * @param string|Icon $icon
+     * @param array $options
+     * @return self
+     */
+    public function on($icon, $options = [])
+    {
+        if (is_string($icon)) {
+            $icon = new Icon($icon, $options);
+        }
 
-		return $this;
-	}
-} 
+        $this->icon_back = $icon;
+
+        return $this;
+    }
+}
