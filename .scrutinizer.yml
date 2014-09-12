@@ -4,7 +4,6 @@ build:
             version: 5.5.12
     tests:
         override:
-            - ./run-tests.sh
             -
                 command: phpunit --coverage-clover=coverage/coverage.clover
                 coverage:
