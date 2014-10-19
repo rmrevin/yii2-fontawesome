@@ -4,7 +4,7 @@
 	"keywords": ["yii", "font", "awesome", "asset", "bundle"],
 	"type": "yii2-extension",
 	"license": "MIT",
-	"minimum-stability": "dev",
+	"minimum-stability": "stable",
 	"support": {
 		"issues": "https://github.com/rmrevin/yii2-fontawesome/issues",
 		"source": "https://github.com/rmrevin/yii2-fontawesome"
@@ -17,7 +17,7 @@
 		}
 	],
 	"require": {
-		"yiisoft/yii2": "*",
+		"yiisoft/yii2": "2.0.*",
 		"fortawesome/font-awesome": "4.2.*"
 	},
 	"autoload": {
