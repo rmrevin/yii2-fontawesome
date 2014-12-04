@@ -12,6 +12,15 @@ namespace rmrevin\yii\fontawesome;
  */
 class FA extends FontAwesome
 {
+
+    /**
+     * How I saved from: http://fortawesome.github.io/Font-Awesome/cheatsheet/
+     *
+     * $.each($('.col-md-4.col-sm-6.col-lg-3').text().split(' '), function(i, item){
+     *        item.indexOf('fa-') !== -1 ? console.log('const ICON_' + item.replace(/-/gi, '_').toUpperCase() + " = '" + item + "';") : null;
+     * })
+     */
+
     const _ADJUST = 'adjust';
     const _ADN = 'adn';
     const _ALIGN_CENTER = 'align-center';
