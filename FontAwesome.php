@@ -61,7 +61,7 @@ class FontAwesome
 	 * How I saved from: http://fortawesome.github.io/Font-Awesome/cheatsheet/
 	 *
 	 * $.each($('.col-md-4.col-sm-6.col-lg-3').text().split(' '), function(i, item){
-	 *        item.indexOf('fa-') !== -1 ? console.log('const ICON_' + item.replace(/-/gi, '_').toUpperCase() + " = '" + item + "'") : null;
+	 *        item.indexOf('fa-') !== -1 ? console.log('const ICON_' + item.replace(/-/gi, '_').toUpperCase() + " = '" + item + "';") : null;
 	 * })
 	 */
 
