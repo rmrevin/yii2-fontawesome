@@ -26,7 +26,7 @@ class Icon
      */
     public function __construct($name, $options = [])
     {
-		FontAwesome::registerAssets();
+	FontAwesome::registerAssets();
 
         yii\helpers\Html::addCssClass($options, 'fa fa-' . $name);
 
