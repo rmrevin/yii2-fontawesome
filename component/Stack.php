@@ -6,6 +6,7 @@
 
 namespace rmrevin\yii\fontawesome\component;
 
+use rmrevin\yii\fontawesome\FontAwesome;
 use yii;
 
 /**
@@ -29,6 +30,8 @@ class Stack
      */
     public function __construct($options = [])
     {
+		FontAwesome::registerAssets();
+		
         yii\helpers\Html::addCssClass($options, 'fa-stack');
 
         $this->options = $options;
