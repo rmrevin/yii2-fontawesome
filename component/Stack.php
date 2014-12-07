@@ -30,7 +30,7 @@ class Stack
      */
     public function __construct($options = [])
     {
-		FontAwesome::registerAssets();
+	FontAwesome::registerAssets();
 		
         yii\helpers\Html::addCssClass($options, 'fa-stack');
 
