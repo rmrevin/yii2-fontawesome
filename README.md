@@ -23,34 +23,6 @@ Add in `composer.json`:
 }
 ```
 
-Usage
------
-In view
-```php
-<?
-// ...
-
-rmrevin\yii\fontawesome\AssetBundle::register($this);
-
-```
-
-or as dependency in your asset bundle
-```php
-<?
-// ...
-
-class AppAsset extends AssetBundle
-{
-	// ...
-
-	public $depends = [
-		// ...
-		'\rmrevin\yii\fontawesome\AssetBundle'
-	];
-}
-
-```
-
 Helper
 ------
 ```php
@@ -103,7 +75,6 @@ echo FA::stack(['data-role' => 'stacked-icon'])
 //   <i class="fa fa-square-o fa-inverse fa-stack-2x"></i>
 //   <i class="fa fa-cog fa-spin fa-stack-1x"></i>
 // </span>
-```
 
 // autocomplete in IDE
 echo FA::icon(FA::_COG);
@@ -111,3 +82,4 @@ echo FA::icon(FA::_DESKTOP);
 echo FA::stack(['data-role' => 'stacked-icon'])
      ->on((new FA\Icon(FA::SQUARE))->inverse())
      ->icon((new FA\Icon(FA::COG))->spin());
+```
