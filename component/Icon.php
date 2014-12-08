@@ -7,7 +7,6 @@
 namespace rmrevin\yii\fontawesome\component;
 
 use rmrevin\yii\fontawesome\FA;
-use yii;
 
 /**
  * Class Icon
@@ -25,7 +24,7 @@ class Icon
      */
     public function __construct($name, $options = [])
     {
-        yii\helpers\Html::addCssClass($options, 'fa fa-' . $name);
+        \yii\helpers\Html::addCssClass($options, 'fa fa-' . $name);
 
         $this->options = $options;
     }
@@ -105,7 +104,7 @@ class Icon
     /**
      * @param string $value
      * @return self
-     * @throws yii\base\InvalidConfigException
+     * @throws \yii\base\InvalidConfigException
      */
     public function size($value)
     {
@@ -121,7 +120,7 @@ class Icon
     /**
      * @param string $value
      * @return self
-     * @throws yii\base\InvalidConfigException
+     * @throws \yii\base\InvalidConfigException
      */
     public function rotate($value)
     {
@@ -137,7 +136,7 @@ class Icon
     /**
      * @param string $value
      * @return self
-     * @throws yii\base\InvalidConfigException
+     * @throws \yii\base\InvalidConfigException
      */
     public function flip($value)
     {
@@ -156,7 +155,7 @@ class Icon
      */
     public function addCssClass($class)
     {
-        yii\helpers\Html::addCssClass($this->options, $class);
+        \yii\helpers\Html::addCssClass($this->options, $class);
 
         return $this;
     }
@@ -165,12 +164,12 @@ class Icon
      * @param mixed $needle
      * @param array $haystack
      * @param string $message
-     * @throws yii\base\InvalidConfigException
+     * @throws \yii\base\InvalidConfigException
      */
     private function _checkValue($needle, $haystack, $message)
     {
         if (!in_array($needle, $haystack, true)) {
-            throw new yii\base\InvalidConfigException($message);
+            throw new \yii\base\InvalidConfigException($message);
         }
     }
 
@@ -179,6 +178,6 @@ class Icon
      */
     public function render()
     {
-        return yii\helpers\Html::tag('i', null, $this->options);
+        return \yii\helpers\Html::tag('i', null, $this->options);
     }
 }

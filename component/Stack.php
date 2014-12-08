@@ -6,8 +6,6 @@
 
 namespace rmrevin\yii\fontawesome\component;
 
-use yii;
-
 /**
  * Class Stack
  * @package rmrevin\yii\fontawesome\component
@@ -29,7 +27,7 @@ class Stack
      */
     public function __construct($options = [])
     {
-        yii\helpers\Html::addCssClass($options, 'fa-stack');
+        \yii\helpers\Html::addCssClass($options, 'fa-stack');
 
         $this->options = $options;
     }
@@ -87,7 +85,7 @@ class Stack
             ? $this->icon_front->addCssClass('fa-stack-1x')
             : null;
 
-        return yii\helpers\Html::tag(
+        return \yii\helpers\Html::tag(
             'span',
             $icon_back . $icon_front,
             $this->options
