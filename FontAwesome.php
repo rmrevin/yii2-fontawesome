@@ -32,6 +32,14 @@ class FontAwesome
         return new component\Stack($options);
     }
 
+	/**
+	 * register the AssetBundle
+	 */
+	public static function registerAssets(){
+		$view = \Yii::$app->getView();
+		AssetBundle::register($view);
+	}
+
     /**
      * Size values
      * @see Icon::size

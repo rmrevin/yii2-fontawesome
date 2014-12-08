@@ -7,6 +7,7 @@
 namespace rmrevin\yii\fontawesome\component;
 
 use rmrevin\yii\fontawesome\FA;
+use rmrevin\yii\fontawesome\FontAwesome;
 use yii;
 
 /**
@@ -25,6 +26,8 @@ class Icon
      */
     public function __construct($name, $options = [])
     {
+	FontAwesome::registerAssets();
+
         yii\helpers\Html::addCssClass($options, 'fa fa-' . $name);
 
         $this->options = $options;
