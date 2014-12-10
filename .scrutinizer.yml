@@ -2,6 +2,10 @@ build:
     environment:
         php:
             version: 5.5.12
+    dependencies:
+        before:
+            - sudo composer self-update && composer --version
+            - composer global require "fxp/composer-asset-plugin:1.0.0-beta4"
     tests:
         override:
             - phpunit
