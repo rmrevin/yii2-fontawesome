@@ -1,28 +1,36 @@
 {
-	"name": "rmrevin/yii2-fontawesome",
-	"description": "Asset Bundle for Yii2 with Font Awesome",
-	"keywords": ["yii", "font", "awesome", "asset", "bundle"],
-	"type": "yii2-extension",
-	"license": "MIT",
-	"minimum-stability": "stable",
-	"support": {
-		"issues": "https://github.com/rmrevin/yii2-fontawesome/issues",
-		"source": "https://github.com/rmrevin/yii2-fontawesome"
-	},
-	"authors": [
-		{
-			"name": "Roman Revin",
-			"email": "xgismox@gmail.com",
-			"homepage": "http://rmrevin.ru/"
-		}
-	],
-	"require": {
-		"yiisoft/yii2": "2.0.*",
-		"fortawesome/font-awesome": "4.2.*"
-	},
-	"autoload": {
-		"psr-4": {
-			"rmrevin\\yii\\fontawesome\\": ""
-		}
-	}
+  "name": "rmrevin/yii2-fontawesome",
+  "description": "Asset Bundle for Yii2 with Font Awesome",
+  "keywords": [
+    "yii",
+    "font",
+    "awesome",
+    "asset",
+    "bundle"
+  ],
+  "type": "yii2-extension",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "support": {
+    "issues": "https://github.com/rmrevin/yii2-fontawesome/issues",
+    "source": "https://github.com/rmrevin/yii2-fontawesome"
+  },
+  "authors": [
+    {
+      "name": "Roman Revin",
+      "email": "xgismox@gmail.com",
+      "homepage": "http://rmrevin.ru/"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+
+    "yiisoft/yii2": "2.0.*",
+    "fortawesome/font-awesome": "4.2.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "rmrevin\\yii\\fontawesome\\": ""
+    }
+  }
 }
