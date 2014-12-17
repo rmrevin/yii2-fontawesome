@@ -108,6 +108,6 @@ echo FA::stack(['data-role' => 'stacked-icon'])
 echo FA::icon(FA::_COG);
 echo FA::icon(FA::_DESKTOP);
 echo FA::stack(['data-role' => 'stacked-icon'])
-     ->on((new FA\Icon(FA::SQUARE))->inverse())
-     ->icon((new FA\Icon(FA::COG))->spin());
+     ->on((new FA\Icon(FA::_SQUARE))->inverse())
+     ->icon((new FA\Icon(FA::_COG))->spin());
 ```
