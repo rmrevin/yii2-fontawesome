@@ -16,9 +16,12 @@ class FA extends FontAwesome
     /**
      * How I saved from: http://fortawesome.github.io/Font-Awesome/cheatsheet/
      *
-     * $.each($('.col-md-4.col-sm-6.col-lg-3').text().split(' '), function(i, item){
-     *        item.indexOf('fa-') !== -1 ? console.log('const ICON_' + item.replace(/-/gi, '_').toUpperCase() + " = '" + item + "';") : null;
-     * })
+     * $.each($('.col-md-4.col-sm-6.col-lg-3').text().split(' '), function (i, item) {
+     *   if(item.indexOf('fa-') !== -1) {
+     *     var icon = item.substr(3).replace(/(\n)/g, '');
+     *     console.log('const _' + icon.replace(/-/gi, '_').toUpperCase() + " = '" + icon + "';")
+     *   }
+     * });
      */
 
     const _ADJUST = 'adjust';
@@ -68,6 +71,7 @@ class FA extends FontAwesome
     const _BAR_CHART_O = 'bar-chart-o';
     const _BARCODE = 'barcode';
     const _BARS = 'bars';
+    const _BED = 'bed';
     const _BEER = 'beer';
     const _BEHANCE = 'behance';
     const _BEHANCE_SQUARE = 'behance-square';
@@ -95,6 +99,7 @@ class FA extends FontAwesome
     const _BULLHORN = 'bullhorn';
     const _BULLSEYE = 'bullseye';
     const _BUS = 'bus';
+    const _BUYSELLADS = 'buysellads';
     const _CAB = 'cab';
     const _CALCULATOR = 'calculator';
     const _CALENDAR = 'calendar';
@@ -110,6 +115,8 @@ class FA extends FontAwesome
     const _CARET_SQUARE_O_RIGHT = 'caret-square-o-right';
     const _CARET_SQUARE_O_UP = 'caret-square-o-up';
     const _CARET_UP = 'caret-up';
+    const _CART_ARROW_DOWN = 'cart-arrow-down';
+    const _CART_PLUS = 'cart-plus';
     const _CC = 'cc';
     const _CC_AMEX = 'cc-amex';
     const _CC_DISCOVER = 'cc-discover';
@@ -158,6 +165,7 @@ class FA extends FontAwesome
     const _COMMENTS_O = 'comments-o';
     const _COMPASS = 'compass';
     const _COMPRESS = 'compress';
+    const _CONNECTDEVELOP = 'connectdevelop';
     const _COPY = 'copy';
     const _COPYRIGHT = 'copyright';
     const _CREDIT_CARD = 'credit-card';
@@ -169,11 +177,13 @@ class FA extends FontAwesome
     const _CUT = 'cut';
     const _CUTLERY = 'cutlery';
     const _DASHBOARD = 'dashboard';
+    const _DASHCUBE = 'dashcube';
     const _DATABASE = 'database';
     const _DEDENT = 'dedent';
     const _DELICIOUS = 'delicious';
     const _DESKTOP = 'desktop';
     const _DEVIANTART = 'deviantart';
+    const _DIAMOND = 'diamond';
     const _DIGG = 'digg';
     const _DOLLAR = 'dollar';
     const _DOT_CIRCLE_O = 'dot-circle-o';
@@ -203,6 +213,8 @@ class FA extends FontAwesome
     const _EYE_SLASH = 'eye-slash';
     const _EYEDROPPER = 'eyedropper';
     const _FACEBOOK = 'facebook';
+    const _FACEBOOK_F = 'facebook-f';
+    const _FACEBOOK_OFFICIAL = 'facebook-official';
     const _FACEBOOK_SQUARE = 'facebook-square';
     const _FAST_BACKWARD = 'fast-backward';
     const _FAST_FORWARD = 'fast-forward';
@@ -244,6 +256,7 @@ class FA extends FontAwesome
     const _FOLDER_OPEN = 'folder-open';
     const _FOLDER_OPEN_O = 'folder-open-o';
     const _FONT = 'font';
+    const _FORUMBEE = 'forumbee';
     const _FORWARD = 'forward';
     const _FOURSQUARE = 'foursquare';
     const _FROWN_O = 'frown-o';
@@ -254,6 +267,7 @@ class FA extends FontAwesome
     const _GE = 'ge';
     const _GEAR = 'gear';
     const _GEARS = 'gears';
+    const _GENDERLESS = 'genderless';
     const _GIFT = 'gift';
     const _GIT = 'git';
     const _GIT_SQUARE = 'git-square';
@@ -268,6 +282,7 @@ class FA extends FontAwesome
     const _GOOGLE_PLUS_SQUARE = 'google-plus-square';
     const _GOOGLE_WALLET = 'google-wallet';
     const _GRADUATION_CAP = 'graduation-cap';
+    const _GRATIPAY = 'gratipay';
     const _GROUP = 'group';
     const _H_SQUARE = 'h-square';
     const _HACKER_NEWS = 'hacker-news';
@@ -280,9 +295,11 @@ class FA extends FontAwesome
     const _HEADPHONES = 'headphones';
     const _HEART = 'heart';
     const _HEART_O = 'heart-o';
+    const _HEARTBEAT = 'heartbeat';
     const _HISTORY = 'history';
     const _HOME = 'home';
     const _HOSPITAL_O = 'hospital-o';
+    const _HOTEL = 'hotel';
     const _HTML5 = 'html5';
     const _ILS = 'ils';
     const _IMAGE = 'image';
@@ -306,6 +323,7 @@ class FA extends FontAwesome
     const _LASTFM = 'lastfm';
     const _LASTFM_SQUARE = 'lastfm-square';
     const _LEAF = 'leaf';
+    const _LEANPUB = 'leanpub';
     const _LEGAL = 'legal';
     const _LEMON_O = 'lemon-o';
     const _LEVEL_DOWN = 'level-down';
@@ -337,10 +355,17 @@ class FA extends FontAwesome
     const _MAIL_REPLY_ALL = 'mail-reply-all';
     const _MALE = 'male';
     const _MAP_MARKER = 'map-marker';
+    const _MARS = 'mars';
+    const _MARS_DOUBLE = 'mars-double';
+    const _MARS_STROKE = 'mars-stroke';
+    const _MARS_STROKE_H = 'mars-stroke-h';
+    const _MARS_STROKE_V = 'mars-stroke-v';
     const _MAXCDN = 'maxcdn';
     const _MEANPATH = 'meanpath';
+    const _MEDIUM = 'medium';
     const _MEDKIT = 'medkit';
     const _MEH_O = 'meh-o';
+    const _MERCURY = 'mercury';
     const _MICROPHONE = 'microphone';
     const _MICROPHONE_SLASH = 'microphone-slash';
     const _MINUS = 'minus';
@@ -352,8 +377,10 @@ class FA extends FontAwesome
     const _MONEY = 'money';
     const _MOON_O = 'moon-o';
     const _MORTAR_BOARD = 'mortar-board';
+    const _MOTORCYCLE = 'motorcycle';
     const _MUSIC = 'music';
     const _NAVICON = 'navicon';
+    const _NEUTER = 'neuter';
     const _NEWSPAPER_O = 'newspaper-o';
     const _OPENID = 'openid';
     const _OUTDENT = 'outdent';
@@ -378,6 +405,7 @@ class FA extends FontAwesome
     const _PIED_PIPER = 'pied-piper';
     const _PIED_PIPER_ALT = 'pied-piper-alt';
     const _PINTEREST = 'pinterest';
+    const _PINTEREST_P = 'pinterest-p';
     const _PINTEREST_SQUARE = 'pinterest-square';
     const _PLANE = 'plane';
     const _PLAY = 'play';
@@ -427,8 +455,10 @@ class FA extends FontAwesome
     const _SEARCH = 'search';
     const _SEARCH_MINUS = 'search-minus';
     const _SEARCH_PLUS = 'search-plus';
+    const _SELLSY = 'sellsy';
     const _SEND = 'send';
     const _SEND_O = 'send-o';
+    const _SERVER = 'server';
     const _SHARE = 'share';
     const _SHARE_ALT = 'share-alt';
     const _SHARE_ALT_SQUARE = 'share-alt-square';
@@ -437,11 +467,15 @@ class FA extends FontAwesome
     const _SHEKEL = 'shekel';
     const _SHEQEL = 'sheqel';
     const _SHIELD = 'shield';
+    const _SHIP = 'ship';
+    const _SHIRTSINBULK = 'shirtsinbulk';
     const _SHOPPING_CART = 'shopping-cart';
     const _SIGN_IN = 'sign-in';
     const _SIGN_OUT = 'sign-out';
     const _SIGNAL = 'signal';
+    const _SIMPLYBUILT = 'simplybuilt';
     const _SITEMAP = 'sitemap';
+    const _SKYATLAS = 'skyatlas';
     const _SKYPE = 'skype';
     const _SLACK = 'slack';
     const _SLIDERS = 'sliders';
@@ -480,10 +514,12 @@ class FA extends FontAwesome
     const _STEP_FORWARD = 'step-forward';
     const _STETHOSCOPE = 'stethoscope';
     const _STOP = 'stop';
+    const _STREET_VIEW = 'street-view';
     const _STRIKETHROUGH = 'strikethrough';
     const _STUMBLEUPON = 'stumbleupon';
     const _STUMBLEUPON_CIRCLE = 'stumbleupon-circle';
     const _SUBSCRIPT = 'subscript';
+    const _SUBWAY = 'subway';
     const _SUITCASE = 'suitcase';
     const _SUN_O = 'sun-o';
     const _SUPERSCRIPT = 'superscript';
@@ -518,6 +554,9 @@ class FA extends FontAwesome
     const _TOGGLE_ON = 'toggle-on';
     const _TOGGLE_RIGHT = 'toggle-right';
     const _TOGGLE_UP = 'toggle-up';
+    const _TRAIN = 'train';
+    const _TRANSGENDER = 'transgender';
+    const _TRANSGENDER_ALT = 'transgender-alt';
     const _TRASH = 'trash';
     const _TRASH_O = 'trash-o';
     const _TREE = 'tree';
@@ -544,7 +583,14 @@ class FA extends FontAwesome
     const _USD = 'usd';
     const _USER = 'user';
     const _USER_MD = 'user-md';
+    const _USER_PLUS = 'user-plus';
+    const _USER_SECRET = 'user-secret';
+    const _USER_TIMES = 'user-times';
     const _USERS = 'users';
+    const _VENUS = 'venus';
+    const _VENUS_DOUBLE = 'venus-double';
+    const _VENUS_MARS = 'venus-mars';
+    const _VIACOIN = 'viacoin';
     const _VIDEO_CAMERA = 'video-camera';
     const _VIMEO_SQUARE = 'vimeo-square';
     const _VINE = 'vine';
@@ -556,6 +602,7 @@ class FA extends FontAwesome
     const _WECHAT = 'wechat';
     const _WEIBO = 'weibo';
     const _WEIXIN = 'weixin';
+    const _WHATSAPP = 'whatsapp';
     const _WHEELCHAIR = 'wheelchair';
     const _WIFI = 'wifi';
     const _WINDOWS = 'windows';

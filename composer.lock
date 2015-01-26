@@ -4,27 +4,27 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "93f25c947d76b4f1d2742c866fe267fb",
+    "hash": "25cc69debdf98c18458617766e045459",
     "packages": [
         {
             "name": "bower-asset/jquery",
-            "version": "2.1.1",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jquery/jquery.git",
-                "reference": "4dec426aa2a6cbabb1b064319ba7c272d594a688"
+                "reference": "8f2a9d9272d6ed7f32d3a484740ab342c02541e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery/zipball/4dec426aa2a6cbabb1b064319ba7c272d594a688",
-                "reference": "4dec426aa2a6cbabb1b064319ba7c272d594a688",
+                "url": "https://api.github.com/repos/jquery/jquery/zipball/8f2a9d9272d6ed7f32d3a484740ab342c02541e0",
+                "reference": "8f2a9d9272d6ed7f32d3a484740ab342c02541e0",
                 "shasum": ""
             },
             "require-dev": {
                 "bower-asset/qunit": "1.14.0",
                 "bower-asset/requirejs": "2.1.10",
                 "bower-asset/sinon": "1.8.1",
-                "bower-asset/sizzle": "1.10.19"
+                "bower-asset/sizzle": "2.1.1-patch2"
             },
             "type": "bower-asset-library",
             "extra": {
@@ -51,16 +51,16 @@
         },
         {
             "name": "bower-asset/jquery.inputmask",
-            "version": "3.1.47",
+            "version": "3.1.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
-                "reference": "9ff37e85bc2fa2350475c4a7fa60aa20cd211481"
+                "reference": "d180082aa1ba98c85f85b2c4eebbfa195fd25613"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/9ff37e85bc2fa2350475c4a7fa60aa20cd211481",
-                "reference": "9ff37e85bc2fa2350475c4a7fa60aa20cd211481",
+                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/d180082aa1ba98c85f85b2c4eebbfa195fd25613",
+                "reference": "d180082aa1ba98c85f85b2c4eebbfa195fd25613",
                 "shasum": ""
             },
             "require": {
@@ -266,16 +266,16 @@
         },
         {
             "name": "fortawesome/font-awesome",
-            "version": "v4.2.0",
+            "version": "v4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FortAwesome/Font-Awesome.git",
-                "reference": "a65bd93d81e9e6bd5ebfa41757a4474960b973b4"
+                "reference": "41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/a65bd93d81e9e6bd5ebfa41757a4474960b973b4",
-                "reference": "a65bd93d81e9e6bd5ebfa41757a4474960b973b4",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0",
+                "reference": "41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0",
                 "shasum": ""
             },
             "require-dev": {
@@ -310,20 +310,20 @@
                 "font",
                 "icon"
             ],
-            "time": "2014-08-26 16:36:44"
+            "time": "2015-01-22 18:09:42"
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "7ed175b4b71ac96eaf86aadc322186ecdc58498d"
+                "reference": "a0bb60febe1e886d7c45ab3a70e17a3b3149f1a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/7ed175b4b71ac96eaf86aadc322186ecdc58498d",
-                "reference": "7ed175b4b71ac96eaf86aadc322186ecdc58498d",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/a0bb60febe1e886d7c45ab3a70e17a3b3149f1a3",
+                "reference": "a0bb60febe1e886d7c45ab3a70e17a3b3149f1a3",
                 "shasum": ""
             },
             "require": {
@@ -333,6 +333,7 @@
                 "bower-asset/yii2-pjax": ">=2.0.1",
                 "cebe/markdown": "~1.0.0",
                 "ext-mbstring": "*",
+                "ext-mcrypt": "*",
                 "ezyang/htmlpurifier": "4.6.*",
                 "lib-pcre": "*",
                 "php": ">=5.4.0",
@@ -398,20 +399,20 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2014-12-07 16:42:41"
+            "time": "2015-01-11 03:57:55"
         },
         {
             "name": "yiisoft/yii2-composer",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-composer.git",
-                "reference": "7f300dd23b6c4d1e7effc81c962b3889f83e43c0"
+                "reference": "e0f95611402ad0e8e66f9764dddb6bac624b75c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/7f300dd23b6c4d1e7effc81c962b3889f83e43c0",
-                "reference": "7f300dd23b6c4d1e7effc81c962b3889f83e43c0",
+                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/e0f95611402ad0e8e66f9764dddb6bac624b75c2",
+                "reference": "e0f95611402ad0e8e66f9764dddb6bac624b75c2",
                 "shasum": ""
             },
             "require": {
@@ -445,7 +446,7 @@
                 "extension installer",
                 "yii2"
             ],
-            "time": "2014-12-07 16:42:41"
+            "time": "2015-01-11 03:57:55"
         }
     ],
     "packages-dev": [],
@@ -453,6 +454,7 @@
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.4.0"
     },
