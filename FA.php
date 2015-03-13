@@ -617,4 +617,19 @@ class FA extends FontAwesome
     const _YOUTUBE = 'youtube';
     const _YOUTUBE_PLAY = 'youtube-play';
     const _YOUTUBE_SQUARE = 'youtube-square';
+    
+    /**
+     * Get all icon constants for dropdown list in example
+     * @param null $prefix
+     *
+     * @return array
+     */
+    public static function getConstants($prefix = null)
+    {
+        $arr = [];
+        foreach ((new \ReflectionClass(get_class()))->getConstants() as $constant) {
+            $arr[$prefix . $constant] = $prefix . $constant;
+        }
+        return $arr;
+    }
 }
