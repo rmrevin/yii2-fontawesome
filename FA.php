@@ -619,16 +619,24 @@ class FA extends FontAwesome
     const _YOUTUBE_SQUARE = 'youtube-square';
     
     /**
+     * CSS Class prefix
+     * @var string
+     */
+    private static $cssPrefix = "fa fa-";
+
+    /**
      * Get all icon constants for dropdown list in example
-     * @param null $prefix
+     *
+     * @param bool $html weather to render icon as array value prefix
      *
      * @return array
      */
-    public static function getConstants($prefix = null)
+    public static function getConstants($html = false)
     {
         $arr = [];
         foreach ((new \ReflectionClass(get_class()))->getConstants() as $constant) {
-            $arr[$prefix . $constant] = $prefix . $constant;
+            $arr[self::$cssPrefix . $constant] = ($html) ?
+                '<i class="' . self::$cssPrefix . $constant . '"></i>&nbsp;&nbsp;' . $constant : $constant;
         }
         return $arr;
     }
