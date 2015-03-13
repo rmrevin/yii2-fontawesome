@@ -7,6 +7,7 @@
 namespace rmrevin\yii\fontawesome\component;
 
 use rmrevin\yii\fontawesome\FA;
+use \yii\helpers\Html;
 
 /**
  * Class Icon
@@ -24,7 +25,7 @@ class Icon
      */
     public function __construct($name, $options = [])
     {
-        \yii\helpers\Html::addCssClass($options, 'fa fa-' . $name);
+        Html::addCssClass($options, FA::$cssPrefix . $name);
 
         $this->options = $options;
     }
@@ -155,7 +156,7 @@ class Icon
      */
     public function addCssClass($class)
     {
-        \yii\helpers\Html::addCssClass($this->options, $class);
+        Html::addCssClass($this->options, $class);
 
         return $this;
     }
@@ -178,6 +179,6 @@ class Icon
      */
     public function render()
     {
-        return \yii\helpers\Html::tag('i', null, $this->options);
+        return Html::tag('i', null, $this->options);
     }
 }
