@@ -622,7 +622,7 @@ class FA extends FontAwesome
      * CSS Class prefix
      * @var string
      */
-    private static $cssPrefix = "fa fa-";
+    public static $cssPrefix = "fa fa-";
 
     /**
      * Get all icon constants for dropdown list in example
