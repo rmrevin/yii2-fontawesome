@@ -18,7 +18,7 @@ class FA extends FontAwesome
 
     /**
      * Get all icon constants for dropdown list in example
-     * @param bool $html weather to render icon as array value prefix
+     * @param bool $html whether to render icon as array value prefix
      * @return array
      */
     public static function getConstants($html = false)
