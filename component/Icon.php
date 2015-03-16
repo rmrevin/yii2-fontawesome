@@ -7,7 +7,7 @@
 namespace rmrevin\yii\fontawesome\component;
 
 use rmrevin\yii\fontawesome\FA;
-use \yii\helpers\Html;
+use yii\helpers\Html;
 
 /**
  * Class Icon
@@ -25,7 +25,7 @@ class Icon
      */
     public function __construct($name, $options = [])
     {
-        Html::addCssClass($options, FA::$cssPrefix . $name);
+        Html::addCssClass($options, FA::$cssPrefix . ' ' . FA::$cssPrefix . '-' . $name);
 
         $this->options = $options;
     }
@@ -43,7 +43,7 @@ class Icon
      */
     public function inverse()
     {
-        return $this->addCssClass('fa-inverse');
+        return $this->addCssClass(FA::$cssPrefix . '-inverse');
     }
 
     /**
@@ -51,7 +51,7 @@ class Icon
      */
     public function spin()
     {
-        return $this->addCssClass('fa-spin');
+        return $this->addCssClass(FA::$cssPrefix . '-spin');
     }
 
     /**
@@ -59,7 +59,7 @@ class Icon
      */
     public function fixed_width()
     {
-        return $this->addCssClass('fa-fw');
+        return $this->addCssClass(FA::$cssPrefix . '-fw');
     }
 
     /**
@@ -67,7 +67,7 @@ class Icon
      */
     public function ul()
     {
-        return $this->addCssClass('fa-ul');
+        return $this->addCssClass(FA::$cssPrefix . '-ul');
     }
 
     /**
@@ -75,7 +75,7 @@ class Icon
      */
     public function li()
     {
-        return $this->addCssClass('fa-li');
+        return $this->addCssClass(FA::$cssPrefix . '-li');
     }
 
     /**
@@ -83,7 +83,7 @@ class Icon
      */
     public function border()
     {
-        return $this->addCssClass('fa-border');
+        return $this->addCssClass(FA::$cssPrefix . '-border');
     }
 
     /**
@@ -115,7 +115,7 @@ class Icon
             'FA::size() - invalid value. Use one of the constants: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X.'
         );
 
-        return $this->addCssClass('fa-' . $value);
+        return $this->addCssClass(FA::$cssPrefix . '-' . $value);
     }
 
     /**
@@ -131,7 +131,7 @@ class Icon
             'FA::rotate() - invalid value. Use one of the constants: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270.'
         );
 
-        return $this->addCssClass('fa-rotate-' . $value);
+        return $this->addCssClass(FA::$cssPrefix . '-rotate-' . $value);
     }
 
     /**
@@ -147,7 +147,7 @@ class Icon
             'FA::flip() - invalid value. Use one of the constants: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL.'
         );
 
-        return $this->addCssClass('fa-flip-' . $value);
+        return $this->addCssClass(FA::$cssPrefix . '-flip-' . $value);
     }
 
     /**

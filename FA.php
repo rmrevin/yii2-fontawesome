@@ -13,6 +13,25 @@ namespace rmrevin\yii\fontawesome;
 class FA extends FontAwesome
 {
 
+    /** @var string CSS Class prefix */
+    public static $cssPrefix = 'fa';
+
+    /**
+     * Get all icon constants for dropdown list in example
+     * @param bool $html weather to render icon as array value prefix
+     * @return array
+     */
+    public static function getConstants($html = false)
+    {
+        $arr = [];
+        foreach ((new \ReflectionClass(get_class()))->getConstants() as $constant) {
+            $arr[static::$cssPrefix . $constant] = ($html)
+                ? '<i class="' . static::$cssPrefix . ' ' . static::$cssPrefix . '-' . $constant . '"></i>&nbsp;&nbsp;' . $constant
+                : $constant;
+        }
+        return $arr;
+    }
+
     /**
      * How I saved from: http://fortawesome.github.io/Font-Awesome/cheatsheet/
      *
@@ -617,27 +636,4 @@ class FA extends FontAwesome
     const _YOUTUBE = 'youtube';
     const _YOUTUBE_PLAY = 'youtube-play';
     const _YOUTUBE_SQUARE = 'youtube-square';
-    
-    /**
-     * CSS Class prefix
-     * @var string
-     */
-    public static $cssPrefix = "fa fa-";
-
-    /**
-     * Get all icon constants for dropdown list in example
-     *
-     * @param bool $html weather to render icon as array value prefix
-     *
-     * @return array
-     */
-    public static function getConstants($html = false)
-    {
-        $arr = [];
-        foreach ((new \ReflectionClass(get_class()))->getConstants() as $constant) {
-            $arr[self::$cssPrefix . $constant] = ($html) ?
-                '<i class="' . self::$cssPrefix . $constant . '"></i>&nbsp;&nbsp;' . $constant : $constant;
-        }
-        return $arr;
-    }
 }

@@ -111,3 +111,13 @@ echo FA::stack(['data-role' => 'stacked-icon'])
      ->on((new FA\Icon(FA::_SQUARE))->inverse())
      ->icon((new FA\Icon(FA::_COG))->spin());
 ```
+
+### Another prefix
+```
+// 
+FA::$cssPrefix = 'awf';
+echo FA::icon('home');
+// <i class="awf awf-home"></i>
+echo FA::icon('cog')->inverse();
+// <i class="awf awf-cog awf-inverse"></i>
+```
