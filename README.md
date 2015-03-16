@@ -113,7 +113,7 @@ echo FA::stack(['data-role' => 'stacked-icon'])
 ```
 
 ### Another prefix
-```
+```php
 FA::$cssPrefix = 'awf';
 
 echo FA::icon('home');
