@@ -26,7 +26,7 @@ class FA extends FontAwesome
         $arr = [];
         foreach ((new \ReflectionClass(get_class()))->getConstants() as $constant) {
             $arr[static::$cssPrefix . ' ' . static::$cssPrefix . '-' . $constant] = ($html)
-                ? '<i class="' . static::$cssPrefix . ' ' . static::$cssPrefix . '-' . $constant . '"></i>&nbsp;&nbsp;' . $constant
+                ? FA::icon($constant) . '&nbsp;&nbsp;' . $constant
                 : $constant;
         }
         return $arr;
