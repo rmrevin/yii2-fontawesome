@@ -29,18 +29,12 @@ class AssetBundle extends \yii\web\AssetBundle
      * Initializes the bundle.
      * Set publish options to copy only necessary files (in this case css and font folders)
      */
-    public function init() {
-
+    public function init()
+    {
         parent::init();
 
         $this->publishOptions['beforeCopy'] = function ($from, $to) {
-            switch (true) {
-                case preg_match('%/css%', $from):
-                case preg_match('%/fonts%', $from):
-                    return true;
-                default:
-                    return false;
-            }
+            return preg_match('%/(fonts|css)%', $from);
         };
     }
 }

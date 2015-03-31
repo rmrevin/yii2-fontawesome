@@ -9,13 +9,12 @@ namespace rmrevin\yii\fontawesome\tests\unit\fontawesome;
 use rmrevin\yii\fontawesome\component\Icon;
 use rmrevin\yii\fontawesome\FA;
 use rmrevin\yii\fontawesome\FontAwesome;
-use rmrevin\yii\fontawesome\tests\unit\TestCase;
 
 /**
  * Class MainTest
  * @package rmrevin\yii\fontawesome\tests\unit\fontawesome
  */
-class MainTest extends TestCase
+class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
 {
 
     public function testMain()
