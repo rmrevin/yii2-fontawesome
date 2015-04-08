@@ -34,7 +34,7 @@ class AssetBundle extends \yii\web\AssetBundle
         parent::init();
 
         $this->publishOptions['beforeCopy'] = function ($from, $to) {
-            return preg_match('%/(fonts|css)%', $from);
+            return preg_match('%(/|\\\\)(fonts|css)%', $from);
         };
     }
 }
