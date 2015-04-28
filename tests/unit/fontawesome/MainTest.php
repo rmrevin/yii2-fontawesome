@@ -78,12 +78,12 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
 
         $this->assertEquals(FA::icon('cog')->inverse(), '<i class="fa fa-cog fa-inverse"></i>');
         $this->assertEquals(FA::icon('cog')->spin(), '<i class="fa fa-cog fa-spin"></i>');
-        $this->assertEquals(FA::icon('cog')->fixed_width(), '<i class="fa fa-cog fa-fw"></i>');
+        $this->assertEquals(FA::icon('cog')->fixedWidth(), '<i class="fa fa-cog fa-fw"></i>');
         $this->assertEquals(FA::icon('cog')->ul(), '<i class="fa fa-cog fa-ul"></i>');
         $this->assertEquals(FA::icon('cog')->li(), '<i class="fa fa-cog fa-li"></i>');
         $this->assertEquals(FA::icon('cog')->border(), '<i class="fa fa-cog fa-border"></i>');
-        $this->assertEquals(FA::icon('cog')->pull_left(), '<i class="fa fa-cog pull-left"></i>');
-        $this->assertEquals(FA::icon('cog')->pull_right(), '<i class="fa fa-cog pull-right"></i>');
+        $this->assertEquals(FA::icon('cog')->pullLeft(), '<i class="fa fa-cog pull-left"></i>');
+        $this->assertEquals(FA::icon('cog')->pullRight(), '<i class="fa fa-cog pull-right"></i>');
 
         $this->assertEquals(FA::icon('cog')->size(FA::SIZE_2X), '<i class="fa fa-cog fa-2x"></i>');
         $this->assertEquals(FA::icon('cog')->size(FA::SIZE_3X), '<i class="fa fa-cog fa-3x"></i>');

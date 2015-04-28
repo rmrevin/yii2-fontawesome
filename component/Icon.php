@@ -55,9 +55,18 @@ class Icon
     }
 
     /**
+     * @deprecated
      * @return self
      */
     public function fixed_width()
+    {
+        return $this->fixedWidth();
+    }
+
+    /**
+     * @return self
+     */
+    public function fixedWidth()
     {
         return $this->addCssClass(FA::$cssPrefix . '-fw');
     }
@@ -87,17 +96,35 @@ class Icon
     }
 
     /**
+     * @deprecated
      * @return self
      */
     public function pull_left()
     {
-        return $this->addCssClass('pull-left');
+        return $this->pullLeft();
     }
 
     /**
      * @return self
      */
+    public function pullLeft()
+    {
+        return $this->addCssClass('pull-left');
+    }
+
+    /**
+     * @deprecated
+     * @return self
+     */
     public function pull_right()
+    {
+        return $this->pullRight();
+    }
+
+    /**
+     * @return self
+     */
+    public function pullRight()
     {
         return $this->addCssClass('pull-right');
     }
