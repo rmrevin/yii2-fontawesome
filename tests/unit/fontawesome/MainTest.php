@@ -75,15 +75,19 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
     public function testIconOutput()
     {
         $this->assertEquals(FA::icon('cog'), '<i class="fa fa-cog"></i>');
+        $this->assertEquals(FA::icon('cog')->addCssClass('highlight'), '<i class="fa fa-cog highlight"></i>');
 
         $this->assertEquals(FA::icon('cog')->inverse(), '<i class="fa fa-cog fa-inverse"></i>');
         $this->assertEquals(FA::icon('cog')->spin(), '<i class="fa fa-cog fa-spin"></i>');
         $this->assertEquals(FA::icon('cog')->fixedWidth(), '<i class="fa fa-cog fa-fw"></i>');
+        $this->assertEquals(FA::icon('cog')->fixed_width(), '<i class="fa fa-cog fa-fw"></i>');
         $this->assertEquals(FA::icon('cog')->ul(), '<i class="fa fa-cog fa-ul"></i>');
         $this->assertEquals(FA::icon('cog')->li(), '<i class="fa fa-cog fa-li"></i>');
         $this->assertEquals(FA::icon('cog')->border(), '<i class="fa fa-cog fa-border"></i>');
         $this->assertEquals(FA::icon('cog')->pullLeft(), '<i class="fa fa-cog pull-left"></i>');
+        $this->assertEquals(FA::icon('cog')->pull_left(), '<i class="fa fa-cog pull-left"></i>');
         $this->assertEquals(FA::icon('cog')->pullRight(), '<i class="fa fa-cog pull-right"></i>');
+        $this->assertEquals(FA::icon('cog')->pull_right(), '<i class="fa fa-cog pull-right"></i>');
 
         $this->assertEquals(FA::icon('cog')->size(FA::SIZE_2X), '<i class="fa fa-cog fa-2x"></i>');
         $this->assertEquals(FA::icon('cog')->size(FA::SIZE_3X), '<i class="fa fa-cog fa-3x"></i>');
@@ -97,6 +101,12 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
 
         $this->assertEquals(FA::icon('cog')->flip(FA::FLIP_HORIZONTAL), '<i class="fa fa-cog fa-flip-horizontal"></i>');
         $this->assertEquals(FA::icon('cog')->flip(FA::FLIP_VERTICAL), '<i class="fa fa-cog fa-flip-vertical"></i>');
+    }
+
+    public function testGetConstants()
+    {
+        $this->assertNotEmpty(FA::getConstants(false));
+        $this->assertNotEmpty(FA::getConstants(true));
     }
 
     public function testIconSizeException()

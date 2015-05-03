@@ -23,13 +23,16 @@ class FA extends FontAwesome
      */
     public static function getConstants($html = false)
     {
-        $arr = [];
+        $result = [];
         foreach ((new \ReflectionClass(get_class()))->getConstants() as $constant) {
-            $arr[static::$cssPrefix . ' ' . static::$cssPrefix . '-' . $constant] = ($html)
+            $key = static::$cssPrefix . ' ' . static::$cssPrefix . '-' . $constant;
+
+            $result[$key] = ($html)
                 ? static::icon($constant) . '&nbsp;&nbsp;' . $constant
                 : $constant;
         }
-        return $arr;
+
+        return $result;
     }
 
     /**
