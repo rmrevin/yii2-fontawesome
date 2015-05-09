@@ -1,3 +1,7 @@
+2015-05-09 - 2.10.1
+-------------------
+* Fix bug in tests.
+
 2015-05-09 - 2.10.0
 -------------------
 * Add CDN asset bundle `CDNAssetBundle`.
