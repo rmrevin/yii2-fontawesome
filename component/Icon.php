@@ -60,6 +60,8 @@ class Icon
      */
     public function fixed_width()
     {
+        \Yii::warning('You are using an deprecated method `fixed_width`.');
+
         return $this->fixedWidth();
     }
 
@@ -101,6 +103,8 @@ class Icon
      */
     public function pull_left()
     {
+        \Yii::warning('You are using an deprecated method `pull_left`.');
+
         return $this->pullLeft();
     }
 
@@ -118,6 +122,8 @@ class Icon
      */
     public function pull_right()
     {
+        \Yii::warning('You are using an deprecated method `pull_right`.');
+
         return $this->pullRight();
     }
 

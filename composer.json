@@ -26,11 +26,17 @@
     "php": ">=5.4.0",
 
     "yiisoft/yii2": "2.0.*",
-    "fortawesome/font-awesome": "4.3.*"
+    "bower-asset/fontawesome": "4.3.*"
   },
   "autoload": {
     "psr-4": {
       "rmrevin\\yii\\fontawesome\\": ""
+    }
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
     }
   }
 }
