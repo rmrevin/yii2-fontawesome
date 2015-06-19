@@ -1,7 +1,8 @@
 <?php
 /**
  * CDNAssetBundle.php
- * @author Revin Roman http://phptime.ru
+ * @author Revin Roman
+ * @link https://rmrevin.ru
  */
 
 namespace rmrevin\yii\fontawesome;
@@ -9,14 +10,15 @@ namespace rmrevin\yii\fontawesome;
 /**
  * Class CDNAssetBundle
  * @package rmrevin\yii\fontawesome
+ * @deprecated
  */
-class CDNAssetBundle extends \yii\web\AssetBundle
+class CDNAssetBundle extends \rmrevin\yii\fontawesome\cdn\AssetBundle
 {
 
-    /**
-     * @inherit
-     */
-    public $css = [
-        '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
-    ];
+    public function init()
+    {
+        parent::init();
+
+        \Yii::warning(sprintf('You are using an deprecated class `%s`.', __CLASS__));
+    }
 }

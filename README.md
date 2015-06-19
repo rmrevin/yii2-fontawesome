@@ -14,13 +14,8 @@ Code Status
 
 Installation
 ------------
-Add in `composer.json`:
-```
-{
-    "require": {
-        "rmrevin/yii2-fontawesome": "2.10.1"
-    }
-}
+```bash
+composer require "rmrevin/yii2-fontawesome:2.10.*"
 ```
 
 Usage

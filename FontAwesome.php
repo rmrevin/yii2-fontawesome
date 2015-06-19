@@ -1,7 +1,8 @@
 <?php
 /**
  * FontAwesome.php
- * @author Revin Roman http://phptime.ru
+ * @author Revin Roman
+ * @link https://rmrevin.ru
  */
 
 namespace rmrevin\yii\fontawesome;
@@ -34,7 +35,7 @@ class FontAwesome
 
     /**
      * Size values
-     * @see Icon::size
+     * @see rmrevin\yii\fontawesome\component\Icon::size
      */
     const SIZE_LARGE = 'lg';
     const SIZE_2X = '2x';
@@ -44,7 +45,7 @@ class FontAwesome
 
     /**
      * Rotate values
-     * @see Icon::rotate
+     * @see rmrevin\yii\fontawesome\component\Icon::rotate
      */
     const ROTATE_90 = 90;
     const ROTATE_180 = 180;
@@ -52,7 +53,7 @@ class FontAwesome
 
     /**
      * Flip values
-     * @see Icon::flip
+     * @see rmrevin\yii\fontawesome\component\Icon::flip
      */
     const FLIP_HORIZONTAL = 'horizontal';
     const FLIP_VERTICAL = 'vertical';

@@ -1,7 +1,8 @@
 <?php
 /**
  * Icon.php
- * @author Revin Roman http://phptime.ru
+ * @author Revin Roman
+ * @link https://rmrevin.ru
  */
 
 namespace rmrevin\yii\fontawesome\component;
@@ -60,7 +61,7 @@ class Icon
      */
     public function fixed_width()
     {
-        \Yii::warning('You are using an deprecated method `fixed_width`.');
+        \Yii::warning(sprintf('You are using an deprecated method `%s`.', 'fixed_width'));
 
         return $this->fixedWidth();
     }
@@ -103,7 +104,7 @@ class Icon
      */
     public function pull_left()
     {
-        \Yii::warning('You are using an deprecated method `pull_left`.');
+        \Yii::warning(sprintf('You are using an deprecated method `%s`.', 'pull_left'));
 
         return $this->pullLeft();
     }
@@ -122,7 +123,7 @@ class Icon
      */
     public function pull_right()
     {
-        \Yii::warning('You are using an deprecated method `pull_right`.');
+        \Yii::warning(sprintf('You are using an deprecated method `%s`.', 'pull_right'));
 
         return $this->pullRight();
     }

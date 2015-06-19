@@ -1,7 +1,8 @@
 <?php
 /**
  * MainTest.php
- * @author Revin Roman http://phptime.ru
+ * @author Revin Roman
+ * @link https://rmrevin.ru
  */
 
 namespace rmrevin\yii\fontawesome\tests\unit\fontawesome;

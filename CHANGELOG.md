@@ -1,3 +1,8 @@
+2015-06-19 - 2.10.2
+-------------------
+* `CDNAssetBundle` is now deprecated. Use `rmrevin\yii\fontawesome\cdn\AssetBundle`.
+* Refactoring.
+
 2015-05-09 - 2.10.1
 -------------------
 * Fix bug in tests.
