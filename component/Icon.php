@@ -193,21 +193,23 @@ class Icon
     /**
      * @param string $class
      * @param bool $condition
-     * @param string|null $message
+     * @param string|bool $throw
      * @return \rmrevin\yii\fontawesome\component\Icon
      * @throws \yii\base\InvalidConfigException
      */
-    public function addCssClass($class, $condition = true, $message = null)
+    public function addCssClass($class, $condition = true, $throw = false)
     {
         if ($condition === false) {
-            $message = empty($message)
-                ? 'Condition is false'
-                : $message;
+            if (!empty($throw)) {
+                $message = !is_string($throw)
+                    ? 'Condition is false'
+                    : $throw;
 
-            throw new \yii\base\InvalidConfigException($message);
+                throw new \yii\base\InvalidConfigException($message);
+            }
+        } else {
+            Html::addCssClass($this->options, $class);
         }
-
-        Html::addCssClass($this->options, $class);
 
         return $this;
     }
