@@ -47,9 +47,9 @@ class FontAwesome
      * Rotate values
      * @see rmrevin\yii\fontawesome\component\Icon::rotate
      */
-    const ROTATE_90 = 90;
-    const ROTATE_180 = 180;
-    const ROTATE_270 = 270;
+    const ROTATE_90 = '90';
+    const ROTATE_180 = '180';
+    const ROTATE_270 = '270';
 
     /**
      * Flip values

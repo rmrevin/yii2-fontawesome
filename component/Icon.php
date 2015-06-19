@@ -143,13 +143,15 @@ class Icon
      */
     public function size($value)
     {
-        $this->_checkValue(
-            $value,
-            [FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X],
-            'FA::size() - invalid value. Use one of the constants: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X.'
+        return $this->addCssClass(
+            FA::$cssPrefix . '-' . $value,
+            in_array((string)$value, [FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X], true),
+            sprintf(
+                '%s - invalid value. Use one of the constants: %s.',
+                'FA::size()',
+                'FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X'
+            )
         );
-
-        return $this->addCssClass(FA::$cssPrefix . '-' . $value);
     }
 
     /**
@@ -159,13 +161,15 @@ class Icon
      */
     public function rotate($value)
     {
-        $this->_checkValue(
-            $value,
-            [FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270],
-            'FA::rotate() - invalid value. Use one of the constants: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270.'
+        return $this->addCssClass(
+            FA::$cssPrefix . '-rotate-' . $value,
+            in_array((string)$value, [FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270], true),
+            sprintf(
+                '%s - invalid value. Use one of the constants: %s.',
+                'FA::rotate()',
+                'FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270'
+            )
         );
-
-        return $this->addCssClass(FA::$cssPrefix . '-rotate-' . $value);
     }
 
     /**
@@ -175,37 +179,37 @@ class Icon
      */
     public function flip($value)
     {
-        $this->_checkValue(
-            $value,
-            [FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL],
-            'FA::flip() - invalid value. Use one of the constants: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL.'
+        return $this->addCssClass(
+            FA::$cssPrefix . '-flip-' . $value,
+            in_array((string)$value, [FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL], true),
+            sprintf(
+                '%s - invalid value. Use one of the constants: %s.',
+                'FA::flip()',
+                'FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL'
+            )
         );
-
-        return $this->addCssClass(FA::$cssPrefix . '-flip-' . $value);
     }
 
     /**
      * @param string $class
-     * @return self
+     * @param bool $condition
+     * @param string|null $message
+     * @return \rmrevin\yii\fontawesome\component\Icon
+     * @throws \yii\base\InvalidConfigException
      */
-    public function addCssClass($class)
+    public function addCssClass($class, $condition = true, $message = null)
     {
+        if ($condition === false) {
+            $message = empty($message)
+                ? 'Condition is false'
+                : $message;
+
+            throw new \yii\base\InvalidConfigException($message);
+        }
+
         Html::addCssClass($this->options, $class);
 
         return $this;
-    }
-
-    /**
-     * @param mixed $needle
-     * @param array $haystack
-     * @param string $message
-     * @throws \yii\base\InvalidConfigException
-     */
-    private function _checkValue($needle, $haystack, $message)
-    {
-        if (!in_array($needle, $haystack, true)) {
-            throw new \yii\base\InvalidConfigException($message);
-        }
     }
 
     /**
