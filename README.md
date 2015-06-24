@@ -78,14 +78,14 @@ echo Html::submitButton(
     Yii::t('app', '{icon} Save', ['icon' => FA::icon('check')])
 ); // <button type="submit"><i class="fa fa-check"></i> Save</button>
 
-echo FA::icon('cog')->inverse(); // <i class="fa fa-cog fa-inverse"></i>
-echo FA::icon('cog')->spin(); // <i class="fa fa-cog fa-spin"></i>
+echo FA::icon('cog')->inverse();    // <i class="fa fa-cog fa-inverse"></i>
+echo FA::icon('cog')->spin();       // <i class="fa fa-cog fa-spin"></i>
 echo FA::icon('cog')->fixedWidth(); // <i class="fa fa-cog fa-fw"></i>
-echo FA::icon('cog')->ul(); // <i class="fa fa-cog fa-ul"></i>
-echo FA::icon('cog')->li(); // <i class="fa fa-cog fa-li"></i>
-echo FA::icon('cog')->border(); // <i class="fa fa-cog fa-border"></i>
-echo FA::icon('cog')->pullLeft(); // <i class="fa fa-cog pull-left"></i>
-echo FA::icon('cog')->pullRight(); // <i class="fa fa-cog pull-right"></i>
+echo FA::icon('cog')->ul();         // <i class="fa fa-cog fa-ul"></i>
+echo FA::icon('cog')->li();         // <i class="fa fa-cog fa-li"></i>
+echo FA::icon('cog')->border();     // <i class="fa fa-cog fa-border"></i>
+echo FA::icon('cog')->pullLeft();   // <i class="fa fa-cog pull-left"></i>
+echo FA::icon('cog')->pullRight();  // <i class="fa fa-cog pull-right"></i>
 
 echo FA::icon('cog')->size(FA::SIZE_3X);
 // values: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X
