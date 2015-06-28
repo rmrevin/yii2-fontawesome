@@ -19,6 +19,9 @@ class Icon
 
     /** @var array */
     private $options = [];
+    
+    /** @var string */
+    private $tag = 'i';
 
     /**
      * @param string $name
@@ -215,10 +218,29 @@ class Icon
     }
 
     /**
+     * Change html tag.
+     * @param string $tag
+     * @return Icon
+     * @throws \yii\base\InvalidParamException
+     */
+    public function tag($tag)
+    {
+        if (!is_string($tag)) {
+            throw new \yii\base\InvalidParamException(
+                sprintf('Argument $tag passed to tag() must be an instance of string, %s given', 
+                    gettype($tag))
+            );
+        }
+
+        $this->tag = $tag;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function render()
     {
-        return Html::tag('i', null, $this->options);
+        return Html::tag($this->tag, null, $this->options);
     }
 }
