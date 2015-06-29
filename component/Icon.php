@@ -17,11 +17,14 @@ use yii\helpers\Html;
 class Icon
 {
 
+    /** @var string */
+    public static $defaultTag = 'i';
+
+    /** @var string */
+    private $tag;
+
     /** @var array */
     private $options = [];
-    
-    /** @var string */
-    private $tag = 'i';
 
     /**
      * @param string $name
@@ -194,6 +197,19 @@ class Icon
     }
 
     /**
+     * Change html tag.
+     * @param string $tag
+     * @return static
+     * @throws \yii\base\InvalidParamException
+     */
+    public function tag($tag)
+    {
+        $this->tag = $tag;
+
+        return $this;
+    }
+
+    /**
      * @param string $class
      * @param bool $condition
      * @param string|bool $throw
@@ -218,29 +234,19 @@ class Icon
     }
 
     /**
-     * Change html tag.
-     * @param string $tag
-     * @return Icon
-     * @throws \yii\base\InvalidParamException
-     */
-    public function tag($tag)
-    {
-        if (!is_string($tag)) {
-            throw new \yii\base\InvalidParamException(
-                sprintf('Argument $tag passed to tag() must be an instance of string, %s given', 
-                    gettype($tag))
-            );
-        }
-
-        $this->tag = $tag;
-        return $this;
-    }
-
-    /**
+     * @param string|null $tag
+     * @param string|null $content
+     * @param array $options
      * @return string
      */
-    public function render()
+    public function render($tag = null, $content = null, $options = [])
     {
-        return Html::tag($this->tag, null, $this->options);
+        $tag = empty($tag) ?
+            (empty($this->tag) ? static::$defaultTag : $this->tag)
+            : $tag;
+
+        $options = array_merge($this->options, $options);
+
+        return Html::tag($tag, $content, $options);
     }
 }
