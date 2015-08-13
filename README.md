@@ -18,6 +18,10 @@ Code Status
 [![Travis CI Build Status](https://travis-ci.org/rmrevin/yii2-fontawesome.svg)](https://travis-ci.org/rmrevin/yii2-fontawesome)
 [![Dependency Status](https://www.versioneye.com/user/projects/54119b799e16229fe00000da/badge.svg)](https://www.versioneye.com/user/projects/54119b799e16229fe00000da)
 
+Support
+-------
+[GutHub issues](https://github.com/rmrevin/yii2-fontawesome/issues) or [public chat](https://gitter.im/rmrevin/support).
+
 Installation
 ------------
 
