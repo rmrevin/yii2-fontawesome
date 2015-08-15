@@ -1,3 +1,7 @@
+2015-08-15 - 2.12.0
+-------------------
+* `Font Awesome` updated to version `4.4`.
+
 2015-06-29 - 2.11.0
 -------------------
 * Added the ability to change the tag for icons.
@@ -59,7 +63,7 @@
 
 2015-01-26 - 2.7.0
 ------------------
-* Font Awesome updated to version 4.3.
+* `Font Awesome` updated to version `4.3`.
 * Update icons constants list.
 * Update readme.
 
