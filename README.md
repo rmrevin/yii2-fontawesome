@@ -30,7 +30,7 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```bash
-composer require "rmrevin/yii2-fontawesome:2.10.*"
+composer require "rmrevin/yii2-fontawesome:2.12.*"
 ```
 
 or add
