@@ -20,7 +20,8 @@ Code Status
 
 Support
 -------
-[GutHub issues](https://github.com/rmrevin/yii2-fontawesome/issues) or [public chat](https://gitter.im/rmrevin/support).
+* [GutHub issues](https://github.com/rmrevin/yii2-fontawesome/issues)
+* [Public chat](https://gitter.im/rmrevin/support)
 
 Installation
 ------------
