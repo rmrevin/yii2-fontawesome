@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Yii2-fontawesome by rmrevin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Yii2-fontawesome</h1>
+      <h2 class="project-tagline">Asset Bundle for Yii2 with Font Awesome http://fortawesome.github.io/Font-Awesome/</h2>
+      <a href="https://github.com/rmrevin/yii2-fontawesome" class="btn">View on GitHub</a>
+      <a href="https://github.com/rmrevin/yii2-fontawesome/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/rmrevin/yii2-fontawesome/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="yii-2-font-awesome-asset-bundle" class="anchor" href="#yii-2-font-awesome-asset-bundle" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yii 2 Font Awesome Asset Bundle</h1>
+
+<p>This extension provides a assets bundle with <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>
+for <a href="http://www.yiiframework.com/">Yii framework 2.0</a> applications and helper to use icons.</p>
+
+<p>For license information check the <a href="https://github.com/rmrevin/yii2-fontawesome/blob/master/LICENSE">LICENSE</a>-file.</p>
+
+<p><a href="https://packagist.org/packages/rmrevin/yii2-fontawesome"><img src="https://poser.pugx.org/rmrevin/yii2-fontawesome/license.svg" alt="License"></a>
+<a href="https://packagist.org/packages/rmrevin/yii2-fontawesome"><img src="https://poser.pugx.org/rmrevin/yii2-fontawesome/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/rmrevin/yii2-fontawesome"><img src="https://poser.pugx.org/rmrevin/yii2-fontawesome/v/unstable.svg" alt="Latest Unstable Version"></a>
+<a href="https://packagist.org/packages/rmrevin/yii2-fontawesome"><img src="https://poser.pugx.org/rmrevin/yii2-fontawesome/downloads.svg" alt="Total Downloads"></a></p>
+
+<h2>
+<a id="code-status" class="anchor" href="#code-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Status</h2>
+
+<p><a href="https://scrutinizer-ci.com/g/rmrevin/yii2-fontawesome/?branch=master"><img src="https://scrutinizer-ci.com/g/rmrevin/yii2-fontawesome/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
+<a href="https://scrutinizer-ci.com/g/rmrevin/yii2-fontawesome/?branch=master"><img src="https://scrutinizer-ci.com/g/rmrevin/yii2-fontawesome/badges/coverage.png?b=master" alt="Code Coverage"></a>
+<a href="https://travis-ci.org/rmrevin/yii2-fontawesome"><img src="https://travis-ci.org/rmrevin/yii2-fontawesome.svg" alt="Travis CI Build Status"></a>
+<a href="https://www.versioneye.com/user/projects/54119b799e16229fe00000da"><img src="https://www.versioneye.com/user/projects/54119b799e16229fe00000da/badge.svg" alt="Dependency Status"></a></p>
+
+<h2>
+<a id="support" class="anchor" href="#support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support</h2>
+
+<ul>
+<li><a href="https://github.com/rmrevin/yii2-fontawesome/issues">GutHub issues</a></li>
+<li><a href="https://gitter.im/rmrevin/support">Public chat</a></li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>The preferred way to install this extension is through <a href="https://getcomposer.org/">composer</a>.</p>
+
+<p>Either run</p>
+
+<div class="highlight highlight-source-shell"><pre>composer require <span class="pl-s"><span class="pl-pds">"</span>rmrevin/yii2-fontawesome:2.12.*<span class="pl-pds">"</span></span></pre></div>
+
+<p>or add</p>
+
+<pre><code>"rmrevin/yii2-fontawesome": "2.10.*",
+</code></pre>
+
+<p>to the <code>require</code> section of your <code>composer.json</code> file.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>In view</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">rmrevin\yii\fontawesome\</span><span class="pl-c1">AssetBundle</span><span class="pl-k">::</span>register(<span class="pl-smi">$this</span>);</span>
+<span class="pl-s1"></span></pre></div>
+
+<p>or as dependency in your main application asset bundle</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">AppAsset</span> <span class="pl-k">extends</span> <span class="pl-e">AssetBundle</span></span>
+<span class="pl-s1">{</span>
+<span class="pl-s1">    <span class="pl-c">// ...</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-smi">$depends</span> <span class="pl-k">=</span> [</span>
+<span class="pl-s1">        <span class="pl-c">// ...</span></span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>\rmrevin\yii\fontawesome\AssetBundle<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">    ];</span>
+<span class="pl-s1">}</span>
+<span class="pl-s1"></span></pre></div>
+
+<h2>
+<a id="helper" class="anchor" href="#helper" aria-hidden="true"><span class="octicon octicon-link"></span></a>Helper</h2>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">rmrevin\yii\fontawesome\FA</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>home<span class="pl-pds">'</span></span>); <span class="pl-c">// &lt;i class="fa fa-home"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>arrow-left<span class="pl-pds">'</span></span>, </span>
+<span class="pl-s1">    [<span class="pl-s"><span class="pl-pds">'</span>class<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>big<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>data-role<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>arrow<span class="pl-pds">'</span></span>]</span>
+<span class="pl-s1">); <span class="pl-c">// &lt;i class="big fa fa-arrow-left" data-role="arrow"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">Html</span><span class="pl-k">::</span>submitButton(</span>
+<span class="pl-s1">    <span class="pl-c1">Yii</span><span class="pl-k">::</span>t(<span class="pl-s"><span class="pl-pds">'</span>app<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>{icon} Save<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>icon<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>check<span class="pl-pds">'</span></span>)])</span>
+<span class="pl-s1">); <span class="pl-c">// &lt;button type="submit"&gt;&lt;i class="fa fa-check"&gt;&lt;/i&gt; Save&lt;/button&gt;</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>inverse();    <span class="pl-c">// &lt;i class="fa fa-cog fa-inverse"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>spin();       <span class="pl-c">// &lt;i class="fa fa-cog fa-spin"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>fixedWidth(); <span class="pl-c">// &lt;i class="fa fa-cog fa-fw"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>ul();         <span class="pl-c">// &lt;i class="fa fa-cog fa-ul"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>li();         <span class="pl-c">// &lt;i class="fa fa-cog fa-li"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>border();     <span class="pl-c">// &lt;i class="fa fa-cog fa-border"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>pullLeft();   <span class="pl-c">// &lt;i class="fa fa-cog pull-left"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>pullRight();  <span class="pl-c">// &lt;i class="fa fa-cog pull-right"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>size(<span class="pl-c1">FA</span><span class="pl-k">::</span><span class="pl-c1">SIZE_3X</span>);</span>
+<span class="pl-s1"><span class="pl-c">// values: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X</span></span>
+<span class="pl-s1"><span class="pl-c">// &lt;i class="fa fa-cog fa-size-3x"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>rotate(<span class="pl-c1">FA</span><span class="pl-k">::</span><span class="pl-c1">ROTATE_90</span>); </span>
+<span class="pl-s1"><span class="pl-c">// values: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_180</span></span>
+<span class="pl-s1"><span class="pl-c">// &lt;i class="fa fa-cog fa-rotate-90"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>flip(<span class="pl-c1">FA</span><span class="pl-k">::</span><span class="pl-c1">FLIP_VERTICAL</span>); </span>
+<span class="pl-s1"><span class="pl-c">// values: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL</span></span>
+<span class="pl-s1"><span class="pl-c">// &lt;i class="fa fa-cog fa-flip-vertical"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">        <span class="pl-k">-&gt;</span>spin()</span>
+<span class="pl-s1">        <span class="pl-k">-&gt;</span>fixedWidth()</span>
+<span class="pl-s1">        <span class="pl-k">-&gt;</span>pullLeft()</span>
+<span class="pl-s1">        <span class="pl-k">-&gt;</span>size(<span class="pl-c1">FA</span><span class="pl-k">::</span><span class="pl-c1">SIZE_LARGE</span>);</span>
+<span class="pl-s1"><span class="pl-c">// &lt;i class="fa fa-cog fa-spin fa-fw pull-left fa-size-lg"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>stack()</span>
+<span class="pl-s1">        <span class="pl-k">-&gt;</span>icon(<span class="pl-s"><span class="pl-pds">'</span>twitter<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">        <span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>square-o<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-c">// &lt;span class="fa-stack"&gt;</span></span>
+<span class="pl-s1"><span class="pl-c">//   &lt;i class="fa fa-square-o fa-stack-2x"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c">//   &lt;i class="fa fa-twitter fa-stack-1x"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c">// &lt;/span&gt;</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>stack([<span class="pl-s"><span class="pl-pds">'</span>data-role<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>stacked-icon<span class="pl-pds">'</span></span>])</span>
+<span class="pl-s1">     <span class="pl-k">-&gt;</span>on((<span class="pl-k">new</span> <span class="pl-c1">FA\</span><span class="pl-c1">Icon</span>(<span class="pl-s"><span class="pl-pds">'</span>square<span class="pl-pds">'</span></span>))<span class="pl-k">-&gt;</span>inverse())</span>
+<span class="pl-s1">     <span class="pl-k">-&gt;</span>icon((<span class="pl-k">new</span> <span class="pl-c1">FA\</span><span class="pl-c1">Icon</span>(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>))<span class="pl-k">-&gt;</span>spin());</span>
+<span class="pl-s1"><span class="pl-c">// &lt;span class="fa-stack" data-role="stacked-icon"&gt;</span></span>
+<span class="pl-s1"><span class="pl-c">//   &lt;i class="fa fa-square-o fa-inverse fa-stack-2x"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c">//   &lt;i class="fa fa-cog fa-spin fa-stack-1x"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c">// &lt;/span&gt;</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// autocomplete icons name in IDE</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-c1">FA</span><span class="pl-k">::</span><span class="pl-c1">_COG</span>);</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-c1">FA</span><span class="pl-k">::</span><span class="pl-c1">_DESKTOP</span>);</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>stack()</span>
+<span class="pl-s1">     <span class="pl-k">-&gt;</span>on((<span class="pl-k">new</span> <span class="pl-c1">FA\</span><span class="pl-c1">Icon</span>(<span class="pl-c1">FA</span><span class="pl-k">::</span><span class="pl-c1">_SQUARE</span>))<span class="pl-k">-&gt;</span>inverse())</span>
+<span class="pl-s1">     <span class="pl-k">-&gt;</span>icon((<span class="pl-k">new</span> <span class="pl-c1">FA\</span><span class="pl-c1">Icon</span>(<span class="pl-c1">FA</span><span class="pl-k">::</span><span class="pl-c1">_COG</span>))<span class="pl-k">-&gt;</span>spin());</span></pre></div>
+
+<h3>
+<a id="set-another-prefix" class="anchor" href="#set-another-prefix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set another prefix</h3>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">FA</span><span class="pl-k">::</span><span class="pl-smi">$cssPrefix</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>awf<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>home<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-c">// &lt;i class="awf awf-home"&gt;&lt;/i&gt;</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">FA</span><span class="pl-k">::</span>icon(<span class="pl-s"><span class="pl-pds">'</span>cog<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>inverse();</span>
+<span class="pl-s1"><span class="pl-c">// &lt;i class="awf awf-cog awf-inverse"&gt;&lt;/i&gt;</span></span></pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/rmrevin/yii2-fontawesome">Yii2-fontawesome</a> is maintained by <a href="https://github.com/rmrevin">rmrevin</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
