@@ -1,3 +1,9 @@
+2015-08-15 - 2.12.1
+-------------------
+* Variable `FA::$cssPrefix` transferred to the class `FontAwesome`.
+* Refactoring.
+* Update tests.
+
 2015-08-15 - 2.12.0
 -------------------
 * `Font Awesome` updated to version `4.4`.

@@ -215,6 +215,7 @@ class Icon
      * @param string|bool $throw
      * @return \rmrevin\yii\fontawesome\component\Icon
      * @throws \yii\base\InvalidConfigException
+     * @codeCoverageIgnore
      */
     public function addCssClass($class, $condition = true, $throw = false)
     {

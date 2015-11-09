@@ -6,10 +6,13 @@
          convertWarningsToExceptions="true"
          stopOnFailure="false">
     <filter>
-        <blacklist>
-            <directory suffix=".php">./tests</directory>
-            <directory suffix=".php">./vendor</directory>
-        </blacklist>
+        <whitelist>
+            <directory suffix=".php">./</directory>
+            <exclude>
+                <directory>./tests</directory>
+                <directory>./vendor</directory>
+            </exclude>
+        </whitelist>
     </filter>
     <testsuites>
         <testsuite name="Test Suite">

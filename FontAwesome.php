@@ -7,12 +7,17 @@
 
 namespace rmrevin\yii\fontawesome;
 
+use rmrevin\yii\fontawesome\component;
+
 /**
  * Class FA
  * @package rmrevin\yii\fontawesome
  */
 class FontAwesome
 {
+
+    /** @var string CSS Class prefix */
+    public static $cssPrefix = 'fa';
 
     /**
      * @param string $name

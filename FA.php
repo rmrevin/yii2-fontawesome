@@ -14,9 +14,6 @@ namespace rmrevin\yii\fontawesome;
 class FA extends FontAwesome
 {
 
-    /** @var string CSS Class prefix */
-    public static $cssPrefix = 'fa';
-
     /**
      * Get all icon constants for dropdown list in example
      * @param bool $html whether to render icon as array value prefix

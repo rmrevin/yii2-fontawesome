@@ -76,6 +76,33 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
                 ->on((new Icon('square-o'))->size(FA::SIZE_3X)),
             '<span class="fa-stack"><i class="fa fa-square-o fa-3x fa-stack-2x"></i><i class="fa fa-cog fa-spin fa-stack-1x"></i></span>'
         );
+
+        $this->assertEquals(
+            (string)FA::stack()
+                ->icon(FA::Icon('cog')->spin())
+                ->on(FA::Icon('square-o')->size(FA::SIZE_3X)),
+            '<span class="fa-stack"><i class="fa fa-square-o fa-3x fa-stack-2x"></i><i class="fa fa-cog fa-spin fa-stack-1x"></i></span>'
+        );
+
+        $this->assertNotEquals(
+            (string)FA::stack()
+                ->icon((string)FA::Icon('cog')->spin())
+                ->on((string)FA::Icon('square-o')->size(FA::SIZE_3X)),
+            '<span class="fa-stack"><i class="fa fa-square-o fa-3x fa-stack-2x"></i><i class="fa fa-cog fa-spin fa-stack-1x"></i></span>'
+        );
+    }
+
+    public function testAnotherPrefix()
+    {
+        $old_prefix = FA::$cssPrefix;
+
+        FA::$cssPrefix = 'fontawesome';
+
+        $this->assertEquals(FA::icon('cog'), '<i class="fontawesome fontawesome-cog"></i>');
+        $this->assertEquals(FA::icon('cog')->tag('span'), '<span class="fontawesome fontawesome-cog"></span>');
+        $this->assertEquals(FA::icon('cog')->addCssClass('highlight'), '<i class="fontawesome fontawesome-cog highlight"></i>');
+
+        FA::$cssPrefix = $old_prefix;
     }
 
     public function testIconOutput()
@@ -144,5 +171,16 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
         );
         FA::icon('cog')
             ->flip('badvalue');
+    }
+
+    public function testIconAddCssClassCondition()
+    {
+        $this->assertEquals(FA::icon('cog')->addCssClass('highlight', true), '<i class="fa fa-cog highlight"></i>');
+
+        $this->setExpectedException(
+            'yii\base\InvalidConfigException',
+            'Condition is false'
+        );
+        FA::icon('cog')->addCssClass('highlight', false, true);
     }
 }

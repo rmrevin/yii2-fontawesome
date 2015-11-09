@@ -120,8 +120,8 @@ echo FA::stack()
 // </span>
 
 echo FA::stack(['data-role' => 'stacked-icon'])
-     ->on((new FA\Icon('square'))->inverse())
-     ->icon((new FA\Icon('cog'))->spin());
+     ->on(FA::Icon('square')->inverse())
+     ->icon(FA::Icon('cog')->spin());
 // <span class="fa-stack" data-role="stacked-icon">
 //   <i class="fa fa-square-o fa-inverse fa-stack-2x"></i>
 //   <i class="fa fa-cog fa-spin fa-stack-1x"></i>
@@ -131,8 +131,8 @@ echo FA::stack(['data-role' => 'stacked-icon'])
 echo FA::icon(FA::_COG);
 echo FA::icon(FA::_DESKTOP);
 echo FA::stack()
-     ->on((new FA\Icon(FA::_SQUARE))->inverse())
-     ->icon((new FA\Icon(FA::_COG))->spin());
+     ->on(FA::_CIRCLE_O)
+     ->icon(FA::_TWITTER);
 ```
 
 ### Set another prefix

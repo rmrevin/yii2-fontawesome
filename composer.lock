@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "54ddca2d2b639ae136422a58590cdccc",
+    "hash": "a6e2105374df8af26fdde9137b018143",
+    "content-hash": "94d3274c874502d1e22ab4ff59c2386f",
     "packages": [
         {
             "name": "bower-asset/fontawesome",
