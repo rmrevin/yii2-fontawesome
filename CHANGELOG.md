@@ -1,4 +1,4 @@
-2015-08-15 - 2.12.1
+2015-11-09 - 2.12.1
 -------------------
 * Variable `FA::$cssPrefix` transferred to the class `FontAwesome`.
 * Refactoring.
