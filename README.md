@@ -74,10 +74,10 @@ Namespace: `rmrevin\yii\fontawesome`;
 
 ###Class `FA` or `FontAwesome`
 
-* `static FA::icon($name, $options=[])` - Creates an `component\Icon` that can be used to FontAwesome html icon
+* `static FA::icon($name, $options=[])` - Creates an [`component\Icon`](#class-componenticon-icon) that can be used to FontAwesome html icon
   * `$name` - name of icon in font awesome set.
   * `$options` - additional attributes for `i.fa` html tag.
-* `static FA::stack($name, $options=[])` - Creates an `component\Stack` that can be used to FontAwesome html icon
+* `static FA::stack($name, $options=[])` - Creates an [`component\Stack`](#class-componentstack-stack) that can be used to FontAwesome html icon
   * `$options` - additional attributes for `span.fa-stack` html tag.
 
 ###Class `component\Icon` (`$Icon`)
