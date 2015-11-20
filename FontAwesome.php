@@ -20,6 +20,8 @@ class FontAwesome
     public static $cssPrefix = 'fa';
 
     /**
+     * Creates an `Icon'  component that can be used to FontAwesome html icon
+     * 
      * @param string $name
      * @param array $options
      * @return component\Icon
@@ -29,6 +31,14 @@ class FontAwesome
         return new component\Icon($name, $options);
     }
 
+    /**
+     * Shorcut for `icon()` static method
+     * @see `icon()`
+     */
+    public static function i($name, $options)
+    {
+        return static::icon($name, $options);
+    }
     /**
      * @param array $options
      * @return component\Stack
