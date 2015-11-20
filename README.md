@@ -74,20 +74,34 @@ Namespace: `rmrevin\yii\fontawesome`;
 
 Class `FA` or `FontAwesome`
 
-* `FA::icon($name, $options=[])` - Creates an `Icon` component that can be used to FontAwesome html icon
+* `static FA::icon($name, $options=[])` - Creates an `component\Icon` that can be used to FontAwesome html icon
   * `$name` - name of icon in font awesome set.
   * `$options` - additional attributes for `i.fa` html tag.
-
-* `FA::stack($name, $options=[])` - Creates an `Stack` component that can be used to FontAwesome html icon
+* `static FA::stack($name, $options=[])` - Creates an `component\Stack` that can be used to FontAwesome html icon
   * `$options` - additional attributes for `span.fa-stack` html tag.
 
+Class `component\Icon` (`$Icon`)
 
-| Method                     | Description                                                           |
-| -------------------------- | --------------------------------------------------------------------- |
-| `icon($name, $options=[])` | Creates an `Icon` component that can be used to FontAwesome html icon |
-| `stack($options=[])`       | Creates a `Stack` component that can be used to FontAwesome html icon |
-| `i($name, $options=[])`    | Shortcut for `icon()` method                                          |
-| `s($options=[])`           | Shortcut for `stack()` method                                         |
+* `(string)$Icon` - render icon
+* `$Icon->render()` - render icon
+* `$Icon->tag($value)` - set another html tag for icon (default `i`)
+  * `$value` - name of tag
+* `$Icon->addCssClass($value)` - add to html tag css class in `$value`
+  * `$value` - name of css class
+* `$Icon->inverse()` - add to html tag css class `fa-inverse`
+* `$Icon->spin()` - add to html tag css class `fa-spin`
+* `$Icon->fixedWidth()` - add to html tag css class `fa-fw`
+* `$Icon->ul()` - add to html tag css class `fa-ul`
+* `$Icon->li()` - add to html tag css class `fa-li`
+* `$Icon->border()` - add to html tag css class `fa-border`
+* `$Icon->pullLeft()` - add to html tag css class `pull-left`
+* `$Icon->pullRight()` - add to html tag css class `pull-right`
+* `$Icon->size($value)` - add to html tag css class with size
+  * `$value` - size value (variants: `FA::SIZE_LARGE`, `FA::SIZE_2X`, `FA::SIZE_3X`, `FA::SIZE_4X`, `FA::SIZE_5X`)
+* `$Icon->rotate($value)` - add to html tag css class with rotate
+  * `$value` - rotate value (variants: `FA::ROTATE_90`, `FA::ROTATE_180`, `FA::ROTATE_270`)
+* `$Icon->flip($value)` - add to html tag css class with rotate
+  * `$value` - flip value (variants: `FA::FLIP_HORIZONTAL`, `FA::FLIP_VERTICAL`)
 
 Helper examples
 ---------------
