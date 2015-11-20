@@ -32,7 +32,7 @@ class FontAwesome
     }
 
     /**
-     * Shortcut for `icon()` static method
+     * Shortcut for `icon()` method
      * @see icon()
      *
      * @param string $name
@@ -56,7 +56,7 @@ class FontAwesome
     }
 
     /**
-     * Shortcut for `stack()` static method
+     * Shortcut for `stack()` method
      * @see stack()
      *
      * @param array $options

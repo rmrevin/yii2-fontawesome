@@ -69,8 +69,12 @@ class AppAsset extends AssetBundle
 
 Helper reference
 ----------------
-| Method | Description |
-| ------ | ----------- |
+| Method                   | Description                                                           |
+| ------------------------ | --------------------------------------------------------------------- |
+| icon($name, $options=[]) | Creates an `Icon` component that can be used to FontAwesome html icon |
+| stack($options=[])       | Creates a `Stack` component that can be used to FontAwesome html icon |
+| i($name, $options=[])    | Shortcut for `icon()` method                                          |
+| s($options=[])           | Shortcut for `stack()` method                                         |
 
 Helper examples
 ---------------
