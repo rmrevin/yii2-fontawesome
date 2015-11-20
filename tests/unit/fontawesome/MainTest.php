@@ -35,6 +35,11 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
     public function testStackOutput()
     {
         $this->assertEquals(
+            (string)FA::s(),
+            '<span class="fa-stack"></span>'
+        );
+
+        $this->assertEquals(
             (string)FA::stack(),
             '<span class="fa-stack"></span>'
         );
@@ -107,6 +112,7 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
 
     public function testIconOutput()
     {
+        $this->assertEquals(FA::i('cog'), '<i class="fa fa-cog"></i>');
         $this->assertEquals(FA::icon('cog'), '<i class="fa fa-cog"></i>');
         $this->assertEquals(FA::icon('cog')->tag('span'), '<span class="fa fa-cog"></span>');
         $this->assertEquals(FA::icon('cog')->addCssClass('highlight'), '<i class="fa fa-cog highlight"></i>');
