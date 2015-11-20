@@ -73,19 +73,22 @@ Reference
 Namespace: `rmrevin\yii\fontawesome`;
 
 Class `FA` or `FontAwesome`
-`icon($name, $options=[])` - Creates an `Icon` component that can be used to FontAwesome html icon
+
+`FA::icon($name, $options=[])` - Creates an `Icon` component that can be used to FontAwesome html icon
 
 * `$name` - name of icon in font awesome set.
 * `$options` - additional attributes for `i.fa` html tag.
 
-`stack($name, $options=[])` - Creates an `Stack` component that can be used to FontAwesome html icon
+`FA::stack($name, $options=[])` - Creates an `Stack` component that can be used to FontAwesome html icon
 
 * `$options` - additional attributes for `span.fa-stack` html tag.
 
 
 | Method                     | Description                                                           |
 | -------------------------- | --------------------------------------------------------------------- |
-| `icon($name, $options=[])` | Creates an `Icon` component that can be used to FontAwesome html icon |
+| `icon($name, $options=[])` | Creates an `Icon` component that can be used to FontAwesome html icon
+ * `$name` - name of icon in font awesome set.
+ * `$options` - additional attributes for `i.fa` html tag. |
 | `stack($options=[])`       | Creates a `Stack` component that can be used to FontAwesome html icon |
 | `i($name, $options=[])`    | Shortcut for `icon()` method                                          |
 | `s($options=[])`           | Shortcut for `stack()` method                                         |
