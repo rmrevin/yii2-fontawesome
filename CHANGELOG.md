@@ -1,6 +1,7 @@
 2015-11-20 - 2.12.2
 -------------------
 * Add shortcuts methods `i()` for `FA::icon()` and `FA::s()` for `FA::stack()`
+* Update readme
 
 2015-11-09 - 2.12.1
 -------------------
