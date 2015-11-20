@@ -103,6 +103,18 @@ Class `component\Icon` (`$Icon`)
 * `$Icon->flip($value)` - add to html tag css class with rotate
   * `$value` - flip value (variants: `FA::FLIP_HORIZONTAL`, `FA::FLIP_VERTICAL`)
 
+Class `component\Stack` (`$Stack`)
+
+* `(string)$Stack` - render icon stack
+* `$Stack->render()` - render icon stack
+* `$Stack->tag($value)` - set another html tag for icon stack (default `span`)
+* `$Stack->icon($icon, $options=[])` - set icon for stack
+  * `$icon` - name of icon or `component\Icon` object
+  * `$options` - additional attributes for icon html tag.
+* `$Stack->icon($icon, $options=[])` - set background icon for stack
+  * `$icon` - name of icon or `component\Icon` object
+  * `$options` - additional attributes for icon html tag.
+
 Helper examples
 ---------------
 
