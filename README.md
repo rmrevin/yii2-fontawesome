@@ -77,6 +77,7 @@ Class `FA` or `FontAwesome`
 * `FA::icon($name, $options=[])` - Creates an `Icon` component that can be used to FontAwesome html icon
   * `$name` - name of icon in font awesome set.
   * `$options` - additional attributes for `i.fa` html tag.
+
 * `FA::stack($name, $options=[])` - Creates an `Stack` component that can be used to FontAwesome html icon
   * `$options` - additional attributes for `span.fa-stack` html tag.
 
