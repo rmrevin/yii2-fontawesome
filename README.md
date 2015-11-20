@@ -67,12 +67,12 @@ class AppAsset extends AssetBundle
 
 ```
 
-Reference
-----------------
+Class reference
+---------------
 
 Namespace: `rmrevin\yii\fontawesome`;
 
-Class `FA` or `FontAwesome`
+###Class `FA` or `FontAwesome`
 
 * `static FA::icon($name, $options=[])` - Creates an `component\Icon` that can be used to FontAwesome html icon
   * `$name` - name of icon in font awesome set.
@@ -80,7 +80,7 @@ Class `FA` or `FontAwesome`
 * `static FA::stack($name, $options=[])` - Creates an `component\Stack` that can be used to FontAwesome html icon
   * `$options` - additional attributes for `span.fa-stack` html tag.
 
-Class `component\Icon` (`$Icon`)
+###Class `component\Icon` (`$Icon`)
 
 * `(string)$Icon` - render icon
 * `$Icon->render()` - render icon
@@ -103,7 +103,7 @@ Class `component\Icon` (`$Icon`)
 * `$Icon->flip($value)` - add to html tag css class with rotate
   * `$value` - flip value (variants: `FA::FLIP_HORIZONTAL`, `FA::FLIP_VERTICAL`)
 
-Class `component\Stack` (`$Stack`)
+###Class `component\Stack` (`$Stack`)
 
 * `(string)$Stack` - render icon stack
 * `$Stack->render()` - render icon stack
