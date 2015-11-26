@@ -1,3 +1,7 @@
+2015-11-26 - 2.13.0
+-------------------
+* `Font Awesome` updated to version `4.5`.
+
 2015-11-20 - 2.12.2
 -------------------
 * Add shortcuts methods `i()` for `FA::icon()` and `FA::s()` for `FA::stack()`
