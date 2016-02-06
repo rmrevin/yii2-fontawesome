@@ -23,7 +23,7 @@ class AssetBundle extends \yii\web\AssetBundle
      * @inherit
      */
     public $css = [
-        'css/font-awesome.min.css',
+        'css/font-awesome.css',
     ];
 
     /**
