@@ -1,3 +1,7 @@
+2015-11-26 - 2.14.0
+-------------------
+* `Font Awesome` updated to version `4.6`.
+
 2015-11-26 - 2.13.0
 -------------------
 * `Font Awesome` updated to version `4.5`.
