@@ -107,9 +107,9 @@ class Stack
             ? (empty($this->tag) ? static::$defaultTag : $this->tag)
             : $tag;
 
-        $template = ArrayHelper::remove($options, 'template', '{back}{front}');
-
         $options = array_merge($this->options, $options);
+
+        $template = ArrayHelper::remove($options, 'template', '{back}{front}');
 
         $icon_back = $this->icon_back instanceof Icon
             ? $this->icon_back->addCssClass('fa-stack-2x')
