@@ -7,6 +7,7 @@
 
 namespace rmrevin\yii\fontawesome\component;
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
@@ -102,9 +103,11 @@ class Stack
      */
     public function render($tag = null, $options = [])
     {
-        $tag = empty($tag) ?
-            (empty($this->tag) ? static::$defaultTag : $this->tag)
+        $tag = empty($tag)
+            ? (empty($this->tag) ? static::$defaultTag : $this->tag)
             : $tag;
+
+        $template = ArrayHelper::remove($options, 'template', '{back}{front}');
 
         $options = array_merge($this->options, $options);
 
@@ -118,7 +121,7 @@ class Stack
 
         return Html::tag(
             $tag,
-            $icon_back . $icon_front,
+            str_replace(['{back}', '{front}'], [$icon_back, $icon_front], $template),
             $options
         );
     }

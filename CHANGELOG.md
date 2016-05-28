@@ -1,3 +1,8 @@
+2016-05-29 - 2.15.1
+-------------------
+* Added option to skip the icon.
+* Added option to change the order of icons in the stack.
+
 2016-05-22 - 2.15.0
 -------------------
 * Remove bower package.
