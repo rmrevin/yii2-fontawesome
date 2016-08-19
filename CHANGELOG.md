@@ -1,3 +1,7 @@
+2016-08-19 - 2.15.2
+-------------------
+* Update icon name constants to version 4.6.3.
+
 2016-05-29 - 2.15.1
 -------------------
 * Added option to skip the icon.
