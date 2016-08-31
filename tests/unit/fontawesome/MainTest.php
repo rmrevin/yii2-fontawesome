@@ -97,6 +97,35 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
         );
     }
 
+    public function testUlOutput()
+    {
+        $this->assertEquals(
+            (string)FA::ul(),
+            '<ul class="fa-ul"></ul>'
+        );
+
+        $this->assertEquals(
+            (string)FA::ul()
+                ->item('cog', 'Gear'),
+            '<ul class="fa-ul"><li><i class="fa fa-cog fa-li"></i>Gear</li></ul>'
+        );
+
+        $this->assertEquals(
+            (string)FA::ul()
+                ->item('check', 'Check')
+                ->item('cog', 'Gear'),
+            '<ul class="fa-ul"><li><i class="fa fa-check fa-li"></i>Check</li><li><i class="fa fa-cog fa-li"></i>Gear</li></ul>'
+        );
+
+        $this->assertEquals(
+            (string)FA::ul()
+                ->tag('ol')
+                ->item('check', 'Check')
+                ->item('cog', 'Gear'),
+            '<ol class="fa-ul"><li><i class="fa fa-check fa-li"></i>Check</li><li><i class="fa fa-cog fa-li"></i>Gear</li></ol>'
+        );
+    }
+
     public function testAnotherPrefix()
     {
         $old_prefix = FA::$cssPrefix;
@@ -106,6 +135,19 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
         $this->assertEquals(FA::icon('cog'), '<i class="fontawesome fontawesome-cog"></i>');
         $this->assertEquals(FA::icon('cog')->tag('span'), '<span class="fontawesome fontawesome-cog"></span>');
         $this->assertEquals(FA::icon('cog')->addCssClass('highlight'), '<i class="fontawesome fontawesome-cog highlight"></i>');
+
+        $this->assertEquals(
+            (string)FA::stack()
+                ->icon(FA::Icon('cog')->spin())
+                ->on(FA::Icon('square-o')->size(FA::SIZE_3X)),
+            '<span class="fontawesome-stack"><i class="fontawesome fontawesome-square-o fontawesome-3x fontawesome-stack-2x"></i><i class="fontawesome fontawesome-cog fontawesome-spin fontawesome-stack-1x"></i></span>'
+        );
+
+        $this->assertEquals(
+            (string)FA::ul()
+                ->item('cog', 'Gear'),
+            '<ul class="fontawesome-ul"><li><i class="fontawesome fontawesome-cog fontawesome-li"></i>Gear</li></ul>'
+        );
 
         FA::$cssPrefix = $old_prefix;
     }

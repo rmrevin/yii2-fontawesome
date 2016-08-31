@@ -1,27 +1,26 @@
 <?php
 /**
- * Stack.php
+ * UnorderedList.php
  * @author Revin Roman
- * @link https://rmrevin.ru
+ * @link https://rmrevin.com
  */
 
 namespace rmrevin\yii\fontawesome\component;
 
 use rmrevin\yii\fontawesome\FA;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
- * Class Stack
+ * Class UnorderedList
  * @package rmrevin\yii\fontawesome\component
  */
-class Stack
+class UnorderedList
 {
 
     /**
      * @var string
      */
-    public static $defaultTag = 'span';
+    public static $defaultTag = 'ul';
 
     /**
      * @var string
@@ -34,21 +33,16 @@ class Stack
     private $options = [];
 
     /**
-     * @var Icon
+     * @var array
      */
-    private $icon_front;
-
-    /**
-     * @var Icon
-     */
-    private $icon_back;
+    private $items = [];
 
     /**
      * @param array $options
      */
     public function __construct($options = [])
     {
-        Html::addCssClass($options, FA::$cssPrefix . '-stack');
+        Html::addCssClass($options, FA::$cssPrefix . '-ul');
 
         $this->options = $options;
     }
@@ -63,32 +57,19 @@ class Stack
 
     /**
      * @param string|Icon $icon
+     * @param string|null $label
      * @param array $options
-     * @return self
+     * @return static
      */
-    public function icon($icon, $options = [])
+    public function item($icon, $label = null, $options = [])
     {
         if (is_string($icon)) {
             $icon = new Icon($icon, $options);
         }
 
-        $this->icon_front = $icon;
+        $content = trim((string)$icon->li() . $label);
 
-        return $this;
-    }
-
-    /**
-     * @param string|Icon $icon
-     * @param array $options
-     * @return self
-     */
-    public function on($icon, $options = [])
-    {
-        if (is_string($icon)) {
-            $icon = new Icon($icon, $options);
-        }
-
-        $this->icon_back = $icon;
+        $this->items[] = Html::tag('li', $content);
 
         return $this;
     }
@@ -120,20 +101,8 @@ class Stack
 
         $options = array_merge($this->options, $options);
 
-        $template = ArrayHelper::remove($options, 'template', '{back}{front}');
+        $items = $this->items;
 
-        $icon_back = $this->icon_back instanceof Icon
-            ? $this->icon_back->addCssClass(FA::$cssPrefix . '-stack-2x')
-            : null;
-
-        $icon_front = $this->icon_front instanceof Icon
-            ? $this->icon_front->addCssClass(FA::$cssPrefix . '-stack-1x')
-            : null;
-
-        return Html::tag(
-            $tag,
-            str_replace(['{back}', '{front}'], [$icon_back, $icon_front], $template),
-            $options
-        );
+        return Html::tag($tag, implode($items), $options);
     }
 }

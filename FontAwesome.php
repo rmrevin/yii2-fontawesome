@@ -68,6 +68,15 @@ class FontAwesome
     }
 
     /**
+     * @param array $options
+     * @return component\UnorderedList
+     */
+    public static function ul($options = [])
+    {
+        return new component\UnorderedList($options);
+    }
+
+    /**
      * Size values
      * @see rmrevin\yii\fontawesome\component\Icon::size
      */

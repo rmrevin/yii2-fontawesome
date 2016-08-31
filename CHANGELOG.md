@@ -1,3 +1,7 @@
+2016-08-31 - 2.16.0
+-------------------
+* Enh #22: Added FA:ul() method.
+
 2016-08-19 - 2.15.2
 -------------------
 * Update icon name constants to version 4.6.3.

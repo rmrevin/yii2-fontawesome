@@ -17,13 +17,19 @@ use yii\helpers\Html;
 class Icon
 {
 
-    /** @var string */
+    /**
+     * @var string
+     */
     public static $defaultTag = 'i';
 
-    /** @var string */
+    /**
+     * @var string
+     */
     private $tag;
 
-    /** @var array */
+    /**
+     * @var array
+     */
     private $options = [];
 
     /**
@@ -84,6 +90,7 @@ class Icon
     }
 
     /**
+     * @deprecated
      * @return self
      */
     public function ul()
