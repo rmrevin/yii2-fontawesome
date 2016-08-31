@@ -189,6 +189,15 @@ echo FA::stack(['data-role' => 'stacked-icon'])
 //   <i class="fa fa-cog fa-spin fa-stack-1x"></i>
 // </span>
 
+// unordered list icons 
+echo FA::ul(['data-role' => 'unordered-list'])
+     ->item('circle', 'Bullet item')
+     ->item('check', 'Checked item');
+// <ul class="fa-ul" data-role="unordered-list">
+//   <li><i class="fa fa-circle fa-li"></i>Bullet item</li>
+//   <li><i class="fa fa-check fa-li"></i>Checked Item</li>
+// </span>
+
 // autocomplete icons name in IDE
 echo FA::icon(FA::_COG);
 echo FA::icon(FA::_DESKTOP);

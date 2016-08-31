@@ -64,12 +64,12 @@ class UnorderedList
     public function item($icon, $label = null, $options = [])
     {
         if (is_string($icon)) {
-            $icon = new Icon($icon, $options);
+            $icon = new Icon($icon);
         }
 
         $content = trim((string)$icon->li() . $label);
 
-        $this->items[] = Html::tag('li', $content);
+        $this->items[] = Html::tag('li', $content, $options);
 
         return $this;
     }

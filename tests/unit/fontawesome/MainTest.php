@@ -124,6 +124,12 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
                 ->item('cog', 'Gear'),
             '<ol class="fa-ul"><li><i class="fa fa-check fa-li"></i>Check</li><li><i class="fa fa-cog fa-li"></i>Gear</li></ol>'
         );
+
+        $this->assertEquals(
+            (string)FA::ul()
+                ->item('check', 'Check', ['class' => 'another-class']),
+            '<ul class="fa-ul"><li class="another-class"><i class="fa fa-check fa-li"></i>Check</li></ul>'
+        );
     }
 
     public function testAnotherPrefix()
