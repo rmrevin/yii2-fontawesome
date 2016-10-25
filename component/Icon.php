@@ -8,6 +8,7 @@
 namespace rmrevin\yii\fontawesome\component;
 
 use rmrevin\yii\fontawesome\FA;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
@@ -18,11 +19,13 @@ class Icon
 {
 
     /**
+     * @deprecated
      * @var string
      */
     public static $defaultTag = 'i';
 
     /**
+     * @deprecated
      * @var string
      */
     private $tag;
@@ -39,6 +42,7 @@ class Icon
     public function __construct($name, $options = [])
     {
         Html::addCssClass($options, FA::$cssPrefix);
+
         if (!empty($name)) {
             Html::addCssClass($options, FA::$cssPrefix . '-' . $name);
         }
@@ -51,7 +55,11 @@ class Icon
      */
     public function __toString()
     {
-        return $this->render();
+        $options = $this->options;
+
+        $tag = ArrayHelper::remove($options, 'tag', 'i');
+
+        return Html::tag($tag, null, $options);
     }
 
     /**
@@ -71,31 +79,11 @@ class Icon
     }
 
     /**
-     * @deprecated
-     * @return self
-     */
-    public function fixed_width()
-    {
-        \Yii::warning(sprintf('You are using an deprecated method `%s`.', 'fixed_width'), __METHOD__);
-
-        return $this->fixedWidth();
-    }
-
-    /**
      * @return self
      */
     public function fixedWidth()
     {
         return $this->addCssClass(FA::$cssPrefix . '-fw');
-    }
-
-    /**
-     * @deprecated
-     * @return self
-     */
-    public function ul()
-    {
-        return $this->addCssClass(FA::$cssPrefix . '-ul');
     }
 
     /**
@@ -115,33 +103,11 @@ class Icon
     }
 
     /**
-     * @deprecated
-     * @return self
-     */
-    public function pull_left()
-    {
-        \Yii::warning(sprintf('You are using an deprecated method `%s`.', 'pull_left'), __METHOD__);
-
-        return $this->pullLeft();
-    }
-
-    /**
      * @return self
      */
     public function pullLeft()
     {
         return $this->addCssClass('pull-left');
-    }
-
-    /**
-     * @deprecated
-     * @return self
-     */
-    public function pull_right()
-    {
-        \Yii::warning(sprintf('You are using an deprecated method `%s`.', 'pull_right'), __METHOD__);
-
-        return $this->pullRight();
     }
 
     /**
@@ -207,6 +173,7 @@ class Icon
     }
 
     /**
+     * @deprecated
      * Change html tag.
      * @param string $tag
      * @return static
@@ -215,6 +182,8 @@ class Icon
     public function tag($tag)
     {
         $this->tag = $tag;
+
+        $this->options['tag'] = $tag;
 
         return $this;
     }
@@ -245,6 +214,7 @@ class Icon
     }
 
     /**
+     * @deprecated
      * @param string|null $tag
      * @param string|null $content
      * @param array $options

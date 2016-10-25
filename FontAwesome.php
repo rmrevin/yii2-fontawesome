@@ -16,7 +16,10 @@ use rmrevin\yii\fontawesome\component;
 class FontAwesome
 {
 
-    /** @var string CSS Class prefix */
+    /**
+     * CSS class prefix
+     * @var string
+     */
     public static $cssPrefix = 'fa';
 
     /**
@@ -78,7 +81,7 @@ class FontAwesome
 
     /**
      * Size values
-     * @see rmrevin\yii\fontawesome\component\Icon::size
+     * @see component\Icon::size
      */
     const SIZE_LARGE = 'lg';
     const SIZE_2X = '2x';
@@ -88,7 +91,7 @@ class FontAwesome
 
     /**
      * Rotate values
-     * @see rmrevin\yii\fontawesome\component\Icon::rotate
+     * @see component\Icon::rotate
      */
     const ROTATE_90 = '90';
     const ROTATE_180 = '180';
@@ -96,7 +99,7 @@ class FontAwesome
 
     /**
      * Flip values
-     * @see rmrevin\yii\fontawesome\component\Icon::flip
+     * @see component\Icon::flip
      */
     const FLIP_HORIZONTAL = 'horizontal';
     const FLIP_VERTICAL = 'vertical';

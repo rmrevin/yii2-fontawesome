@@ -8,6 +8,7 @@
 namespace rmrevin\yii\fontawesome\component;
 
 use rmrevin\yii\fontawesome\FA;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
@@ -18,11 +19,13 @@ class UnorderedList
 {
 
     /**
+     * @deprecated
      * @var string
      */
     public static $defaultTag = 'ul';
 
     /**
+     * @deprecated
      * @var string
      */
     private $tag;
@@ -30,12 +33,12 @@ class UnorderedList
     /**
      * @var array
      */
-    private $options = [];
+    protected $options = [];
 
     /**
      * @var array
      */
-    private $items = [];
+    protected $items = [];
 
     /**
      * @param array $options
@@ -43,6 +46,10 @@ class UnorderedList
     public function __construct($options = [])
     {
         Html::addCssClass($options, FA::$cssPrefix . '-ul');
+
+        $options['item'] = function ($item, $index) {
+            return call_user_func($item, $index);
+        };
 
         $this->options = $options;
     }
@@ -52,29 +59,34 @@ class UnorderedList
      */
     public function __toString()
     {
-        return $this->render();
+        return Html::ul($this->items, $this->options);
     }
 
     /**
-     * @param string|Icon $icon
-     * @param string|null $label
+     * @param string $label
      * @param array $options
      * @return static
      */
-    public function item($icon, $label = null, $options = [])
+    public function item($label, $options = [])
     {
-        if (is_string($icon)) {
-            $icon = new Icon($icon);
-        }
+        $this->items[] = function ($index) use ($label, $options) {
+            $tag = ArrayHelper::remove($options, 'tag', 'li');
 
-        $content = trim((string)$icon->li() . $label);
+            $icon = ArrayHelper::remove($options, 'icon');
+            $icon = empty($icon)
+                ? null
+                : (is_string($icon) ? (string)(new Icon($icon))->li() : $icon);
 
-        $this->items[] = Html::tag('li', $content, $options);
+            $content = trim($icon . $label);
+
+            return Html::tag($tag, $content, $options);
+        };
 
         return $this;
     }
 
     /**
+     * @deprecated
      * Change html tag.
      * @param string $tag
      * @return static
@@ -84,10 +96,13 @@ class UnorderedList
     {
         $this->tag = $tag;
 
+        $this->options['tag'] = $tag;
+
         return $this;
     }
 
     /**
+     * @deprecated
      * @param string|null $tag
      * @param array $options
      * @return string

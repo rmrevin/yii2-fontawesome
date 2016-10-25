@@ -1,3 +1,32 @@
+2016-10-25 - 2.17.0
+-------------------
+* `Font Awesome` updated to version `4.7`.
+* Update minimum php to `5.5`
+* These deprecated classes are now removed:
+  * `rmrevin\yii\fontawesome\CDNAssetBundle`
+* These deprecated methods are now removed:
+  * `rmrevin\yii\fontawesome\component\Icon::ul`
+  * `rmrevin\yii\fontawesome\component\Icon::fixed_width`
+  * `rmrevin\yii\fontawesome\component\Icon::pull_left`
+  * `rmrevin\yii\fontawesome\component\Icon::pull_right`
+* In method `rmrevin\yii\fontawesome\component\UnorderedList::item` changed interface (removed `$icon` param).
+* These directories are now deprecated:
+  * `./assets`
+* These fields and methods are now deprecated:
+  * `rmrevin\yii\fontawesome\component\Icon::$defaultTag`
+  * `rmrevin\yii\fontawesome\component\Icon::$tag`
+  * `rmrevin\yii\fontawesome\component\Icon::tag()`
+  * `rmrevin\yii\fontawesome\component\Icon::render()`
+  * `rmrevin\yii\fontawesome\component\Stack::$defaultTag`
+  * `rmrevin\yii\fontawesome\component\Stack::$tag`
+  * `rmrevin\yii\fontawesome\component\Stack::tag()`
+  * `rmrevin\yii\fontawesome\component\Stack::render()`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::$defaultTag`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::$tag`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::tag()`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::render()`
+* Refactoring class `rmrevin\yii\fontawesome\component\UnorderedList`.
+
 2016-08-31 - 2.16.1
 -------------------
 * Fix options in li item.
