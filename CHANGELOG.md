@@ -1,3 +1,7 @@
+2017-01-11 - 2.17.1
+-------------------
+* Downgrade minimum php to `5.4`
+
 2016-10-25 - 2.17.0
 -------------------
 * `Font Awesome` updated to version `4.7`.
