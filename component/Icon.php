@@ -77,6 +77,14 @@ class Icon
     {
         return $this->addCssClass(FA::$cssPrefix . '-spin');
     }
+    
+    /**
+     * @return self
+     */
+    public function pulse()
+    {
+        return $this->addCssClass(FA::$cssPrefix . '-pulse');
+    }
 
     /**
      * @return self
