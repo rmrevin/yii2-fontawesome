@@ -25,18 +25,21 @@ class AssetBundle extends \yii\web\AssetBundle
     public $css = [
         'css/font-awesome.min.css',
     ];
-
+    
     /**
-     * Initializes the bundle.
-     * Set publish options to copy only necessary files (in this case css and font folders)
-     * @codeCoverageIgnore
+     * @inherit
      */
-    public function init()
-    {
-        parent::init();
+    public $publishOptions = [
+            'only' => [
+                "css/*",
+                "fonts/*",
+            ],
+            'except' => [
+                "less",
+                "scss",
+                "src",
+            ],
+    ];
 
-        $this->publishOptions['beforeCopy'] = function ($from, $to) {
-            return preg_match('%(/|\\\\)(fonts|css)%', $from);
-        };
-    }
+ 
 }
