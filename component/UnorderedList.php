@@ -1,7 +1,8 @@
 <?php
 /**
  * UnorderedList.php
- * @author Revin Roman
+ * @author Revin Roman <roman@rmrevin.com>
+ * @author Simon Karlen <simi.albi@gmail.com>
  * @link https://rmrevin.com
  */
 
@@ -17,19 +18,6 @@ use yii\helpers\Html;
  */
 class UnorderedList
 {
-
-    /**
-     * @deprecated
-     * @var string
-     */
-    public static $defaultTag = 'ul';
-
-    /**
-     * @deprecated
-     * @var string
-     */
-    private $tag;
-
     /**
      * @var array
      */
@@ -69,7 +57,7 @@ class UnorderedList
      */
     public function item($label, $options = [])
     {
-        $this->items[] = function ($index) use ($label, $options) {
+        $this->items[] = function () use ($label, $options) {
             $tag = ArrayHelper::remove($options, 'tag', 'li');
 
             $icon = ArrayHelper::remove($options, 'icon');
@@ -83,41 +71,5 @@ class UnorderedList
         };
 
         return $this;
-    }
-
-    /**
-     * @deprecated
-     * Change html tag.
-     * @param string $tag
-     * @return static
-     * @throws \yii\base\InvalidParamException
-     */
-    public function tag($tag)
-    {
-        $this->tag = $tag;
-
-        $this->options['tag'] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * @deprecated
-     * @param string|null $tag
-     * @param array $options
-     * @return string
-     * @throws \yii\base\InvalidConfigException
-     */
-    public function render($tag = null, $options = [])
-    {
-        $tag = empty($tag)
-            ? (empty($this->tag) ? static::$defaultTag : $this->tag)
-            : $tag;
-
-        $options = array_merge($this->options, $options);
-
-        $items = $this->items;
-
-        return Html::tag($tag, implode($items), $options);
     }
 }

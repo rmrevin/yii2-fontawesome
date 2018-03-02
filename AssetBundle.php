@@ -1,7 +1,8 @@
 <?php
 /**
  * AssetBundle.php
- * @author Revin Roman
+ * @author Revin Roman <roman@rmrevin.com>
+ * @author Simon Karlen <simi.albi@gmail.com>
  * @link https://rmrevin.ru
  */
 
@@ -13,33 +14,32 @@ namespace rmrevin\yii\fontawesome;
  */
 class AssetBundle extends \yii\web\AssetBundle
 {
-
     /**
-     * @inherit
+     * @inheritdoc
      */
     public $sourcePath = '@vendor/fortawesome/font-awesome';
 
     /**
-     * @inherit
+     * @inheritdoc
      */
-    public $css = [
-        'css/font-awesome.min.css',
-    ];
-    
-    /**
-     * @inherit
-     */
-    public $publishOptions = [
-            'only' => [
-                "css/*",
-                "fonts/*",
-            ],
-            'except' => [
-                "less",
-                "scss",
-                "src",
-            ],
+    public $js = [
+        'svg-with-js/js/fontawesome-all.min.js'
     ];
 
- 
+    /**
+     * @inheritdoc
+     */
+    public $publishOptions = [
+        'only' => [
+            'svg-with-js/*'
+        ],
+        'except' => [
+            '.github',
+            'advanced-options',
+            'use-on-desktop',
+            'web-fonts-with-css'
+        ]
+    ];
+
+
 }

@@ -1,7 +1,8 @@
 <?php
 /**
  * FontAwesome.php
- * @author Revin Roman
+ * @author Revin Roman <roman@rmrevin.com>
+ * @author Simon Karlen <simi.albi@gmail.com>
  * @link https://rmrevin.ru
  */
 
@@ -15,7 +16,6 @@ use rmrevin\yii\fontawesome\component;
  */
 class FontAwesome
 {
-
     /**
      * CSS class prefix
      * @var string
@@ -28,6 +28,7 @@ class FontAwesome
      * @param string $name
      * @param array $options
      * @return component\Icon
+     * @throws \yii\base\InvalidConfigException
      */
     public static function icon($name, $options = [])
     {
@@ -41,6 +42,7 @@ class FontAwesome
      * @param string $name
      * @param array $options
      * @return component\Icon
+     * @throws \yii\base\InvalidConfigException
      */
     public static function i($name, $options = [])
     {
@@ -83,24 +85,23 @@ class FontAwesome
      * Size values
      * @see component\Icon::size
      */
-    const SIZE_LARGE = 'lg';
+    const SIZE_XS = 'xs';
+    const SIZE_SM = 'sm';
+    const SIZE_LG = 'lg';
     const SIZE_2X = '2x';
     const SIZE_3X = '3x';
     const SIZE_4X = '4x';
     const SIZE_5X = '5x';
-
-    /**
-     * Rotate values
-     * @see component\Icon::rotate
-     */
-    const ROTATE_90 = '90';
-    const ROTATE_180 = '180';
-    const ROTATE_270 = '270';
+    const SIZE_6X = '6x';
+    const SIZE_7X = '7x';
+    const SIZE_8X = '8x';
+    const SIZE_9X = '9x';
+    const SIZE_10X = '10x';
 
     /**
      * Flip values
      * @see component\Icon::flip
      */
-    const FLIP_HORIZONTAL = 'horizontal';
-    const FLIP_VERTICAL = 'vertical';
+    const FLIP_HORIZONTAL = 'h';
+    const FLIP_VERTICAL = 'v';
 }

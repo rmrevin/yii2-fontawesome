@@ -1,7 +1,8 @@
 <?php
 /**
  * Stack.php
- * @author Revin Roman
+ * @author Revin Roman <roman@rmrevin.com>
+ * @author Simon Karlen <simi.albi@gmail.com>
  * @link https://rmrevin.ru
  */
 
@@ -17,19 +18,6 @@ use yii\helpers\Html;
  */
 class Stack
 {
-
-    /**
-     * @deprecated
-     * @var string
-     */
-    public static $defaultTag = 'span';
-
-    /**
-     * @deprecated
-     * @var string
-     */
-    private $tag;
-
     /**
      * @var array
      */
@@ -50,7 +38,7 @@ class Stack
      */
     public function __construct($options = [])
     {
-        Html::addCssClass($options, FA::$cssPrefix . '-stack');
+        Html::addCssClass($options, [FA::$cssPrefix . '-layers', FA::$cssPrefix . '-fw']);
 
         $this->options = $options;
     }
@@ -67,12 +55,12 @@ class Stack
         $template = ArrayHelper::remove($options, 'template', '{back}{front}');
 
         $icon_back = $this->icon_back instanceof Icon
-            ? $this->icon_back->addCssClass(FA::$cssPrefix . '-stack-2x')
-            : null;
+            ? $this->icon_back
+            : '';
 
         $icon_front = $this->icon_front instanceof Icon
-            ? $this->icon_front->addCssClass(FA::$cssPrefix . '-stack-1x')
-            : null;
+            ? $this->icon_front
+            : '';
 
         $content = str_replace(['{back}', '{front}'], [$icon_back, $icon_front], $template);
 
@@ -83,6 +71,7 @@ class Stack
      * @param string|Icon $icon
      * @param array $options
      * @return self
+     * @throws \yii\base\InvalidConfigException
      */
     public function icon($icon, $options = [])
     {
@@ -99,6 +88,7 @@ class Stack
      * @param string|Icon $icon
      * @param array $options
      * @return self
+     * @throws \yii\base\InvalidConfigException
      */
     public function on($icon, $options = [])
     {
@@ -109,53 +99,5 @@ class Stack
         $this->icon_back = $icon;
 
         return $this;
-    }
-
-    /**
-     * @deprecated
-     * Change html tag.
-     * @param string $tag
-     * @return static
-     * @throws \yii\base\InvalidParamException
-     */
-    public function tag($tag)
-    {
-        $this->tag = $tag;
-
-        $this->options['tag'] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * @deprecated
-     * @param string|null $tag
-     * @param array $options
-     * @return string
-     * @throws \yii\base\InvalidConfigException
-     */
-    public function render($tag = null, $options = [])
-    {
-        $tag = empty($tag)
-            ? (empty($this->tag) ? static::$defaultTag : $this->tag)
-            : $tag;
-
-        $options = array_merge($this->options, $options);
-
-        $template = ArrayHelper::remove($options, 'template', '{back}{front}');
-
-        $icon_back = $this->icon_back instanceof Icon
-            ? $this->icon_back->addCssClass(FA::$cssPrefix . '-stack-2x')
-            : null;
-
-        $icon_front = $this->icon_front instanceof Icon
-            ? $this->icon_front->addCssClass(FA::$cssPrefix . '-stack-1x')
-            : null;
-
-        return Html::tag(
-            $tag,
-            str_replace(['{back}', '{front}'], [$icon_back, $icon_front], $template),
-            $options
-        );
     }
 }

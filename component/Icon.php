@@ -1,13 +1,15 @@
 <?php
 /**
  * Icon.php
- * @author Revin Roman
+ * @author Revin Roman <roman@rmrevin.com>
+ * @author Simon Karlen <simi.albi@gmail.com>
  * @link https://rmrevin.ru
  */
 
 namespace rmrevin\yii\fontawesome\component;
 
 use rmrevin\yii\fontawesome\FA;
+use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
@@ -17,19 +19,6 @@ use yii\helpers\Html;
  */
 class Icon
 {
-
-    /**
-     * @deprecated
-     * @var string
-     */
-    public static $defaultTag = 'i';
-
-    /**
-     * @deprecated
-     * @var string
-     */
-    private $tag;
-
     /**
      * @var array
      */
@@ -38,14 +27,16 @@ class Icon
     /**
      * @param string $name
      * @param array $options
+     * @throws InvalidConfigException
      */
     public function __construct($name, $options = [])
     {
-        Html::addCssClass($options, FA::$cssPrefix);
-
-        if (!empty($name)) {
-            Html::addCssClass($options, FA::$cssPrefix . '-' . $name);
+        if (empty($name)) {
+            throw new InvalidConfigException('property is mandatory');
         }
+
+        Html::addCssClass($options, $name);
+
 
         $this->options = $options;
     }
@@ -64,6 +55,7 @@ class Icon
 
     /**
      * @return self
+     * @throws InvalidConfigException
      */
     public function inverse()
     {
@@ -72,14 +64,16 @@ class Icon
 
     /**
      * @return self
+     * @throws InvalidConfigException
      */
     public function spin()
     {
         return $this->addCssClass(FA::$cssPrefix . '-spin');
     }
-    
+
     /**
      * @return self
+     * @throws InvalidConfigException
      */
     public function pulse()
     {
@@ -88,6 +82,7 @@ class Icon
 
     /**
      * @return self
+     * @throws InvalidConfigException
      */
     public function fixedWidth()
     {
@@ -96,6 +91,7 @@ class Icon
 
     /**
      * @return self
+     * @throws InvalidConfigException
      */
     public function li()
     {
@@ -104,6 +100,7 @@ class Icon
 
     /**
      * @return self
+     * @throws InvalidConfigException
      */
     public function border()
     {
@@ -112,6 +109,7 @@ class Icon
 
     /**
      * @return self
+     * @throws InvalidConfigException
      */
     public function pullLeft()
     {
@@ -120,6 +118,7 @@ class Icon
 
     /**
      * @return self
+     * @throws InvalidConfigException
      */
     public function pullRight()
     {
@@ -135,11 +134,24 @@ class Icon
     {
         return $this->addCssClass(
             FA::$cssPrefix . '-' . $value,
-            in_array((string)$value, [FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X], true),
+            in_array((string)$value, [
+                FA::SIZE_XS,
+                FA::SIZE_SM,
+                FA::SIZE_LG,
+                FA::SIZE_2X,
+                FA::SIZE_3X,
+                FA::SIZE_4X,
+                FA::SIZE_5X,
+                FA::SIZE_6X,
+                FA::SIZE_7X,
+                FA::SIZE_8X,
+                FA::SIZE_9X,
+                FA::SIZE_10X
+            ], true),
             sprintf(
                 '%s - invalid value. Use one of the constants: %s.',
                 'FA::size()',
-                'FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X'
+                'FA::SIZE_XS, FA::SIZE_SM, FA::SIZE_LG, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X, FA::SIZE_6X, FA::SIZE_7X, FA::SIZE_8X, FA::SIZE_9X, FA::SIZE_10X'
             )
         );
     }
@@ -151,13 +163,13 @@ class Icon
      */
     public function rotate($value)
     {
-        return $this->addCssClass(
-            FA::$cssPrefix . '-rotate-' . $value,
-            in_array((string)$value, [FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270], true),
+        return $this->addTransformation(
+            'rotate-' . $value,
+            in_array((int)$value, [range(-359, 359)], true),
             sprintf(
-                '%s - invalid value. Use one of the constants: %s.',
+                '%s - invalid value. Must be in range: %s.',
                 'FA::rotate()',
-                'FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270'
+                '-359 through 359'
             )
         );
     }
@@ -169,8 +181,8 @@ class Icon
      */
     public function flip($value)
     {
-        return $this->addCssClass(
-            FA::$cssPrefix . '-flip-' . $value,
+        return $this->addTransformation(
+            'flip-' . $value,
             in_array((string)$value, [FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL], true),
             sprintf(
                 '%s - invalid value. Use one of the constants: %s.',
@@ -181,26 +193,112 @@ class Icon
     }
 
     /**
-     * @deprecated
-     * Change html tag.
-     * @param string $tag
-     * @return static
-     * @throws \yii\base\InvalidParamException
+     * @param integer $value
+     * @return self
+     * @throws \yii\base\InvalidConfigException
      */
-    public function tag($tag)
+    public function shrink($value)
     {
-        $this->tag = $tag;
+        return $this->addTransformation(
+            'shrink-' . $value,
+            is_numeric($value),
+            sprintf(
+                '%s - invalid value. Must be numeric.',
+                'FA::shrink()'
+            )
+        );
+    }
 
-        $this->options['tag'] = $tag;
+    /**
+     * @param integer $value
+     * @return self
+     * @throws \yii\base\InvalidConfigException
+     */
+    public function grow($value)
+    {
+        return $this->addTransformation(
+            'grow-' . $value,
+            is_numeric($value),
+            sprintf(
+                '%s - invalid value. Must be numeric.',
+                'FA::shrink()'
+            )
+        );
+    }
 
-        return $this;
+    /**
+     * @param integer $value
+     * @return self
+     * @throws \yii\base\InvalidConfigException
+     */
+    public function up($value)
+    {
+        return $this->addTransformation(
+            'up-' . $value,
+            is_numeric($value),
+            sprintf(
+                '%s - invalid value. Must be numeric.',
+                'FA::shrink()'
+            )
+        );
+    }
+
+    /**
+     * @param integer $value
+     * @return self
+     * @throws \yii\base\InvalidConfigException
+     */
+    public function right($value)
+    {
+        return $this->addTransformation(
+            'right-' . $value,
+            is_numeric($value),
+            sprintf(
+                '%s - invalid value. Must be numeric.',
+                'FA::shrink()'
+            )
+        );
+    }
+
+    /**
+     * @param integer $value
+     * @return self
+     * @throws \yii\base\InvalidConfigException
+     */
+    public function down($value)
+    {
+        return $this->addTransformation(
+            'down-' . $value,
+            is_numeric($value),
+            sprintf(
+                '%s - invalid value. Must be numeric.',
+                'FA::shrink()'
+            )
+        );
+    }
+
+    /**
+     * @param integer $value
+     * @return self
+     * @throws \yii\base\InvalidConfigException
+     */
+    public function left($value)
+    {
+        return $this->addTransformation(
+            'left-' . $value,
+            is_numeric($value),
+            sprintf(
+                '%s - invalid value. Must be numeric.',
+                'FA::shrink()'
+            )
+        );
     }
 
     /**
      * @param string $class
      * @param bool $condition
      * @param string|bool $throw
-     * @return \rmrevin\yii\fontawesome\component\Icon
+     * @return static
      * @throws \yii\base\InvalidConfigException
      * @codeCoverageIgnore
      */
@@ -222,20 +320,32 @@ class Icon
     }
 
     /**
-     * @deprecated
-     * @param string|null $tag
-     * @param string|null $content
-     * @param array $options
-     * @return string
+     * @param string $transformation
+     * @param bool $condition
+     * @param string|bool $throw
+     * @return static
+     * @throws \yii\base\InvalidConfigException
+     * @codeCoverageIgnore
      */
-    public function render($tag = null, $content = null, $options = [])
+    public function addTransformation($transformation, $condition = true, $throw = false)
     {
-        $tag = empty($tag)
-            ? (empty($this->tag) ? static::$defaultTag : $this->tag)
-            : $tag;
+        if ($condition === false) {
+            if (!empty($throw)) {
+                $message = !is_string($throw)
+                    ? 'Condition is false'
+                    : $throw;
 
-        $options = array_merge($this->options, $options);
+                throw new \yii\base\InvalidConfigException($message);
+            }
+        } else {
+            $transformations = ArrayHelper::getValue($this->options, ['data', 'fa', 'transform'], []);
+            if (!ArrayHelper::isIn($transformation, $transformations)) {
+                $transformations[] = $transformation;
+            }
 
-        return Html::tag($tag, $content, $options);
+            ArrayHelper::setValue($this->options, ['data', 'fa', 'transform'], $transformations);
+        }
+
+        return $this;
     }
 }
