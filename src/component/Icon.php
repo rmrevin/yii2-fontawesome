@@ -25,19 +25,25 @@ class Icon
     private $options = [];
 
     /**
+     * @var string
+     */
+    private $prefix = 'fas';
+
+    /**
      * @param string $name
      * @param array $options
+     * @param string $prefix
      * @throws InvalidConfigException
      */
-    public function __construct($name, $options = [])
+    public function __construct($name, $options = [], $prefix = 'fas')
     {
         if (empty($name)) {
             throw new InvalidConfigException('property is mandatory');
         }
 
-        Html::addCssClass($options, $name);
+        Html::addCssClass($options, $prefix . '-' . $name);
 
-
+        $this->prefix = $prefix;
         $this->options = $options;
     }
 
@@ -54,7 +60,7 @@ class Icon
     }
 
     /**
-     * @return self
+     * @return static
      * @throws InvalidConfigException
      */
     public function inverse()
@@ -63,7 +69,7 @@ class Icon
     }
 
     /**
-     * @return self
+     * @return static
      * @throws InvalidConfigException
      */
     public function spin()
@@ -72,7 +78,7 @@ class Icon
     }
 
     /**
-     * @return self
+     * @return static
      * @throws InvalidConfigException
      */
     public function pulse()
@@ -81,7 +87,7 @@ class Icon
     }
 
     /**
-     * @return self
+     * @return static
      * @throws InvalidConfigException
      */
     public function fixedWidth()
@@ -90,7 +96,7 @@ class Icon
     }
 
     /**
-     * @return self
+     * @return static
      * @throws InvalidConfigException
      */
     public function li()
@@ -99,7 +105,7 @@ class Icon
     }
 
     /**
-     * @return self
+     * @return static
      * @throws InvalidConfigException
      */
     public function border()
@@ -108,7 +114,7 @@ class Icon
     }
 
     /**
-     * @return self
+     * @return static
      * @throws InvalidConfigException
      */
     public function pullLeft()
@@ -117,7 +123,7 @@ class Icon
     }
 
     /**
-     * @return self
+     * @return static
      * @throws InvalidConfigException
      */
     public function pullRight()
@@ -127,7 +133,7 @@ class Icon
 
     /**
      * @param string $value
-     * @return self
+     * @return static
      * @throws \yii\base\InvalidConfigException
      */
     public function size($value)
@@ -158,7 +164,7 @@ class Icon
 
     /**
      * @param string $value
-     * @return self
+     * @return static
      * @throws \yii\base\InvalidConfigException
      */
     public function rotate($value)
@@ -176,7 +182,7 @@ class Icon
 
     /**
      * @param string $value
-     * @return self
+     * @return static
      * @throws \yii\base\InvalidConfigException
      */
     public function flip($value)
@@ -194,7 +200,7 @@ class Icon
 
     /**
      * @param integer $value
-     * @return self
+     * @return static
      * @throws \yii\base\InvalidConfigException
      */
     public function shrink($value)
@@ -211,7 +217,7 @@ class Icon
 
     /**
      * @param integer $value
-     * @return self
+     * @return static
      * @throws \yii\base\InvalidConfigException
      */
     public function grow($value)
@@ -228,7 +234,7 @@ class Icon
 
     /**
      * @param integer $value
-     * @return self
+     * @return static
      * @throws \yii\base\InvalidConfigException
      */
     public function up($value)
@@ -245,7 +251,7 @@ class Icon
 
     /**
      * @param integer $value
-     * @return self
+     * @return static
      * @throws \yii\base\InvalidConfigException
      */
     public function right($value)
@@ -262,7 +268,7 @@ class Icon
 
     /**
      * @param integer $value
-     * @return self
+     * @return static
      * @throws \yii\base\InvalidConfigException
      */
     public function down($value)
@@ -279,7 +285,7 @@ class Icon
 
     /**
      * @param integer $value
-     * @return self
+     * @return static
      * @throws \yii\base\InvalidConfigException
      */
     public function left($value)
@@ -292,6 +298,16 @@ class Icon
                 'FA::shrink()'
             )
         );
+    }
+
+    /**
+     * @param $value
+     * @return static
+     * @throws InvalidConfigException
+     */
+    public function mask($value)
+    {
+        return $this->addMask($value, !empty($value), false);
     }
 
     /**
@@ -338,12 +354,37 @@ class Icon
                 throw new \yii\base\InvalidConfigException($message);
             }
         } else {
-            $transformations = ArrayHelper::getValue($this->options, ['data', 'fa', 'transform'], []);
+            $transformations = ArrayHelper::getValue($this->options, ['data', FA::$cssPrefix, 'transform'], []);
             if (!ArrayHelper::isIn($transformation, $transformations)) {
                 $transformations[] = $transformation;
             }
 
-            ArrayHelper::setValue($this->options, ['data', 'fa', 'transform'], $transformations);
+            ArrayHelper::setValue($this->options, ['data', FA::$cssPrefix, 'transform'], $transformations);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $maskIcon
+     * @param bool $condition
+     * @param string|bool $throw
+     * @return static
+     * @throws \yii\base\InvalidConfigException
+     * @codeCoverageIgnore
+     */
+    public function addMask($maskIcon, $condition = true, $throw = false)
+    {
+        if ($condition === false) {
+            if (!empty($throw)) {
+                $message = !is_string($throw)
+                    ? 'Condition is false'
+                    : $throw;
+
+                throw new \yii\base\InvalidConfigException($message);
+            }
+        } else {
+            ArrayHelper::setValue($this->options, ['data', FA::$cssPrefix, 'mask'], FA::i($maskIcon)->options['class']);
         }
 
         return $this;

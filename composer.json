@@ -55,7 +55,7 @@
   },
   "autoload": {
     "psr-4": {
-      "rmrevin\\yii\\fontawesome\\": ""
+      "rmrevin\\yii\\fontawesome\\": "src/"
     }
   }
 }

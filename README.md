@@ -20,7 +20,7 @@ Code Status
 
 Support
 -------
-* [GutHub issues](https://github.com/rmrevin/yii2-fontawesome/issues)
+* [GitHub issues](https://github.com/rmrevin/yii2-fontawesome/issues)
 * [Public chat](https://gitter.im/rmrevin/support)
 
 Update to `2.17`
@@ -78,21 +78,27 @@ Class reference
 Namespace: `rmrevin\yii\fontawesome`;
 
 ###Class `FA` or `FontAwesome`
-
-* `static FA::icon($name, $options=[])` - Creates an [`component\Icon`](#class-componenticon-icon) that can be used to FontAwesome html icon
+* `static FA::i($name, $options=[])` - Creates an [`component\Icon`](#class-componenticon-icon) that can be used to 
+FontAwesome html icon (intelligent guess which style to use and fa 4 compatible)
   * `$name` - name of icon in font awesome set.
-  * `$options` - additional attributes for `i.fa` html tag.
+  * `$options` - additional attributes for `i.fa` html tag
+* `static FA::icon($name, $options=[])` - Alias of `FA::i()`
+* `static FA::regular($name, $options = [])` - Create a **regular** [`component\Icon`](#class-componenticon-icon)
+* `static FA::solid($name, $options = [])`  - Create a **solid** [`component\Icon`](#class-componenticon-icon)
+* `static FA::light($name, $options = [])` - Create a **light** [`component\Icon`](#class-componenticon-icon) (pro only)
+* `static FA::brand($name, $options = [])` - Create a **brand** [`component\Icon`](#class-componenticon-icon)
 * `static FA::stack($name, $options=[])` - Creates an [`component\Stack`](#class-componentstack-stack) that can be used to FontAwesome html icon
   * `$options` - additional attributes for `span.fa-stack` html tag.
 
 ###Class `component\Icon` (`$Icon`)
 
 * `(string)$Icon` - render icon
-* `$Icon->render()` - DEPRECATED! render icon
-* `$Icon->tag($value)` - DEPRECATED! set another html tag for icon (default `i`)
-  * `$value` - name of tag
 * `$Icon->addCssClass($value)` - add to html tag css class in `$value`
   * `$value` - name of css class
+* `$Icon->addTransformation($value)` - add [`fa-transformation`](https://fontawesome.com/how-to-use/svg-with-js#power-transforms)
+  * `$value` - transformation value (e.g. `shrink-8`)
+* `$Icon->addMask($value)` - add [`fa-mask`](https://fontawesome.com/how-to-use/svg-with-js#masking)
+  * `$value` - mask icon (e.g. `fas fa-circle`)
 * `$Icon->inverse()` - add to html tag css class `fa-inverse`
 * `$Icon->spin()` - add to html tag css class `fa-spin`
 * `$Icon->fixedWidth()` - add to html tag css class `fa-fw`
@@ -104,9 +110,21 @@ Namespace: `rmrevin\yii\fontawesome`;
 * `$Icon->size($value)` - add to html tag css class with size
   * `$value` - size value (variants: `FA::SIZE_LARGE`, `FA::SIZE_2X`, `FA::SIZE_3X`, `FA::SIZE_4X`, `FA::SIZE_5X`)
 * `$Icon->rotate($value)` - add to html tag css class with rotate
-  * `$value` - rotate value (variants: `FA::ROTATE_90`, `FA::ROTATE_180`, `FA::ROTATE_270`)
+  * `$value` - rotate value (between *-359* and *359*)
 * `$Icon->flip($value)` - add to html tag css class with rotate
   * `$value` - flip value (variants: `FA::FLIP_HORIZONTAL`, `FA::FLIP_VERTICAL`)
+* `$Icon->shrink($value)` - add **shrink transformation** to icon
+  * `$value` - shrink value (numeric value, including decimals)
+* `$Icon->grow($value)` - add **grow transformation** to icon
+  * `$value` - grow value (numeric value, including decimals)
+* `$Icon->up($value)` - add **move up transformation** to icon
+  * `$value` - up value (numeric value, including decimals)
+* `$Icon->right($value)` - add **move right transformation** to icon
+  * `$value` - right value (numeric value, including decimals)
+* `$Icon->down($value)` - add **move down transformation** to icon
+  * `$value` - down value (numeric value, including decimals)
+* `$Icon->left($value)` - add **move left transformation** to icon
+  * `$value` - left value (numeric value, including decimals)
 
 ###Class `component\Stack` (`$Stack`)
 
@@ -116,7 +134,7 @@ Namespace: `rmrevin\yii\fontawesome`;
 * `$Stack->icon($icon, $options=[])` - set icon for stack
   * `$icon` - name of icon or `component\Icon` object
   * `$options` - additional attributes for icon html tag.
-* `$Stack->icon($icon, $options=[])` - set background icon for stack
+* `$Stack->on($icon, $options=[])` - set background icon for stack
   * `$icon` - name of icon or `component\Icon` object
   * `$options` - additional attributes for icon html tag.
 
