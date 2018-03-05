@@ -171,7 +171,7 @@ class Icon
     {
         return $this->addTransformation(
             'rotate-' . $value,
-            in_array((int)$value, [range(-359, 359)], true),
+            in_array((int)$value, range(-359, 359), true),
             sprintf(
                 '%s - invalid value. Must be in range: %s.',
                 'FA::rotate()',
@@ -354,12 +354,12 @@ class Icon
                 throw new \yii\base\InvalidConfigException($message);
             }
         } else {
-            $transformations = ArrayHelper::getValue($this->options, ['data', FA::$cssPrefix, 'transform'], []);
+            $transformations = ArrayHelper::getValue($this->options, ['data', FA::$cssPrefix . '-transform'], []);
             if (!ArrayHelper::isIn($transformation, $transformations)) {
                 $transformations[] = $transformation;
             }
 
-            ArrayHelper::setValue($this->options, ['data', FA::$cssPrefix, 'transform'], $transformations);
+            ArrayHelper::setValue($this->options, ['data', FA::$cssPrefix . '-transform'], $transformations);
         }
 
         return $this;
@@ -384,7 +384,8 @@ class Icon
                 throw new \yii\base\InvalidConfigException($message);
             }
         } else {
-            ArrayHelper::setValue($this->options, ['data', FA::$cssPrefix, 'mask'], FA::i($maskIcon)->options['class']);
+            ArrayHelper::setValue($this->options, ['data', FA::$cssPrefix . '-mask'],
+                FA::i($maskIcon)->options['class']);
         }
 
         return $this;
