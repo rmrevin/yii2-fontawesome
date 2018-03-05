@@ -99,38 +99,36 @@ FontAwesome html icon (intelligent guess which style to use and fa 4 compatible)
   * `$value` - transformation value (e.g. `shrink-8`)
 * `$Icon->addMask($value)` - add [`fa-mask`](https://fontawesome.com/how-to-use/svg-with-js#masking)
   * `$value` - mask icon (e.g. `fas fa-circle`)
-* `$Icon->inverse()` - add to html tag css class `fa-inverse`
-* `$Icon->spin()` - add to html tag css class `fa-spin`
-* `$Icon->fixedWidth()` - add to html tag css class `fa-fw`
-* `$Icon->ul()` - add to html tag css class `fa-ul`
-* `$Icon->li()` - add to html tag css class `fa-li`
-* `$Icon->border()` - add to html tag css class `fa-border`
-* `$Icon->pullLeft()` - add to html tag css class `pull-left`
-* `$Icon->pullRight()` - add to html tag css class `pull-right`
-* `$Icon->size($value)` - add to html tag css class with size
+* `$Icon->inverse()` - add `fa-inverse` css class
+* `$Icon->spin()` - add [`fa-spin`](https://fontawesome.com/how-to-use/svg-with-js#animated-icons) css class
+* `$Icon->fixedWidth()` - add [`fa-fw`](https://fontawesome.com/how-to-use/svg-with-js#fixed-width-icons) css class
+* `$Icon->ul()` - add [`fa-ul`](https://fontawesome.com/how-to-use/svg-with-js#list-icons) css class
+* `$Icon->li()` - add [`fa-li`](https://fontawesome.com/how-to-use/svg-with-js#list-icons) css class
+* `$Icon->border()` - add [`fa-border`](https://fontawesome.com/how-to-use/svg-with-js#bordered-pulled-icons) css class
+* `$Icon->pullLeft()` - add [`fa-pull-left`](https://fontawesome.com/how-to-use/svg-with-js#bordered-pulled-icons) css class
+* `$Icon->pullRight()` - add [`fa-pull-right`](https://fontawesome.com/how-to-use/svg-with-js#bordered-pulled-icons) css class
+* `$Icon->size($value)` - add [`fa-#x`](https://fontawesome.com/how-to-use/svg-with-js#icon-sizes) css class
   * `$value` - size value (variants: `FA::SIZE_LARGE`, `FA::SIZE_2X`, `FA::SIZE_3X`, `FA::SIZE_4X`, `FA::SIZE_5X`)
-* `$Icon->rotate($value)` - add to html tag css class with rotate
+* `$Icon->rotate($value)` - add [*rotate transformation*](https://fontawesome.com/how-to-use/svg-with-js#power-transforms)
   * `$value` - rotate value (between *-359* and *359*)
-* `$Icon->flip($value)` - add to html tag css class with rotate
+* `$Icon->flip($value)` - add [*flip transformation*](https://fontawesome.com/how-to-use/svg-with-js#power-transforms)
   * `$value` - flip value (variants: `FA::FLIP_HORIZONTAL`, `FA::FLIP_VERTICAL`)
-* `$Icon->shrink($value)` - add **shrink transformation** to icon
+* `$Icon->shrink($value)` - add [*shrink transformation*](https://fontawesome.com/how-to-use/svg-with-js#power-transforms)
   * `$value` - shrink value (numeric value, including decimals)
-* `$Icon->grow($value)` - add **grow transformation** to icon
+* `$Icon->grow($value)` - add [*grow transformation*](https://fontawesome.com/how-to-use/svg-with-js#power-transforms)
   * `$value` - grow value (numeric value, including decimals)
-* `$Icon->up($value)` - add **move up transformation** to icon
+* `$Icon->up($value)` - add [*up transformation*](https://fontawesome.com/how-to-use/svg-with-js#power-transforms)
   * `$value` - up value (numeric value, including decimals)
-* `$Icon->right($value)` - add **move right transformation** to icon
+* `$Icon->right($value)` - add [*right transformation*](https://fontawesome.com/how-to-use/svg-with-js#power-transforms)
   * `$value` - right value (numeric value, including decimals)
-* `$Icon->down($value)` - add **move down transformation** to icon
+* `$Icon->down($value)` - add [*down transformation*](https://fontawesome.com/how-to-use/svg-with-js#power-transforms)
   * `$value` - down value (numeric value, including decimals)
-* `$Icon->left($value)` - add **move left transformation** to icon
+* `$Icon->left($value)` - add [*left transformation*](https://fontawesome.com/how-to-use/svg-with-js#power-transforms)
   * `$value` - left value (numeric value, including decimals)
 
 ### Class `component\Stack` (`$Stack`)
 
 * `(string)$Stack` - render icon stack
-* `$Stack->render()` - DEPRECATED! render icon stack
-* `$Stack->tag($value)` - DEPRECATED! set another html tag for icon stack (default `span`)
 * `$Stack->icon($icon, $options=[])` - set icon for stack
   * `$icon` - name of icon or `component\Icon` object
   * `$options` - additional attributes for icon html tag.
