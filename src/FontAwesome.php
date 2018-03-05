@@ -345,7 +345,7 @@ class FontAwesome
      * @return component\Icon
      * @throws \yii\base\InvalidConfigException
      */
-    public static function light($name, $options)
+    public static function light($name, $options = [])
     {
         return new component\Icon($name, $options, 'fal');
     }
@@ -358,7 +358,7 @@ class FontAwesome
      * @return component\Icon
      * @throws \yii\base\InvalidConfigException
      */
-    public static function brand($name, $options)
+    public static function brand($name, $options = [])
     {
         return new component\Icon($name, $options, 'fab');
     }
