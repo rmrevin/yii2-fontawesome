@@ -77,7 +77,7 @@ Class reference
 
 Namespace: `rmrevin\yii\fontawesome`;
 
-###Class `FA` or `FontAwesome`
+### Class `FA` or `FontAwesome`
 * `static FA::i($name, $options=[])` - Creates an [`component\Icon`](#class-componenticon-icon) that can be used to 
 FontAwesome html icon (intelligent guess which style to use and fa 4 compatible)
   * `$name` - name of icon in font awesome set.
@@ -90,7 +90,7 @@ FontAwesome html icon (intelligent guess which style to use and fa 4 compatible)
 * `static FA::stack($name, $options=[])` - Creates an [`component\Stack`](#class-componentstack-stack) that can be used to FontAwesome html icon
   * `$options` - additional attributes for `span.fa-stack` html tag.
 
-###Class `component\Icon` (`$Icon`)
+### Class `component\Icon` (`$Icon`)
 
 * `(string)$Icon` - render icon
 * `$Icon->addCssClass($value)` - add to html tag css class in `$value`
@@ -126,7 +126,7 @@ FontAwesome html icon (intelligent guess which style to use and fa 4 compatible)
 * `$Icon->left($value)` - add **move left transformation** to icon
   * `$value` - left value (numeric value, including decimals)
 
-###Class `component\Stack` (`$Stack`)
+### Class `component\Stack` (`$Stack`)
 
 * `(string)$Stack` - render icon stack
 * `$Stack->render()` - DEPRECATED! render icon stack
