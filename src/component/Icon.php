@@ -56,6 +56,14 @@ class Icon
 
         $tag = ArrayHelper::remove($options, 'tag', 'i');
 
+        if (isset($options['data']) && isset($options['data'][FA::$cssPrefix . '-transform']) &&
+            is_array($options['data'][FA::$cssPrefix . '-transform'])) {
+            $options['data'][FA::$cssPrefix . '-transform'] = implode(
+                ' ',
+                $options['data'][FA::$cssPrefix . '-transform']
+            );
+        }
+
         return Html::tag($tag, null, $options);
     }
 
