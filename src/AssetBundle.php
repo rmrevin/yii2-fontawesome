@@ -31,7 +31,8 @@ class AssetBundle extends \yii\web\AssetBundle
      */
     public $publishOptions = [
         'only' => [
-            'svg-with-js/*'
+            'svg-with-js/css/*',
+            'svg-with-js/js/*'
         ],
         'except' => [
             '.github',
@@ -40,6 +41,4 @@ class AssetBundle extends \yii\web\AssetBundle
             'web-fonts-with-css'
         ]
     ];
-
-
 }

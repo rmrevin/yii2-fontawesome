@@ -41,7 +41,7 @@ class Icon
             throw new InvalidConfigException('property is mandatory');
         }
 
-        Html::addCssClass($options, $prefix . '-' . $name);
+        Html::addCssClass($options, $prefix . ' ' . FA::$cssPrefix . '-' . $name);
 
         $this->prefix = $prefix;
         $this->options = $options;
