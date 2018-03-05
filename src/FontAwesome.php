@@ -433,6 +433,8 @@ class FontAwesome
      * Size values
      * @see component\Icon::size
      */
+    const SIZE_SMALL = self::SIZE_SM; // Backwards compatibility
+    const SIZE_LARGE = self::SIZE_LG; // Backwards compatibility
     const SIZE_XS = 'xs';
     const SIZE_SM = 'sm';
     const SIZE_LG = 'lg';
