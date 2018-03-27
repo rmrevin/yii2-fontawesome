@@ -1,7 +1,8 @@
 <?php
 /**
  * MainTest.php
- * @author Revin Roman
+ * @author Revin Roman <roman@rmrevin.com>
+ * @author Simon Karlen <simi.albi@gmail.com>
  * @link https://rmrevin.ru
  */
 
@@ -153,7 +154,8 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
         $this->assertEquals(FA::icon('cog'), '<i class="fontawesome fontawesome-cog"></i>');
         $this->assertEquals(FA::icon('cog')->tag('span'), '<span class="fontawesome fontawesome-cog"></span>');
         $this->assertEquals(FA::icon('cog', ['tag' => 'span']), '<span class="fontawesome fontawesome-cog"></span>');
-        $this->assertEquals(FA::icon('cog')->addCssClass('highlight'), '<i class="fontawesome fontawesome-cog highlight"></i>');
+        $this->assertEquals(FA::icon('cog')->addCssClass('highlight'),
+            '<i class="fontawesome fontawesome-cog highlight"></i>');
 
         $this->assertEquals(
             (string)FA::stack()
@@ -191,7 +193,7 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
         $this->assertEquals(FA::icon('cog')->size(FA::SIZE_3X), '<i class="fa fa-cog fa-3x"></i>');
         $this->assertEquals(FA::icon('cog')->size(FA::SIZE_4X), '<i class="fa fa-cog fa-4x"></i>');
         $this->assertEquals(FA::icon('cog')->size(FA::SIZE_5X), '<i class="fa fa-cog fa-5x"></i>');
-        $this->assertEquals(FA::icon('cog')->size(FA::SIZE_LARGE), '<i class="fa fa-cog fa-lg"></i>');
+        $this->assertEquals(FA::icon('cog')->size(FA::SIZE_LG), '<i class="fa fa-cog fa-lg"></i>');
 
         $this->assertEquals(FA::icon('cog')->rotate(FA::ROTATE_90), '<i class="fa fa-cog fa-rotate-90"></i>');
         $this->assertEquals(FA::icon('cog')->rotate(FA::ROTATE_180), '<i class="fa fa-cog fa-rotate-180"></i>');
