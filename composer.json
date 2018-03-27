@@ -35,11 +35,11 @@
       "type": "package",
       "package": {
         "name": "fortawesome/font-awesome",
-        "version": "5.0.8",
+        "version": "5.0.9",
         "source": {
           "url": "https://github.com/FortAwesome/Font-Awesome.git",
           "type": "git",
-          "reference": "5.0.8"
+          "reference": "5.0.9"
         }
       }
     }
