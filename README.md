@@ -84,10 +84,10 @@ Namespace: `rmrevin\yii\fontawesome`;
 
 ### Class `FAB`, `FAL`, `FAR`, `FAS` or `FontAwesome`
 
-* `static FAR::icon($name, $options=[])` - Creates an [`component\Icon`](#class-componenticon-icon) that can be used to FontAwesome html icon
+* `static FAR::icon($name, $options=[])` - Creates an [`component\Icon`](#class-componenticon) that can be used to FontAwesome html icon
   * `$name` - name of icon in font awesome set.
   * `$options` - additional attributes for `i.fa` html tag.
-* `static FAR::stack($name, $options=[])` - Creates an [`component\Stack`](#class-componentstack-stack) that can be used to FontAwesome html icon
+* `static FAR::stack($name, $options=[])` - Creates an [`component\Stack`](#class-componentstack) that can be used to FontAwesome html icon
   * `$options` - additional attributes for `span.fa-stack` html tag.
 
 ### Class `component\Icon`
