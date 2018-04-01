@@ -8,7 +8,7 @@
 namespace rmrevin\yii\fontawesome\tests\unit\fontawesome;
 
 use rmrevin\yii\fontawesome\component\Icon;
-use rmrevin\yii\fontawesome\FA;
+use rmrevin\yii\fontawesome\FAR;
 use rmrevin\yii\fontawesome\FontAwesome;
 
 /**
@@ -20,233 +20,210 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
 
     public function testMain()
     {
-        $this->assertInstanceOf('rmrevin\yii\fontawesome\FA', new FA());
-        $this->assertInstanceOf('rmrevin\yii\fontawesome\FontAwesome', new FA());
+        $this->assertInstanceOf('rmrevin\yii\fontawesome\FAR', new FAR());
+        $this->assertInstanceOf('rmrevin\yii\fontawesome\FontAwesome', new FAR());
 
         $this->assertInstanceOf('rmrevin\yii\fontawesome\FontAwesome', new FontAwesome());
 
-        $Icon = FA::icon('cog');
+        $Icon = FAR::icon('cog');
         $this->assertInstanceOf('rmrevin\yii\fontawesome\component\Icon', $Icon);
 
-        $Stack = FA::stack();
+        $Stack = FAR::stack();
         $this->assertInstanceOf('rmrevin\yii\fontawesome\component\Stack', $Stack);
     }
 
     public function testStackOutput()
     {
         $this->assertEquals(
-            (string)FA::s(),
+            (string)FAR::s(),
             '<span class="fa-stack"></span>'
         );
 
         $this->assertEquals(
-            (string)FA::stack(),
+            (string)FAR::stack(),
             '<span class="fa-stack"></span>'
         );
 
         $this->assertEquals(
-            (string)FA::stack()->tag('div'),
+            (string)FAR::stack(['tag' => 'div']),
             '<div class="fa-stack"></div>'
         );
 
         $this->assertEquals(
-            (string)FA::stack(['tag' => 'div']),
-            '<div class="fa-stack"></div>'
-        );
-
-        $this->assertEquals(
-            (string)FA::stack()
+            (string)FAR::stack()
                 ->icon('cog'),
-            '<span class="fa-stack"><i class="fa fa-cog fa-stack-1x"></i></span>'
+            '<span class="fa-stack"><i class="far fa-cog fa-stack-1x"></i></span>'
         );
 
         $this->assertEquals(
-            (string)FA::stack()
+            (string)FAR::stack()
                 ->on('square-o'),
-            '<span class="fa-stack"><i class="fa fa-square-o fa-stack-2x"></i></span>'
+            '<span class="fa-stack"><i class="far fa-square-o fa-stack-2x"></i></span>'
         );
 
         $this->assertEquals(
-            (string)FA::stack()
+            (string)FAR::stack()
                 ->icon('cog')
                 ->on('square-o'),
-            '<span class="fa-stack"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-cog fa-stack-1x"></i></span>'
+            '<span class="fa-stack"><i class="far fa-square-o fa-stack-2x"></i><i class="far fa-cog fa-stack-1x"></i></span>'
         );
 
         $this->assertEquals(
-            (string)FA::stack(['data-role' => 'stack'])
+            (string)FAR::stack(['data-role' => 'stack'])
                 ->icon('cog', ['data-role' => 'icon',])
                 ->on('square-o', ['data-role' => 'background']),
-            '<span class="fa-stack" data-role="stack"><i class="fa fa-square-o fa-stack-2x" data-role="background"></i><i class="fa fa-cog fa-stack-1x" data-role="icon"></i></span>'
+            '<span class="fa-stack" data-role="stack"><i class="far fa-square-o fa-stack-2x" data-role="background"></i><i class="far fa-cog fa-stack-1x" data-role="icon"></i></span>'
         );
 
         $this->assertEquals(
-            (string)FA::stack()
-                ->icon((new Icon('cog'))->spin())
-                ->on((new Icon('square-o'))->size(FA::SIZE_3X)),
-            '<span class="fa-stack"><i class="fa fa-square-o fa-3x fa-stack-2x"></i><i class="fa fa-cog fa-spin fa-stack-1x"></i></span>'
+            (string)FAR::stack()
+                ->icon(FAR::icon('cog')->spin())
+                ->on(FAR::icon('square-o')->size(FAR::SIZE_3X)),
+            '<span class="fa-stack"><i class="far fa-square-o fa-3x fa-stack-2x"></i><i class="far fa-cog fa-spin fa-stack-1x"></i></span>'
         );
 
         $this->assertEquals(
-            (string)FA::stack()
-                ->icon(FA::Icon('cog')->spin())
-                ->on(FA::Icon('square-o')->size(FA::SIZE_3X)),
-            '<span class="fa-stack"><i class="fa fa-square-o fa-3x fa-stack-2x"></i><i class="fa fa-cog fa-spin fa-stack-1x"></i></span>'
+            (string)FAR::stack()
+                ->icon(FAR::Icon('cog')->spin())
+                ->on(FAR::Icon('square-o')->size(FAR::SIZE_3X)),
+            '<span class="fa-stack"><i class="far fa-square-o fa-3x fa-stack-2x"></i><i class="far fa-cog fa-spin fa-stack-1x"></i></span>'
         );
 
         $this->assertNotEquals(
-            (string)FA::stack()
-                ->icon((string)FA::Icon('cog')->spin())
-                ->on((string)FA::Icon('square-o')->size(FA::SIZE_3X)),
-            '<span class="fa-stack"><i class="fa fa-square-o fa-3x fa-stack-2x"></i><i class="fa fa-cog fa-spin fa-stack-1x"></i></span>'
+            (string)FAR::stack()
+                ->icon((string)FAR::Icon('cog')->spin())
+                ->on((string)FAR::Icon('square-o')->size(FAR::SIZE_3X)),
+            '<span class="fa-stack"><i class="far fa-square-o fa-3x fa-stack-2x"></i><i class="far fa-cog fa-spin fa-stack-1x"></i></span>'
         );
     }
 
     public function testUlOutput()
     {
         $this->assertEquals(
-            (string)FA::ul(),
+            (string)FAR::ul(),
             '<ul class="fa-ul"></ul>'
         );
 
         $this->assertEquals(
-            (string)FA::ul()
+            (string)FAR::ul()
                 ->item('Gear', ['icon' => 'cog']),
-            "<ul class=\"fa-ul\">\n<li><i class=\"fa fa-cog fa-li\"></i>Gear</li>\n</ul>"
+            "<ul class=\"fa-ul\">\n<li><i class=\"far fa-cog fa-li\"></i>Gear</li>\n</ul>"
         );
 
         $this->assertEquals(
-            (string)FA::ul()
+            (string)FAR::ul()
                 ->item('Check', ['icon' => 'check'])
                 ->item('Gear', ['icon' => 'cog']),
-            "<ul class=\"fa-ul\">\n<li><i class=\"fa fa-check fa-li\"></i>Check</li>\n<li><i class=\"fa fa-cog fa-li\"></i>Gear</li>\n</ul>"
+            "<ul class=\"fa-ul\">\n<li><i class=\"far fa-check fa-li\"></i>Check</li>\n<li><i class=\"far fa-cog fa-li\"></i>Gear</li>\n</ul>"
         );
 
         $this->assertEquals(
-            (string)FA::ul()
-                ->tag('ol')
+            (string)FAR::ul(['tag' => 'ol'])
                 ->item('Check', ['icon' => 'check'])
                 ->item('Gear', ['icon' => 'cog']),
-            "<ol class=\"fa-ul\">\n<li><i class=\"fa fa-check fa-li\"></i>Check</li>\n<li><i class=\"fa fa-cog fa-li\"></i>Gear</li>\n</ol>"
+            "<ol class=\"fa-ul\">\n<li><i class=\"far fa-check fa-li\"></i>Check</li>\n<li><i class=\"far fa-cog fa-li\"></i>Gear</li>\n</ol>"
         );
 
         $this->assertEquals(
-            (string)FA::ul(['tag' => 'ol'])
-                ->item('Check', ['icon' => 'check'])
-                ->item('Gear', ['icon' => 'cog']),
-            "<ol class=\"fa-ul\">\n<li><i class=\"fa fa-check fa-li\"></i>Check</li>\n<li><i class=\"fa fa-cog fa-li\"></i>Gear</li>\n</ol>"
-        );
-
-        $this->assertEquals(
-            (string)FA::ul()
+            (string)FAR::ul()
                 ->item('Check', ['icon' => 'check', 'class' => 'another-class']),
-            "<ul class=\"fa-ul\">\n<li class=\"another-class\"><i class=\"fa fa-check fa-li\"></i>Check</li>\n</ul>"
+            "<ul class=\"fa-ul\">\n<li class=\"another-class\"><i class=\"far fa-check fa-li\"></i>Check</li>\n</ul>"
         );
     }
 
     public function testAnotherPrefix()
     {
-        $old_prefix = FA::$cssPrefix;
+        FontAwesome::$basePrefix = 'fontawesome';
 
-        FA::$cssPrefix = 'fontawesome';
-
-        $this->assertEquals(FA::icon('cog'), '<i class="fontawesome fontawesome-cog"></i>');
-        $this->assertEquals(FA::icon('cog')->tag('span'), '<span class="fontawesome fontawesome-cog"></span>');
-        $this->assertEquals(FA::icon('cog', ['tag' => 'span']), '<span class="fontawesome fontawesome-cog"></span>');
-        $this->assertEquals(FA::icon('cog')->addCssClass('highlight'), '<i class="fontawesome fontawesome-cog highlight"></i>');
+        $this->assertEquals((string)FAR::icon('cog'), '<i class="far fontawesome-cog"></i>');
+        $this->assertEquals((string)FAR::icon('cog', ['tag' => 'span']), '<span class="far fontawesome-cog"></span>');
+        $this->assertEquals((string)FAR::icon('cog')->addCssClass('highlight'), '<i class="far fontawesome-cog highlight"></i>');
 
         $this->assertEquals(
-            (string)FA::stack()
-                ->icon(FA::Icon('cog')->spin())
-                ->on(FA::Icon('square-o')->size(FA::SIZE_3X)),
-            '<span class="fontawesome-stack"><i class="fontawesome fontawesome-square-o fontawesome-3x fontawesome-stack-2x"></i><i class="fontawesome fontawesome-cog fontawesome-spin fontawesome-stack-1x"></i></span>'
+            (string)FAR::stack()
+                ->icon(FAR::Icon('cog')->spin())
+                ->on(FAR::Icon('square-o')->size(FAR::SIZE_3X)),
+            '<span class="fontawesome-stack"><i class="far fontawesome-square-o fontawesome-3x fontawesome-stack-2x"></i><i class="far fontawesome-cog fontawesome-spin fontawesome-stack-1x"></i></span>'
         );
 
         $this->assertEquals(
-            (string)FA::ul()
+            (string)FAR::ul()
                 ->item('Gear', ['icon' => 'cog']),
-            "<ul class=\"fontawesome-ul\">\n<li><i class=\"fontawesome fontawesome-cog fontawesome-li\"></i>Gear</li>\n</ul>"
+            "<ul class=\"fontawesome-ul\">\n<li><i class=\"far fontawesome-cog fontawesome-li\"></i>Gear</li>\n</ul>"
         );
 
-        FA::$cssPrefix = $old_prefix;
+        FontAwesome::$basePrefix = 'fa';
     }
 
     public function testIconOutput()
     {
-        $this->assertEquals(FA::i('cog'), '<i class="fa fa-cog"></i>');
-        $this->assertEquals(FA::icon('cog'), '<i class="fa fa-cog"></i>');
-        $this->assertEquals(FA::icon('cog')->tag('span'), '<span class="fa fa-cog"></span>');
-        $this->assertEquals(FA::icon('cog', ['tag' => 'span']), '<span class="fa fa-cog"></span>');
-        $this->assertEquals(FA::icon('cog')->addCssClass('highlight'), '<i class="fa fa-cog highlight"></i>');
+        $this->assertEquals(FAR::i('cog'), '<i class="far fa-cog"></i>');
+        $this->assertEquals(FAR::icon('cog'), '<i class="far fa-cog"></i>');
+        $this->assertEquals(FAR::icon('cog', ['tag' => 'span']), '<span class="far fa-cog"></span>');
+        $this->assertEquals(FAR::icon('cog')->addCssClass('highlight'), '<i class="far fa-cog highlight"></i>');
 
-        $this->assertEquals(FA::icon('cog')->inverse(), '<i class="fa fa-cog fa-inverse"></i>');
-        $this->assertEquals(FA::icon('cog')->spin(), '<i class="fa fa-cog fa-spin"></i>');
-        $this->assertEquals(FA::icon('cog')->fixedWidth(), '<i class="fa fa-cog fa-fw"></i>');
-        $this->assertEquals(FA::icon('cog')->li(), '<i class="fa fa-cog fa-li"></i>');
-        $this->assertEquals(FA::icon('cog')->border(), '<i class="fa fa-cog fa-border"></i>');
-        $this->assertEquals(FA::icon('cog')->pullLeft(), '<i class="fa fa-cog fa-pull-left"></i>');
-        $this->assertEquals(FA::icon('cog')->pullRight(), '<i class="fa fa-cog fa-pull-right"></i>');
+        $this->assertEquals(FAR::icon('cog')->inverse(), '<i class="far fa-cog fa-inverse"></i>');
+        $this->assertEquals(FAR::icon('cog')->spin(), '<i class="far fa-cog fa-spin"></i>');
+        $this->assertEquals(FAR::icon('cog')->fixedWidth(), '<i class="far fa-cog fa-fw"></i>');
+        $this->assertEquals(FAR::icon('cog')->li(), '<i class="far fa-cog fa-li"></i>');
+        $this->assertEquals(FAR::icon('cog')->border(), '<i class="far fa-cog fa-border"></i>');
+        $this->assertEquals(FAR::icon('cog')->pullLeft(), '<i class="far fa-cog fa-pull-left"></i>');
+        $this->assertEquals(FAR::icon('cog')->pullRight(), '<i class="far fa-cog fa-pull-right"></i>');
 
-        $this->assertEquals(FA::icon('cog')->size(FA::SIZE_2X), '<i class="fa fa-cog fa-2x"></i>');
-        $this->assertEquals(FA::icon('cog')->size(FA::SIZE_3X), '<i class="fa fa-cog fa-3x"></i>');
-        $this->assertEquals(FA::icon('cog')->size(FA::SIZE_4X), '<i class="fa fa-cog fa-4x"></i>');
-        $this->assertEquals(FA::icon('cog')->size(FA::SIZE_5X), '<i class="fa fa-cog fa-5x"></i>');
-        $this->assertEquals(FA::icon('cog')->size(FA::SIZE_LARGE), '<i class="fa fa-cog fa-lg"></i>');
+        $this->assertEquals(FAR::icon('cog')->size(FAR::SIZE_2X), '<i class="far fa-cog fa-2x"></i>');
+        $this->assertEquals(FAR::icon('cog')->size(FAR::SIZE_3X), '<i class="far fa-cog fa-3x"></i>');
+        $this->assertEquals(FAR::icon('cog')->size(FAR::SIZE_4X), '<i class="far fa-cog fa-4x"></i>');
+        $this->assertEquals(FAR::icon('cog')->size(FAR::SIZE_5X), '<i class="far fa-cog fa-5x"></i>');
+        $this->assertEquals(FAR::icon('cog')->size(FAR::SIZE_LARGE), '<i class="far fa-cog fa-lg"></i>');
 
-        $this->assertEquals(FA::icon('cog')->rotate(FA::ROTATE_90), '<i class="fa fa-cog fa-rotate-90"></i>');
-        $this->assertEquals(FA::icon('cog')->rotate(FA::ROTATE_180), '<i class="fa fa-cog fa-rotate-180"></i>');
-        $this->assertEquals(FA::icon('cog')->rotate(FA::ROTATE_270), '<i class="fa fa-cog fa-rotate-270"></i>');
+        $this->assertEquals(FAR::icon('cog')->rotate(FAR::ROTATE_90), '<i class="far fa-cog fa-rotate-90"></i>');
+        $this->assertEquals(FAR::icon('cog')->rotate(FAR::ROTATE_180), '<i class="far fa-cog fa-rotate-180"></i>');
+        $this->assertEquals(FAR::icon('cog')->rotate(FAR::ROTATE_270), '<i class="far fa-cog fa-rotate-270"></i>');
 
-        $this->assertEquals(FA::icon('cog')->flip(FA::FLIP_HORIZONTAL), '<i class="fa fa-cog fa-flip-horizontal"></i>');
-        $this->assertEquals(FA::icon('cog')->flip(FA::FLIP_VERTICAL), '<i class="fa fa-cog fa-flip-vertical"></i>');
-    }
-
-    public function testGetConstants()
-    {
-        $this->assertNotEmpty(FA::getConstants(false));
-        $this->assertNotEmpty(FA::getConstants(true));
+        $this->assertEquals(FAR::icon('cog')->flip(FAR::FLIP_HORIZONTAL), '<i class="far fa-cog fa-flip-horizontal"></i>');
+        $this->assertEquals(FAR::icon('cog')->flip(FAR::FLIP_VERTICAL), '<i class="far fa-cog fa-flip-vertical"></i>');
     }
 
     public function testIconSizeException()
     {
         $this->setExpectedException(
             'yii\base\InvalidConfigException',
-            'FA::size() - invalid value. Use one of the constants: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X.'
+            'FontAwesome::size() - invalid value. Use one of the constants: FontAwesome::SIZE_LARGE, FontAwesome::SIZE_2X, FontAwesome::SIZE_3X, FontAwesome::SIZE_4X, FontAwesome::SIZE_5X.'
         );
 
-        FA::icon('cog')->size('badvalue');
+        FAR::icon('cog')->size('badvalue');
     }
 
     public function testIconRotateException()
     {
         $this->setExpectedException(
             'yii\base\InvalidConfigException',
-            'FA::rotate() - invalid value. Use one of the constants: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270.'
+            'FontAwesome::rotate() - invalid value. Use one of the constants: FontAwesome::ROTATE_90, FontAwesome::ROTATE_180, FontAwesome::ROTATE_270.'
         );
 
-        FA::icon('cog')->rotate('badvalue');
+        FAR::icon('cog')->rotate('badvalue');
     }
 
     public function testIconFlipException()
     {
         $this->setExpectedException(
             'yii\base\InvalidConfigException',
-            'FA::flip() - invalid value. Use one of the constants: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL.'
+            'FontAwesome::flip() - invalid value. Use one of the constants: FontAwesome::FLIP_HORIZONTAL, FontAwesome::FLIP_VERTICAL.'
         );
 
-        FA::icon('cog')->flip('badvalue');
+        FAR::icon('cog')->flip('badvalue');
     }
 
     public function testIconAddCssClassCondition()
     {
-        $this->assertEquals(FA::$cssPrefix, 'fa');
-        $this->assertEquals(FA::icon('cog')->addCssClass('highlight', true), '<i class="fa fa-cog highlight"></i>');
+        $this->assertEquals(FAR::$cssPrefix, 'far');
+        $this->assertEquals((string)FAR::icon('cog')->addCssClass('highlight', true), '<i class="far fa-cog highlight"></i>');
 
         $this->setExpectedException(
             'yii\base\InvalidConfigException',
             'Condition is false'
         );
 
-        FA::icon('cog')->addCssClass('highlight', false, true);
+        FAR::icon('cog')->addCssClass('highlight', false, true);
     }
 }

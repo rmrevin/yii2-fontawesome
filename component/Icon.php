@@ -7,7 +7,8 @@
 
 namespace rmrevin\yii\fontawesome\component;
 
-use rmrevin\yii\fontawesome\FA;
+use rmrevin\yii\fontawesome\FontAwesome;
+use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
@@ -17,34 +18,22 @@ use yii\helpers\Html;
  */
 class Icon
 {
-
-    /**
-     * @deprecated
-     * @var string
-     */
-    public static $defaultTag = 'i';
-
-    /**
-     * @deprecated
-     * @var string
-     */
-    private $tag;
-
     /**
      * @var array
      */
     private $options = [];
 
     /**
+     * @param string $cssPrefix
      * @param string $name
      * @param array $options
      */
-    public function __construct($name, $options = [])
+    public function __construct($cssPrefix, $name, $options = [])
     {
-        Html::addCssClass($options, FA::$cssPrefix);
+        Html::addCssClass($options, $cssPrefix);
 
         if (!empty($name)) {
-            Html::addCssClass($options, FA::$cssPrefix . '-' . $name);
+            Html::addCssClass($options, FontAwesome::$basePrefix . '-' . $name);
         }
 
         $this->options = $options;
@@ -63,137 +52,135 @@ class Icon
     }
 
     /**
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Icon
+     * @throws \yii\base\InvalidConfigException
      */
     public function inverse()
     {
-        return $this->addCssClass(FA::$cssPrefix . '-inverse');
+        return $this->addCssClass(FontAwesome::$basePrefix . '-inverse');
     }
 
     /**
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Icon
+     * @throws \yii\base\InvalidConfigException
      */
     public function spin()
     {
-        return $this->addCssClass(FA::$cssPrefix . '-spin');
+        return $this->addCssClass(FontAwesome::$basePrefix . '-spin');
     }
-    
+
     /**
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Icon
+     * @throws \yii\base\InvalidConfigException
      */
     public function pulse()
     {
-        return $this->addCssClass(FA::$cssPrefix . '-pulse');
+        return $this->addCssClass(FontAwesome::$basePrefix . '-pulse');
     }
 
     /**
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Icon
+     * @throws \yii\base\InvalidConfigException
      */
     public function fixedWidth()
     {
-        return $this->addCssClass(FA::$cssPrefix . '-fw');
+        return $this->addCssClass(FontAwesome::$basePrefix . '-fw');
     }
 
     /**
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Icon
+     * @throws \yii\base\InvalidConfigException
      */
     public function li()
     {
-        return $this->addCssClass(FA::$cssPrefix . '-li');
+        return $this->addCssClass(FontAwesome::$basePrefix . '-li');
     }
 
     /**
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Icon
+     * @throws \yii\base\InvalidConfigException
      */
     public function border()
     {
-        return $this->addCssClass(FA::$cssPrefix . '-border');
+        return $this->addCssClass(FontAwesome::$basePrefix . '-border');
     }
 
     /**
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Icon
+     * @throws \yii\base\InvalidConfigException
      */
     public function pullLeft()
     {
-        return $this->addCssClass(FA::$cssPrefix . '-pull-left');
+        return $this->addCssClass(FontAwesome::$basePrefix . '-pull-left');
     }
 
     /**
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Icon
+     * @throws \yii\base\InvalidConfigException
      */
     public function pullRight()
     {
-        return $this->addCssClass(FA::$cssPrefix . '-pull-right');
+        return $this->addCssClass(FontAwesome::$basePrefix . '-pull-right');
     }
 
     /**
      * @param string $value
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Icon
      * @throws \yii\base\InvalidConfigException
      */
     public function size($value)
     {
         return $this->addCssClass(
-            FA::$cssPrefix . '-' . $value,
-            in_array((string)$value, [FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X], true),
+            FontAwesome::$basePrefix . '-' . $value,
+            in_array((string)$value, [
+                FontAwesome::SIZE_LARGE,
+                FontAwesome::SIZE_2X,
+                FontAwesome::SIZE_3X,
+                FontAwesome::SIZE_4X,
+                FontAwesome::SIZE_5X,
+            ], true),
             sprintf(
                 '%s - invalid value. Use one of the constants: %s.',
-                'FA::size()',
-                'FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X'
+                'FontAwesome::size()',
+                'FontAwesome::SIZE_LARGE, FontAwesome::SIZE_2X, FontAwesome::SIZE_3X, FontAwesome::SIZE_4X, FontAwesome::SIZE_5X'
             )
         );
     }
 
     /**
      * @param string $value
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Icon
      * @throws \yii\base\InvalidConfigException
      */
     public function rotate($value)
     {
         return $this->addCssClass(
-            FA::$cssPrefix . '-rotate-' . $value,
-            in_array((string)$value, [FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270], true),
+            FontAwesome::$basePrefix . '-rotate-' . $value,
+            in_array((string)$value, [FontAwesome::ROTATE_90, FontAwesome::ROTATE_180, FontAwesome::ROTATE_270], true),
             sprintf(
                 '%s - invalid value. Use one of the constants: %s.',
-                'FA::rotate()',
-                'FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_270'
+                'FontAwesome::rotate()',
+                'FontAwesome::ROTATE_90, FontAwesome::ROTATE_180, FontAwesome::ROTATE_270'
             )
         );
     }
 
     /**
      * @param string $value
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Icon
      * @throws \yii\base\InvalidConfigException
      */
     public function flip($value)
     {
         return $this->addCssClass(
-            FA::$cssPrefix . '-flip-' . $value,
-            in_array((string)$value, [FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL], true),
+            FontAwesome::$basePrefix . '-flip-' . $value,
+            in_array((string)$value, [FontAwesome::FLIP_HORIZONTAL, FontAwesome::FLIP_VERTICAL], true),
             sprintf(
                 '%s - invalid value. Use one of the constants: %s.',
-                'FA::flip()',
-                'FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL'
+                'FontAwesome::flip()',
+                'FontAwesome::FLIP_HORIZONTAL, FontAwesome::FLIP_VERTICAL'
             )
         );
-    }
-
-    /**
-     * @deprecated
-     * Change html tag.
-     * @param string $tag
-     * @return static
-     * @throws \yii\base\InvalidParamException
-     */
-    public function tag($tag)
-    {
-        $this->tag = $tag;
-
-        $this->options['tag'] = $tag;
-
-        return $this;
     }
 
     /**
@@ -212,30 +199,12 @@ class Icon
                     ? 'Condition is false'
                     : $throw;
 
-                throw new \yii\base\InvalidConfigException($message);
+                throw new InvalidConfigException($message);
             }
         } else {
             Html::addCssClass($this->options, $class);
         }
 
         return $this;
-    }
-
-    /**
-     * @deprecated
-     * @param string|null $tag
-     * @param string|null $content
-     * @param array $options
-     * @return string
-     */
-    public function render($tag = null, $content = null, $options = [])
-    {
-        $tag = empty($tag)
-            ? (empty($this->tag) ? static::$defaultTag : $this->tag)
-            : $tag;
-
-        $options = array_merge($this->options, $options);
-
-        return Html::tag($tag, $content, $options);
     }
 }

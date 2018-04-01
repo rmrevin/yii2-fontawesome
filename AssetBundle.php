@@ -17,29 +17,26 @@ class AssetBundle extends \yii\web\AssetBundle
     /**
      * @inherit
      */
-    public $sourcePath = '@vendor/fortawesome/font-awesome';
+    public $sourcePath = '@vendor/rmrevin/yii2-fontawesome/assets/web-fonts-with-css';
 
     /**
      * @inherit
      */
     public $css = [
-        'css/font-awesome.min.css',
+        'css/fontawesome-all.css',
     ];
-    
+
     /**
      * @inherit
      */
     public $publishOptions = [
-            'only' => [
-                "css/*",
-                "fonts/*",
-            ],
-            'except' => [
-                "less",
-                "scss",
-                "src",
-            ],
+        'only' => [
+            "css/*",
+            "webfonts/*",
+        ],
+        'except' => [
+            "less",
+            "scss",
+        ],
     ];
-
- 
 }

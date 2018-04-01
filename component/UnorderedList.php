@@ -7,7 +7,7 @@
 
 namespace rmrevin\yii\fontawesome\component;
 
-use rmrevin\yii\fontawesome\FA;
+use rmrevin\yii\fontawesome\FontAwesome;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
@@ -17,18 +17,7 @@ use yii\helpers\Html;
  */
 class UnorderedList
 {
-
-    /**
-     * @deprecated
-     * @var string
-     */
-    public static $defaultTag = 'ul';
-
-    /**
-     * @deprecated
-     * @var string
-     */
-    private $tag;
+    protected $iconCssPrefix;
 
     /**
      * @var array
@@ -41,11 +30,14 @@ class UnorderedList
     protected $items = [];
 
     /**
+     * @param string $iconCssPrefix
      * @param array $options
      */
-    public function __construct($options = [])
+    public function __construct($iconCssPrefix, $options = [])
     {
-        Html::addCssClass($options, FA::$cssPrefix . '-ul');
+        $this->iconCssPrefix = $iconCssPrefix;
+
+        Html::addCssClass($options, FontAwesome::$basePrefix . '-ul');
 
         $options['item'] = function ($item, $index) {
             return call_user_func($item, $index);
@@ -65,7 +57,7 @@ class UnorderedList
     /**
      * @param string $label
      * @param array $options
-     * @return static
+     * @return \rmrevin\yii\fontawesome\component\UnorderedList
      */
     public function item($label, $options = [])
     {
@@ -75,7 +67,7 @@ class UnorderedList
             $icon = ArrayHelper::remove($options, 'icon');
             $icon = empty($icon)
                 ? null
-                : (is_string($icon) ? (string)(new Icon($icon))->li() : $icon);
+                : (is_string($icon) ? (string)(new Icon($this->iconCssPrefix, $icon))->li() : $icon);
 
             $content = trim($icon . $label);
 
@@ -83,41 +75,5 @@ class UnorderedList
         };
 
         return $this;
-    }
-
-    /**
-     * @deprecated
-     * Change html tag.
-     * @param string $tag
-     * @return static
-     * @throws \yii\base\InvalidParamException
-     */
-    public function tag($tag)
-    {
-        $this->tag = $tag;
-
-        $this->options['tag'] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * @deprecated
-     * @param string|null $tag
-     * @param array $options
-     * @return string
-     * @throws \yii\base\InvalidConfigException
-     */
-    public function render($tag = null, $options = [])
-    {
-        $tag = empty($tag)
-            ? (empty($this->tag) ? static::$defaultTag : $this->tag)
-            : $tag;
-
-        $options = array_merge($this->options, $options);
-
-        $items = $this->items;
-
-        return Html::tag($tag, implode($items), $options);
     }
 }
