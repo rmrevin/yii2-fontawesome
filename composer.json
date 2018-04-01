@@ -27,6 +27,7 @@
     "yiisoft/yii2": "^2.0.0"
   },
   "require-dev": {
+    "doctrine/instantiator": "1.0.*",
     "phpunit/phpunit": "^4.8"
   },
   "autoload": {
