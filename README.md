@@ -23,10 +23,15 @@ Support
 * [GutHub issues](https://github.com/rmrevin/yii2-fontawesome/issues)
 * [Public chat](https://gitter.im/rmrevin/support)
 
+Update to `3.0`
+----------------
+
+Be careful in version 3.0 deprecated methods were removed. More in the [changelog](https://github.com/rmrevin/yii2-fontawesome/blob/master/CHANGELOG.md).
+
 Update to `2.17`
 ----------------
 
-Be careful in version 2.17 deprecated methods were removed. More in the [changelog](https://github.com/rmrevin/yii2-fontawesome/blob/master/CHANGELOG.md).
+Be careful in version 2.17 deprecated methods were removed. More in the [changelog](https://github.com/rmrevin/yii2-fontawesome/blob/2.x/CHANGELOG.md).
 
 Installation
 ------------
@@ -36,13 +41,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```bash
-composer require "rmrevin/yii2-fontawesome:~2.17"
+composer require "rmrevin/yii2-fontawesome:~3.0"
 ```
 
 or add
 
 ```
-"rmrevin/yii2-fontawesome": "~2.17",
+"rmrevin/yii2-fontawesome": "~3.0",
 ```
 
 to the `require` section of your `composer.json` file.
@@ -88,8 +93,6 @@ Namespace: `rmrevin\yii\fontawesome`;
 ###Class `component\Icon` (`$Icon`)
 
 * `(string)$Icon` - render icon
-* `$Icon->render()` - DEPRECATED! render icon
-* `$Icon->tag($value)` - DEPRECATED! set another html tag for icon (default `i`)
   * `$value` - name of tag
 * `$Icon->addCssClass($value)` - add to html tag css class in `$value`
   * `$value` - name of css class
@@ -111,8 +114,6 @@ Namespace: `rmrevin\yii\fontawesome`;
 ###Class `component\Stack` (`$Stack`)
 
 * `(string)$Stack` - render icon stack
-* `$Stack->render()` - DEPRECATED! render icon stack
-* `$Stack->tag($value)` - DEPRECATED! set another html tag for icon stack (default `span`)
 * `$Stack->icon($icon, $options=[])` - set icon for stack
   * `$icon` - name of icon or `component\Icon` object
   * `$options` - additional attributes for icon html tag.
@@ -127,96 +128,85 @@ Helper examples
 use rmrevin\yii\fontawesome\FA;
 
 // normal use
-echo FA::icon('home'); // <i class="fa fa-home"></i>
+echo FAR::icon('home'); // <i class="far fa-home"></i>
 
 // shortcut
-echo FA::i('home'); // <i class="fa fa-home"></i>
+echo FAR::i('home'); // <i class="far fa-home"></i>
 
 // icon with additional attributes
-echo FA::icon(
+echo FAR::icon(
     'arrow-left', 
     ['class' => 'big', 'data-role' => 'arrow']
-); // <i class="big fa fa-arrow-left" data-role="arrow"></i>
+); // <i class="big far fa-arrow-left" data-role="arrow"></i>
 
 // icon in button
 echo Html::submitButton(
-    Yii::t('app', '{icon} Save', ['icon' => FA::icon('check')])
-); // <button type="submit"><i class="fa fa-check"></i> Save</button>
+    Yii::t('app', '{icon} Save', ['icon' => FAR::icon('check')])
+); // <button type="submit"><i class="far fa-check"></i> Save</button>
 
 // icon with additional methods
-echo FA::icon('cog')->inverse();    // <i class="fa fa-cog fa-inverse"></i>
-echo FA::icon('cog')->spin();       // <i class="fa fa-cog fa-spin"></i>
-echo FA::icon('cog')->fixedWidth(); // <i class="fa fa-cog fa-fw"></i>
-echo FA::icon('cog')->li();         // <i class="fa fa-cog fa-li"></i>
-echo FA::icon('cog')->border();     // <i class="fa fa-cog fa-border"></i>
-echo FA::icon('cog')->pullLeft();   // <i class="fa fa-cog pull-left"></i>
-echo FA::icon('cog')->pullRight();  // <i class="fa fa-cog pull-right"></i>
+echo FAR::icon('cog')->inverse();    // <i class="far fa-cog fa-inverse"></i>
+echo FAR::icon('cog')->spin();       // <i class="far fa-cog fa-spin"></i>
+echo FAR::icon('cog')->fixedWidth(); // <i class="far fa-cog fa-fw"></i>
+echo FAR::icon('cog')->li();         // <i class="far fa-cog fa-li"></i>
+echo FAR::icon('cog')->border();     // <i class="far fa-cog fa-border"></i>
+echo FAR::icon('cog')->pullLeft();   // <i class="far fa-cog pull-left"></i>
+echo FAR::icon('cog')->pullRight();  // <i class="far fa-cog pull-right"></i>
 
 // icon size
-echo FA::icon('cog')->size(FA::SIZE_3X);
-// values: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X
-// <i class="fa fa-cog fa-size-3x"></i>
+echo FAR::icon('cog')->size(FAR::SIZE_3X);
+// values: FAR::SIZE_LARGE, FAR::SIZE_2X, FAR::SIZE_3X, FAR::SIZE_4X, FAR::SIZE_5X
+// <i class="far fa-cog fa-size-3x"></i>
 
 // icon rotate
-echo FA::icon('cog')->rotate(FA::ROTATE_90); 
-// values: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_180
-// <i class="fa fa-cog fa-rotate-90"></i>
+echo FAR::icon('cog')->rotate(FAR::ROTATE_90); 
+// values: FAR::ROTATE_90, FAR::ROTATE_180, FAR::ROTATE_180
+// <i class="far fa-cog fa-rotate-90"></i>
 
 // icon flip
-echo FA::icon('cog')->flip(FA::FLIP_VERTICAL); 
-// values: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL
-// <i class="fa fa-cog fa-flip-vertical"></i>
+echo FAR::icon('cog')->flip(FAR::FLIP_VERTICAL); 
+// values: FAR::FLIP_HORIZONTAL, FAR::FLIP_VERTICAL
+// <i class="far fa-cog fa-flip-vertical"></i>
 
 // icon with multiple methods
-echo FA::icon('cog')
+echo FAR::icon('cog')
         ->spin()
         ->fixedWidth()
         ->pullLeft()
-        ->size(FA::SIZE_LARGE);
-// <i class="fa fa-cog fa-spin fa-fw pull-left fa-size-lg"></i>
+        ->size(FAR::SIZE_LARGE);
+// <i class="far fa-cog fa-spin fa-fw pull-left fa-size-lg"></i>
 
 // icons stack
-echo FA::stack()
+echo FAR::stack()
         ->icon('twitter')
         ->on('square-o');
 // <span class="fa-stack">
-//   <i class="fa fa-square-o fa-stack-2x"></i>
-//   <i class="fa fa-twitter fa-stack-1x"></i>
+//   <i class="far fa-square-o fa-stack-2x"></i>
+//   <i class="far fa-twitter fa-stack-1x"></i>
 // </span>
 
 // icons stack with additional attributes
-echo FA::stack(['data-role' => 'stacked-icon'])
-     ->on(FA::Icon('square')->inverse())
-     ->icon(FA::Icon('cog')->spin());
+echo FAR::stack(['data-role' => 'stacked-icon'])
+     ->on(FAR::Icon('square')->inverse())
+     ->icon(FAR::Icon('cog')->spin());
 // <span class="fa-stack" data-role="stacked-icon">
-//   <i class="fa fa-square-o fa-inverse fa-stack-2x"></i>
-//   <i class="fa fa-cog fa-spin fa-stack-1x"></i>
+//   <i class="far fa-square-o fa-inverse fa-stack-2x"></i>
+//   <i class="far fa-cog fa-spin fa-stack-1x"></i>
 // </span>
 
 // unordered list icons 
-echo FA::ul(['data-role' => 'unordered-list'])
+echo FAR::ul(['data-role' => 'unordered-list'])
      ->item('Bullet item', ['icon' => 'circle'])
      ->item('Checked item', ['icon' => 'check']);
 // <ul class="fa-ul" data-role="unordered-list">
-//   <li><i class="fa fa-circle fa-li"></i>Bullet item</li>
-//   <li><i class="fa fa-check fa-li"></i>Checked Item</li>
+//   <li><i class="far fa-circle fa-li"></i>Bullet item</li>
+//   <li><i class="far fa-check fa-li"></i>Checked Item</li>
 // </span>
 
 // autocomplete icons name in IDE
-echo FA::icon(FA::_COG);
-echo FA::icon(FA::_DESKTOP);
-echo FA::stack()
-     ->on(FA::_CIRCLE_O)
-     ->icon(FA::_TWITTER);
-```
-
-### Set another prefix
-
-```php
-FA::$cssPrefix = 'awf';
-
-echo FA::icon('home');
-// <i class="awf awf-home"></i>
-echo FA::icon('cog')->inverse();
-// <i class="awf awf-cog awf-inverse"></i>
+echo FAR::icon(FAR::_COG);
+echo FAR::icon(FAR::_DESKTOP);
+echo FAR::stack()
+     ->on(FAR::_CIRCLE_O)
+     ->icon(FAR::_TWITTER);
 ```

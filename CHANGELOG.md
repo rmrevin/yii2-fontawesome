@@ -1,3 +1,23 @@
+2018-04-01 - 3.0.0
+-------------------
+* `Font Awesome` updated to version `5.0`.
+* These class are now deprecated:
+  * `rmrevin\yii\fontawesome\FA` use `...\fontawesome\FAB`,  `...\fontawesome\FAL`,  `...\fontawesome\FAR`, `...\fontawesome\FAS`.  
+* These deprecated properties and methods are now removed:
+  * `rmrevin\yii\fontawesome\component\Icon::$defaultTag`
+  * `rmrevin\yii\fontawesome\component\Icon::$tag`
+  * `rmrevin\yii\fontawesome\component\Icon::tag()`
+  * `rmrevin\yii\fontawesome\component\Icon::render()`
+  * `rmrevin\yii\fontawesome\component\Stack::$defaultTag`
+  * `rmrevin\yii\fontawesome\component\Stack::$tag`
+  * `rmrevin\yii\fontawesome\component\Stack::tag()`
+  * `rmrevin\yii\fontawesome\component\Stack::render()`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::$defaultTag`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::$tag`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::tag()`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::render()`
+  * `rmrevin\yii\fontawesome\FA::getConstants()`
+
 2017-01-11 - 2.17.1
 -------------------
 * Downgrade minimum php to `5.4`
