@@ -82,18 +82,17 @@ Class reference
 
 Namespace: `rmrevin\yii\fontawesome`;
 
-###Class `FA` or `FontAwesome`
+### Class `FAB`, `FAL`, `FAR`, `FAS` or `FontAwesome`
 
-* `static FA::icon($name, $options=[])` - Creates an [`component\Icon`](#class-componenticon-icon) that can be used to FontAwesome html icon
+* `static FAR::icon($name, $options=[])` - Creates an [`component\Icon`](#class-componenticon-icon) that can be used to FontAwesome html icon
   * `$name` - name of icon in font awesome set.
   * `$options` - additional attributes for `i.fa` html tag.
-* `static FA::stack($name, $options=[])` - Creates an [`component\Stack`](#class-componentstack-stack) that can be used to FontAwesome html icon
+* `static FAR::stack($name, $options=[])` - Creates an [`component\Stack`](#class-componentstack-stack) that can be used to FontAwesome html icon
   * `$options` - additional attributes for `span.fa-stack` html tag.
 
-###Class `component\Icon` (`$Icon`)
+### Class `component\Icon`
 
 * `(string)$Icon` - render icon
-  * `$value` - name of tag
 * `$Icon->addCssClass($value)` - add to html tag css class in `$value`
   * `$value` - name of css class
 * `$Icon->inverse()` - add to html tag css class `fa-inverse`
@@ -111,7 +110,7 @@ Namespace: `rmrevin\yii\fontawesome`;
 * `$Icon->flip($value)` - add to html tag css class with rotate
   * `$value` - flip value (variants: `FA::FLIP_HORIZONTAL`, `FA::FLIP_VERTICAL`)
 
-###Class `component\Stack` (`$Stack`)
+### Class `component\Stack`
 
 * `(string)$Stack` - render icon stack
 * `$Stack->icon($icon, $options=[])` - set icon for stack
