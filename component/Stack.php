@@ -7,7 +7,7 @@
 
 namespace rmrevin\yii\fontawesome\component;
 
-use rmrevin\yii\fontawesome\FA;
+use rmrevin\yii\fontawesome\FontAwesome;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
@@ -17,18 +17,10 @@ use yii\helpers\Html;
  */
 class Stack
 {
-
     /**
-     * @deprecated
      * @var string
      */
-    public static $defaultTag = 'span';
-
-    /**
-     * @deprecated
-     * @var string
-     */
-    private $tag;
+    private $iconCssPrefix = 'fa';
 
     /**
      * @var array
@@ -46,17 +38,21 @@ class Stack
     private $icon_back;
 
     /**
+     * @param string $iconCssPrefix
      * @param array $options
      */
-    public function __construct($options = [])
+    public function __construct($iconCssPrefix, $options = [])
     {
-        Html::addCssClass($options, FA::$cssPrefix . '-stack');
+        $this->iconCssPrefix = $iconCssPrefix;
+
+        Html::addCssClass($options, FontAwesome::$basePrefix . '-stack');
 
         $this->options = $options;
     }
 
     /**
      * @return string
+     * @throws \yii\base\InvalidConfigException
      */
     public function __toString()
     {
@@ -67,11 +63,11 @@ class Stack
         $template = ArrayHelper::remove($options, 'template', '{back}{front}');
 
         $icon_back = $this->icon_back instanceof Icon
-            ? $this->icon_back->addCssClass(FA::$cssPrefix . '-stack-2x')
+            ? $this->icon_back->addCssClass(FontAwesome::$basePrefix . '-stack-2x')
             : null;
 
         $icon_front = $this->icon_front instanceof Icon
-            ? $this->icon_front->addCssClass(FA::$cssPrefix . '-stack-1x')
+            ? $this->icon_front->addCssClass(FontAwesome::$basePrefix . '-stack-1x')
             : null;
 
         $content = str_replace(['{back}', '{front}'], [$icon_back, $icon_front], $template);
@@ -82,12 +78,12 @@ class Stack
     /**
      * @param string|Icon $icon
      * @param array $options
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Stack
      */
     public function icon($icon, $options = [])
     {
         if (is_string($icon)) {
-            $icon = new Icon($icon, $options);
+            $icon = new Icon($this->iconCssPrefix, $icon, $options);
         }
 
         $this->icon_front = $icon;
@@ -98,64 +94,16 @@ class Stack
     /**
      * @param string|Icon $icon
      * @param array $options
-     * @return self
+     * @return \rmrevin\yii\fontawesome\component\Stack
      */
     public function on($icon, $options = [])
     {
         if (is_string($icon)) {
-            $icon = new Icon($icon, $options);
+            $icon = new Icon($this->iconCssPrefix, $icon, $options);
         }
 
         $this->icon_back = $icon;
 
         return $this;
-    }
-
-    /**
-     * @deprecated
-     * Change html tag.
-     * @param string $tag
-     * @return static
-     * @throws \yii\base\InvalidParamException
-     */
-    public function tag($tag)
-    {
-        $this->tag = $tag;
-
-        $this->options['tag'] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * @deprecated
-     * @param string|null $tag
-     * @param array $options
-     * @return string
-     * @throws \yii\base\InvalidConfigException
-     */
-    public function render($tag = null, $options = [])
-    {
-        $tag = empty($tag)
-            ? (empty($this->tag) ? static::$defaultTag : $this->tag)
-            : $tag;
-
-        $options = array_merge($this->options, $options);
-
-        $template = ArrayHelper::remove($options, 'template', '{back}{front}');
-
-        $icon_back = $this->icon_back instanceof Icon
-            ? $this->icon_back->addCssClass(FA::$cssPrefix . '-stack-2x')
-            : null;
-
-        $icon_front = $this->icon_front instanceof Icon
-            ? $this->icon_front->addCssClass(FA::$cssPrefix . '-stack-1x')
-            : null;
-
-        return Html::tag(
-            $tag,
-            str_replace(['{back}', '{front}'], [$icon_back, $icon_front], $template),
-            $options
-        );
     }
 }

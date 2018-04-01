@@ -1,6 +1,6 @@
 <?php
 /**
- * FA.php
+ * FAB.php
  * @author Revin Roman
  * @link https://rmrevin.ru
  */
@@ -8,11 +8,10 @@
 namespace rmrevin\yii\fontawesome;
 
 /**
- * Class FA
+ * Class FAB
  * @package rmrevin\yii\fontawesome
- * @deprecated use FAB FAS FAR FAL classes
  */
-class FA extends FontAwesome
+class FAB extends FontAwesome
 {
-    public static $cssPrefix = 'far';
+    public static $cssPrefix = 'fab';
 }
