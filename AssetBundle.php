@@ -13,7 +13,6 @@ namespace rmrevin\yii\fontawesome;
  */
 class AssetBundle extends \yii\web\AssetBundle
 {
-
     /**
      * @inherit
      */
@@ -31,12 +30,12 @@ class AssetBundle extends \yii\web\AssetBundle
      */
     public $publishOptions = [
         'only' => [
-            "css/*",
-            "webfonts/*",
+            'css/*',
+            'webfonts/*',
         ],
         'except' => [
-            "less",
-            "scss",
+            'less',
+            'scss',
         ],
     ];
 }

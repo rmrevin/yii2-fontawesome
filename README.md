@@ -48,13 +48,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```bash
-composer require "rmrevin/yii2-fontawesome:~3.0"
+composer require "rmrevin/yii2-fontawesome:~3.1"
 ```
 
 or add
 
 ```
-"rmrevin/yii2-fontawesome": "~3.0",
+"rmrevin/yii2-fontawesome": "~3.1",
 ```
 
 to the `require` section of your `composer.json` file.

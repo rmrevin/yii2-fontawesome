@@ -1,3 +1,8 @@
+2018-07-11 - 3.1.0
+------------------
+* Remove static font awesome bundle and add composer `bower-asset/font-awesome`.
+* `Font Awesome` updated to version `5.1`.
+
 2018-04-01 - 3.0.0
 -------------------
 * `Font Awesome` updated to version `5.0`.
