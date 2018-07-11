@@ -131,88 +131,92 @@ Helper examples
 ---------------
 
 ```php
-use rmrevin\yii\fontawesome\FA;
+use rmrevin\yii\fontawesome\FAS;
+// or (only in pro version https://fontawesome.com/pro)
+// use rmrevin\yii\fontawesome\FAR;
+// use rmrevin\yii\fontawesome\FAL;
+// use rmrevin\yii\fontawesome\FAB;
 
 // normal use
-echo FAR::icon('home'); // <i class="far fa-home"></i>
+echo FAS::icon('home'); // <i class="fas fa-home"></i>
 
 // shortcut
-echo FAR::i('home'); // <i class="far fa-home"></i>
+echo FAS::i('home'); // <i class="fas fa-home"></i>
 
 // icon with additional attributes
-echo FAR::icon(
+echo FAS::icon(
     'arrow-left', 
     ['class' => 'big', 'data-role' => 'arrow']
-); // <i class="big far fa-arrow-left" data-role="arrow"></i>
+); // <i class="big fas fa-arrow-left" data-role="arrow"></i>
 
 // icon in button
 echo Html::submitButton(
-    Yii::t('app', '{icon} Save', ['icon' => FAR::icon('check')])
-); // <button type="submit"><i class="far fa-check"></i> Save</button>
+    Yii::t('app', '{icon} Save', ['icon' => FAS::icon('check')])
+); // <button type="submit"><i class="fas fa-check"></i> Save</button>
 
 // icon with additional methods
-echo FAR::icon('cog')->inverse();    // <i class="far fa-cog fa-inverse"></i>
-echo FAR::icon('cog')->spin();       // <i class="far fa-cog fa-spin"></i>
-echo FAR::icon('cog')->fixedWidth(); // <i class="far fa-cog fa-fw"></i>
-echo FAR::icon('cog')->li();         // <i class="far fa-cog fa-li"></i>
-echo FAR::icon('cog')->border();     // <i class="far fa-cog fa-border"></i>
-echo FAR::icon('cog')->pullLeft();   // <i class="far fa-cog pull-left"></i>
-echo FAR::icon('cog')->pullRight();  // <i class="far fa-cog pull-right"></i>
+echo FAS::icon('cog')->inverse();    // <i class="fas fa-cog fa-inverse"></i>
+echo FAS::icon('cog')->spin();       // <i class="fas fa-cog fa-spin"></i>
+echo FAS::icon('cog')->fixedWidth(); // <i class="fas fa-cog fa-fw"></i>
+echo FAS::icon('cog')->li();         // <i class="fas fa-cog fa-li"></i>
+echo FAS::icon('cog')->border();     // <i class="fas fa-cog fa-border"></i>
+echo FAS::icon('cog')->pullLeft();   // <i class="fas fa-cog pull-left"></i>
+echo FAS::icon('cog')->pullRight();  // <i class="fas fa-cog pull-right"></i>
 
 // icon size
-echo FAR::icon('cog')->size(FAR::SIZE_3X);
-// values: FAR::SIZE_LARGE, FAR::SIZE_2X, FAR::SIZE_3X, FAR::SIZE_4X, FAR::SIZE_5X
-// <i class="far fa-cog fa-size-3x"></i>
+echo FAS::icon('cog')->size(FAS::SIZE_3X);
+// values: FAS::SIZE_LARGE, FAS::SIZE_2X, FAS::SIZE_3X, FAS::SIZE_4X, FAS::SIZE_5X
+// <i class="fas fa-cog fa-size-3x"></i>
 
 // icon rotate
-echo FAR::icon('cog')->rotate(FAR::ROTATE_90); 
-// values: FAR::ROTATE_90, FAR::ROTATE_180, FAR::ROTATE_180
-// <i class="far fa-cog fa-rotate-90"></i>
+echo FAS::icon('cog')->rotate(FAS::ROTATE_90); 
+// values: FAS::ROTATE_90, FAS::ROTATE_180, FAS::ROTATE_180
+// <i class="fas fa-cog fa-rotate-90"></i>
 
 // icon flip
-echo FAR::icon('cog')->flip(FAR::FLIP_VERTICAL); 
-// values: FAR::FLIP_HORIZONTAL, FAR::FLIP_VERTICAL
-// <i class="far fa-cog fa-flip-vertical"></i>
+echo FAS::icon('cog')->flip(FAS::FLIP_VERTICAL); 
+// values: FAS::FLIP_HORIZONTAL, FAS::FLIP_VERTICAL
+// <i class="fas fa-cog fa-flip-vertical"></i>
 
 // icon with multiple methods
-echo FAR::icon('cog')
+echo FAS::icon('cog')
         ->spin()
         ->fixedWidth()
         ->pullLeft()
-        ->size(FAR::SIZE_LARGE);
-// <i class="far fa-cog fa-spin fa-fw pull-left fa-size-lg"></i>
+        ->size(FAS::SIZE_LARGE);
+// <i class="fas fa-cog fa-spin fa-fw pull-left fa-size-lg"></i>
 
 // icons stack
-echo FAR::stack()
+echo FAS::stack()
         ->icon('twitter')
         ->on('square-o');
 // <span class="fa-stack">
-//   <i class="far fa-square-o fa-stack-2x"></i>
-//   <i class="far fa-twitter fa-stack-1x"></i>
+//   <i class="fas fa-square-o fa-stack-2x"></i>
+//   <i class="fas fa-twitter fa-stack-1x"></i>
 // </span>
 
 // icons stack with additional attributes
-echo FAR::stack(['data-role' => 'stacked-icon'])
-     ->on(FAR::Icon('square')->inverse())
-     ->icon(FAR::Icon('cog')->spin());
+echo FAS::stack(['data-role' => 'stacked-icon'])
+     ->on(FAS::Icon('square')->inverse())
+     ->icon(FAS::Icon('cog')->spin());
 // <span class="fa-stack" data-role="stacked-icon">
-//   <i class="far fa-square-o fa-inverse fa-stack-2x"></i>
-//   <i class="far fa-cog fa-spin fa-stack-1x"></i>
+//   <i class="fas fa-square-o fa-inverse fa-stack-2x"></i>
+//   <i class="fas fa-cog fa-spin fa-stack-1x"></i>
 // </span>
 
 // unordered list icons 
-echo FAR::ul(['data-role' => 'unordered-list'])
+echo FAS::ul(['data-role' => 'unordered-list'])
      ->item('Bullet item', ['icon' => 'circle'])
      ->item('Checked item', ['icon' => 'check']);
 // <ul class="fa-ul" data-role="unordered-list">
-//   <li><i class="far fa-circle fa-li"></i>Bullet item</li>
-//   <li><i class="far fa-check fa-li"></i>Checked Item</li>
+//   <li><i class="fas fa-circle fa-li"></i>Bullet item</li>
+//   <li><i class="fas fa-check fa-li"></i>Checked Item</li>
 // </span>
 
 // autocomplete icons name in IDE
-echo FAR::icon(FAR::_COG);
-echo FAR::icon(FAR::_DESKTOP);
-echo FAR::stack()
-     ->on(FAR::_CIRCLE_O)
-     ->icon(FAR::_TWITTER);
+echo FAS::icon(FAS::_COG);
+echo FAS::icon(FAS::_DESKTOP);
+echo FAS::stack()
+     ->on(FAS::_CIRCLE_O)
+     ->icon(FAS::_TWITTER);
 ```
