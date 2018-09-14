@@ -204,6 +204,26 @@ echo FAS::stack(['data-role' => 'stacked-icon'])
 //   <i class="fas fa-cog fa-spin fa-stack-1x"></i>
 // </span>
 
+// Stacking text and icons
+echo FAS::stack()
+     ->on(FAS::Icon('square'))
+     ->text('1');
+// <span class="fa-stack">
+//   <i class="fas fa-square fa-stack-2x"></i>
+//   <span class="fa-stack-1x">1</span>
+// </span>
+
+// Stacking text and icons with options
+echo FAS::stack()
+     ->on(FAS::Icon('square'))
+     ->text('1', ['tag'=>'strong', 'class'=>'stacked-text']);
+// <span class="fa-stack">
+//   <i class="fas fa-square fa-stack-2x"></i>
+//   <strong class="stacked-text fa-stack-1x">1</strong>
+// </span>
+// Now you can add some css for vertical text positioning:
+.stacked-text { margin-top: .3em; }
+
 // unordered list icons 
 echo FAS::ul(['data-role' => 'unordered-list'])
      ->item('Bullet item', ['icon' => 'circle'])
