@@ -33,6 +33,11 @@ class Stack
     private $icon_front;
 
     /**
+     * @var string
+     */
+    private $text_front = null;
+
+    /**
      * @var Icon
      */
     private $icon_back;
@@ -66,11 +71,15 @@ class Stack
             ? $this->icon_back->addCssClass(FontAwesome::$basePrefix . '-stack-2x')
             : null;
 
-        $icon_front = $this->icon_front instanceof Icon
-            ? $this->icon_front->addCssClass(FontAwesome::$basePrefix . '-stack-1x')
-            : null;
+        if ( !is_null( $this->text_front ) ) {
+            $content_front = $this->text_front;
+        } else {
+            $content_front = $this->icon_front instanceof Icon
+                ? $this->icon_front->addCssClass(FontAwesome::$basePrefix . '-stack-1x')
+                : null;
+        }
 
-        $content = str_replace(['{back}', '{front}'], [$icon_back, $icon_front], $template);
+        $content = str_replace(['{back}', '{front}'], [$icon_back, $content_front], $template);
 
         return Html::tag($tag, $content, $options);
     }
@@ -87,6 +96,23 @@ class Stack
         }
 
         $this->icon_front = $icon;
+
+        return $this;
+    }
+
+    /**
+     * @param string $text
+     * @param array $options
+     * @return \rmrevin\yii\fontawesome\component\Stack
+     */
+    public function text($text = '', $options = [])
+    {
+
+        $tag = ArrayHelper::remove($options, 'tag', 'span');
+
+        Html::addCssClass( $options , FontAwesome::$basePrefix . '-stack-1x');
+
+        $this->text_front = Html::tag( $tag , $text , $options );
 
         return $this;
     }
