@@ -67,19 +67,19 @@ class Stack
 
         $template = ArrayHelper::remove($options, 'template', '{back}{front}');
 
-        $icon_back = $this->icon_back instanceof Icon
+        $iconBack = $this->icon_back instanceof Icon
             ? $this->icon_back->addCssClass(FontAwesome::$basePrefix . '-stack-2x')
             : null;
 
-        if ( !is_null( $this->text_front ) ) {
-            $content_front = $this->text_front;
+        if ($this->text_front !== null) {
+            $contentFront = $this->text_front;
         } else {
-            $content_front = $this->icon_front instanceof Icon
+            $contentFront = $this->icon_front instanceof Icon
                 ? $this->icon_front->addCssClass(FontAwesome::$basePrefix . '-stack-1x')
                 : null;
         }
 
-        $content = str_replace(['{back}', '{front}'], [$icon_back, $content_front], $template);
+        $content = str_replace(['{back}', '{front}'], [$iconBack, $contentFront], $template);
 
         return Html::tag($tag, $content, $options);
     }
@@ -107,12 +107,11 @@ class Stack
      */
     public function text($text = '', $options = [])
     {
-
         $tag = ArrayHelper::remove($options, 'tag', 'span');
 
-        Html::addCssClass( $options , FontAwesome::$basePrefix . '-stack-1x');
+        Html::addCssClass($options, FontAwesome::$basePrefix . '-stack-1x');
 
-        $this->text_front = Html::tag( $tag , $text , $options );
+        $this->text_front = Html::tag($tag, $text, $options);
 
         return $this;
     }

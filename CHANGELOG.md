@@ -1,3 +1,15 @@
+2018-09-17 - 3.2.0
+------------------
+* `Font Awesome` updated to version `5.3.1`.
+* Add text stacking function.
+* Refactoring of asset bundles.
+* Remove bower-asset from `composer.json`
+* These classes are now deprecated:
+  * `rmrevin\yii\fontawesome\AssetBundle`
+  * `rmrevin\yii\fontawesome\cdn\AssetBundle`
+* Update readme.
+* Update tests.
+
 2018-07-11 - 3.1.0
 ------------------
 * Remove static font awesome bundle and add composer `bower-asset/font-awesome`.

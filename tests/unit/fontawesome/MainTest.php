@@ -95,6 +95,13 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
                 ->on((string)FAR::Icon('square-o')->size(FAR::SIZE_3X)),
             '<span class="fa-stack"><i class="far fa-square-o fa-3x fa-stack-2x"></i><i class="far fa-cog fa-spin fa-stack-1x"></i></span>'
         );
+
+        $this->assertEquals(
+            (string)FAR::stack()
+                ->text('hot')
+                ->on('square-o'),
+            '<span class="fa-stack"><i class="far fa-square-o fa-stack-2x"></i><span class="fa-stack-1x">hot</span></span>'
+        );
     }
 
     public function testUlOutput()
@@ -102,6 +109,12 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
         $this->assertEquals(
             (string)FAR::ul(),
             '<ul class="fa-ul"></ul>'
+        );
+
+        $this->assertEquals(
+            (string)FAR::ul()
+                ->item('Gear'),
+            "<ul class=\"fa-ul\">\n<li>Gear</li>\n</ul>"
         );
 
         $this->assertEquals(
@@ -164,6 +177,7 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
 
         $this->assertEquals(FAR::icon('cog')->inverse(), '<i class="far fa-cog fa-inverse"></i>');
         $this->assertEquals(FAR::icon('cog')->spin(), '<i class="far fa-cog fa-spin"></i>');
+        $this->assertEquals(FAR::icon('cog')->pulse(), '<i class="far fa-cog fa-pulse"></i>');
         $this->assertEquals(FAR::icon('cog')->fixedWidth(), '<i class="far fa-cog fa-fw"></i>');
         $this->assertEquals(FAR::icon('cog')->li(), '<i class="far fa-cog fa-li"></i>');
         $this->assertEquals(FAR::icon('cog')->border(), '<i class="far fa-cog fa-border"></i>');

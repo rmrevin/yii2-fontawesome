@@ -10,32 +10,8 @@ namespace rmrevin\yii\fontawesome;
 /**
  * Class AssetBundle
  * @package rmrevin\yii\fontawesome
+ * @deprecated use rmrevin\yii\fontawesome\CdnFreeAssetBundle
  */
-class AssetBundle extends \yii\web\AssetBundle
+class AssetBundle extends CdnFreeAssetBundle
 {
-    /**
-     * @inherit
-     */
-    public $sourcePath = '@bower/font-awesome/web-fonts-with-css';
-
-    /**
-     * @inherit
-     */
-    public $css = [
-        'css/fontawesome-all.css',
-    ];
-
-    /**
-     * @inherit
-     */
-    public $publishOptions = [
-        'only' => [
-            'css/*',
-            'webfonts/*',
-        ],
-        'except' => [
-            'less',
-            'scss',
-        ],
-    ];
 }

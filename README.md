@@ -30,8 +30,13 @@ Fontawesome version
 | 4.* | ~2.17 |
 | 5.* | ~3.0 |
 
+Update to `3.2`
+---------------
+
+Be careful in version 3.2 `rmrevin\yii\fontawesome\AssetBundle` package use cdn by default. More in the [changelog](https://github.com/rmrevin/yii2-fontawesome/blob/master/CHANGELOG.md).
+
 Update to `3.0`
-----------------
+---------------
 
 Be careful in version 3.0 deprecated methods were removed. More in the [changelog](https://github.com/rmrevin/yii2-fontawesome/blob/master/CHANGELOG.md).
 
@@ -48,29 +53,24 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```bash
-composer require "rmrevin/yii2-fontawesome:~3.1"
+composer require "rmrevin/yii2-fontawesome:~3.2"
 ```
 
 or add
 
 ```
-"rmrevin/yii2-fontawesome": "~3.1",
+"rmrevin/yii2-fontawesome": "~3.2",
 ```
 
 to the `require` section of your `composer.json` file.
 
-Usage
------
+Usage with fa pro version
+-------------------------
 
-In view
+### CDN
+Register your domain here - https://fontawesome.com/how-to-use/on-the-web/setup/getting-started
 
-```php
-rmrevin\yii\fontawesome\AssetBundle::register($this);
-
-```
-
-or as dependency in your main application asset bundle
-
+Add `CdnProAssetBundle` as depends of your app asset bundle:
 ```php
 class AppAsset extends AssetBundle
 {
@@ -78,10 +78,100 @@ class AppAsset extends AssetBundle
 
 	public $depends = [
 		// ...
-		'rmrevin\yii\fontawesome\AssetBundle'
+		'rmrevin\yii\fontawesome\CdnProAssetBundle'
 	];
 }
 
+```
+
+Or inject `CdnProAssetBundle` in your view:
+
+```php
+rmrevin\yii\fontawesome\CdnProAssetBundle::register($this);
+```
+
+### NPM
+Install npm package of font:
+```
+npm install @fortawesome/fontawesome-pro
+```
+or 
+```
+yarn add @fortawesome/fontawesome-pro
+```
+
+And add `NpmProAssetBundle` as depends of your app asset bundle:
+```php
+class AppAsset extends AssetBundle
+{
+	// ...
+
+	public $depends = [
+		// ...
+		'rmrevin\yii\fontawesome\NpmProAssetBundle'
+	];
+}
+
+```
+
+Or inject `NpmProAssetBundle` in your view:
+
+```php
+rmrevin\yii\fontawesome\NpmProAssetBundle::register($this);
+```
+
+Usage with fa free version
+-------------------------
+
+### CDN
+Add `CdnFreeAssetBundle` as depends of your app asset bundle:
+```php
+class AppAsset extends AssetBundle
+{
+	// ...
+
+	public $depends = [
+		// ...
+		'rmrevin\yii\fontawesome\CdnFreeAssetBundle'
+	];
+}
+
+```
+
+Or inject `CdnFreeAssetBundle` in your view:
+
+```php
+rmrevin\yii\fontawesome\CdnFreeAssetBundle::register($this);
+```
+
+### NPM
+Install npm package of font:
+```
+npm install @fortawesome/fontawesome-free
+```
+or 
+```
+yarn add @fortawesome/fontawesome-free
+```
+
+And add `NpmFreeAssetBundle` as depends of your app asset bundle:
+```php
+class AppAsset extends AssetBundle
+{
+	// ...
+
+	public $depends = [
+		// ...
+		'rmrevin\yii\fontawesome\NpmFreeAssetBundle'
+	];
+}
+
+```
+
+Or inject `NpmFreeAssetBundle` in your view:
+
+```php
+rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
 ```
 
 Class reference

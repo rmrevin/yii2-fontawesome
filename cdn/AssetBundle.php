@@ -7,17 +7,13 @@
 
 namespace rmrevin\yii\fontawesome\cdn;
 
+use rmrevin\yii\fontawesome\CdnFreeAssetBundle;
+
 /**
  * Class AssetBundle
  * @package rmrevin\yii\fontawesome
+ * @deprecated use rmrevin\yii\fontawesome\CdnFreeAssetBundle
  */
-class AssetBundle extends \yii\web\AssetBundle
+class AssetBundle extends CdnFreeAssetBundle
 {
-
-    /**
-     * @inherit
-     */
-    public $css = [
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
-    ];
 }
