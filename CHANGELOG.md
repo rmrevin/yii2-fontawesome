@@ -1,3 +1,8 @@
+2019-02-12 - 3.3.0
+------------------
+* `Font Awesome` updated to version `5.7.1`.
+* Added new size constants.
+
 2018-09-17 - 3.2.0
 ------------------
 * `Font Awesome` updated to version `5.3.1`.

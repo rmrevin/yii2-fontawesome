@@ -130,19 +130,28 @@ class Icon
      */
     public function size($value)
     {
+        $values = [
+            FontAwesome::SIZE_LG,
+            FontAwesome::SIZE_SM,
+            FontAwesome::SIZE_XS,
+            FontAwesome::SIZE_2X,
+            FontAwesome::SIZE_3X,
+            FontAwesome::SIZE_4X,
+            FontAwesome::SIZE_5X,
+            FontAwesome::SIZE_6X,
+            FontAwesome::SIZE_7X,
+            FontAwesome::SIZE_8X,
+            FontAwesome::SIZE_9X,
+            FontAwesome::SIZE_10X,
+        ];
+
         return $this->addCssClass(
             FontAwesome::$basePrefix . '-' . $value,
-            in_array((string)$value, [
-                FontAwesome::SIZE_LARGE,
-                FontAwesome::SIZE_2X,
-                FontAwesome::SIZE_3X,
-                FontAwesome::SIZE_4X,
-                FontAwesome::SIZE_5X,
-            ], true),
+            in_array((string)$value, $values, true),
             sprintf(
                 '%s - invalid value. Use one of the constants: %s.',
                 'FontAwesome::size()',
-                'FontAwesome::SIZE_LARGE, FontAwesome::SIZE_2X, FontAwesome::SIZE_3X, FontAwesome::SIZE_4X, FontAwesome::SIZE_5X'
+                implode(', ', $values)
             )
         );
     }
@@ -154,13 +163,15 @@ class Icon
      */
     public function rotate($value)
     {
+        $values = [FontAwesome::ROTATE_90, FontAwesome::ROTATE_180, FontAwesome::ROTATE_270];
+
         return $this->addCssClass(
             FontAwesome::$basePrefix . '-rotate-' . $value,
-            in_array((string)$value, [FontAwesome::ROTATE_90, FontAwesome::ROTATE_180, FontAwesome::ROTATE_270], true),
+            in_array((string)$value, $values, true),
             sprintf(
                 '%s - invalid value. Use one of the constants: %s.',
                 'FontAwesome::rotate()',
-                'FontAwesome::ROTATE_90, FontAwesome::ROTATE_180, FontAwesome::ROTATE_270'
+                implode(', ', $values)
             )
         );
     }
@@ -172,13 +183,15 @@ class Icon
      */
     public function flip($value)
     {
+        $values = [FontAwesome::FLIP_HORIZONTAL, FontAwesome::FLIP_VERTICAL];
+
         return $this->addCssClass(
             FontAwesome::$basePrefix . '-flip-' . $value,
             in_array((string)$value, [FontAwesome::FLIP_HORIZONTAL, FontAwesome::FLIP_VERTICAL], true),
             sprintf(
                 '%s - invalid value. Use one of the constants: %s.',
                 'FontAwesome::flip()',
-                'FontAwesome::FLIP_HORIZONTAL, FontAwesome::FLIP_VERTICAL'
+                implode(', ', $values)
             )
         );
     }
