@@ -202,7 +202,7 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
     {
         $this->setExpectedException(
             'yii\base\InvalidConfigException',
-            'FontAwesome::size() - invalid value. Use one of the constants: FontAwesome::SIZE_LARGE, FontAwesome::SIZE_2X, FontAwesome::SIZE_3X, FontAwesome::SIZE_4X, FontAwesome::SIZE_5X.'
+            'FontAwesome::size() - invalid value. Use one of the constants: lg, sm, xs, 2x, 3x, 4x, 5x, 6x, 7x, 8x, 9x, 10x.'
         );
 
         FAR::icon('cog')->size('badvalue');
@@ -212,7 +212,7 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
     {
         $this->setExpectedException(
             'yii\base\InvalidConfigException',
-            'FontAwesome::rotate() - invalid value. Use one of the constants: FontAwesome::ROTATE_90, FontAwesome::ROTATE_180, FontAwesome::ROTATE_270.'
+            'FontAwesome::rotate() - invalid value. Use one of the constants: 90, 180, 270.'
         );
 
         FAR::icon('cog')->rotate('badvalue');
@@ -222,7 +222,7 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
     {
         $this->setExpectedException(
             'yii\base\InvalidConfigException',
-            'FontAwesome::flip() - invalid value. Use one of the constants: FontAwesome::FLIP_HORIZONTAL, FontAwesome::FLIP_VERTICAL.'
+            'FontAwesome::flip() - invalid value. Use one of the constants: horizontal, vertical.'
         );
 
         FAR::icon('cog')->flip('badvalue');
