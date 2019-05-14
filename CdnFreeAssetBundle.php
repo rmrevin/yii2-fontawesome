@@ -17,6 +17,6 @@ class CdnFreeAssetBundle extends \yii\web\AssetBundle
      * @inherit
      */
     public $css = [
-        'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
+        'https://use.fontawesome.com/releases/v5.7.1/css/all.css',
     ];
 }
