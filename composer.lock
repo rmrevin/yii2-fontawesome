@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "421fd7094653c758908e31e1f84ec6d6",
+    "content-hash": "8d8a19d4b1ea0ff7a969bbde30b69c86",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -17,8 +17,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/5e670ad62f50c738388d4dcec78d2888505ad77b",
-                "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b",
-                "shasum": null
+                "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
@@ -39,8 +38,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/77d2a51d0520d2ee44173afdf4e40a9201f5964e",
-                "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e",
-                "shasum": null
+                "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e"
             },
             "type": "bower-asset",
             "license": [
@@ -86,8 +84,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/aef7b953107264f00234902a3880eb50dafc48be",
-                "reference": "aef7b953107264f00234902a3880eb50dafc48be",
-                "shasum": null
+                "reference": "aef7b953107264f00234902a3880eb50dafc48be"
             },
             "require": {
                 "bower-asset/jquery": ">=1.8"
@@ -203,6 +200,18 @@
                 "html"
             ],
             "time": "2018-02-23T01:58:20+00:00"
+        },
+        {
+            "name": "npm-asset/fortawesome--fontawesome-free",
+            "version": "5.7.2",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.7.2.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "(CC-BY-4.0 AND OFL-1.1 AND MIT)"
+            ]
         },
         {
             "name": "yiisoft/yii2",

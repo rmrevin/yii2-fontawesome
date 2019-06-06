@@ -16,7 +16,7 @@ class NpmFreeAssetBundle extends \yii\web\AssetBundle
     /**
      * @inherit
      */
-    public $sourcePath = '@app/node_modules/@fortawesome/fontawesome-free';
+    public $sourcePath = '@npm/fortawesome--fontawesome-free';
 
     /**
      * @inherit
