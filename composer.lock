@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d8a19d4b1ea0ff7a969bbde30b69c86",
+    "content-hash": "421fd7094653c758908e31e1f84ec6d6",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -200,18 +200,6 @@
                 "html"
             ],
             "time": "2018-02-23T01:58:20+00:00"
-        },
-        {
-            "name": "npm-asset/fortawesome--fontawesome-free",
-            "version": "5.7.2",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.7.2.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "(CC-BY-4.0 AND OFL-1.1 AND MIT)"
-            ]
         },
         {
             "name": "yiisoft/yii2",
