@@ -53,13 +53,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```bash
-composer require "rmrevin/yii2-fontawesome:~3.3"
+composer require "rmrevin/yii2-fontawesome:~3.4"
 ```
 
 or add
 
 ```
-"rmrevin/yii2-fontawesome": "~3.3",
+"rmrevin/yii2-fontawesome": "~3.4",
 ```
 
 to the `require` section of your `composer.json` file.
@@ -118,6 +118,17 @@ Or inject `NpmProAssetBundle` in your view:
 
 ```php
 rmrevin\yii\fontawesome\NpmProAssetBundle::register($this);
+```
+
+### Optional
+
+You can add a free version of the package to the replacement, in order that it is not installed.
+In order for do not install the free version of the font-awesome package, you can add it to the `replace` section of `composer.json`.
+
+```
+  "replace": {
+    "fortawesome/font-awesome": "*"
+  },
 ```
 
 Usage with fa free version
