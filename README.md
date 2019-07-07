@@ -25,7 +25,7 @@ Support
 
 Fontawesome version
 -------------------
-| Version of font | Version of extension |
+| Version of font-awesome | Version of extension |
 | ---:|:--- |
 | 4.* | ~2.17 |
 | 5.* | ~3.0 |
