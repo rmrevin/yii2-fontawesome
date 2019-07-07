@@ -122,7 +122,6 @@ rmrevin\yii\fontawesome\NpmProAssetBundle::register($this);
 
 ### Optional
 
-You can add a free version of the package to the replacement, in order that it is not installed.
 In order for do not install the free version of the font-awesome package, you can add it to the `replace` section of `composer.json`.
 
 ```
