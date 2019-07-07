@@ -13,25 +13,20 @@ namespace rmrevin\yii\fontawesome;
  */
 class NpmFreeAssetBundle extends \yii\web\AssetBundle
 {
-    /**
-     * @inherit
-     */
-    public $sourcePath = '@npm/fortawesome--fontawesome-free';
+    public $sourcePath = '@vendor/fortawesome/font-awesome';
 
-    /**
-     * @inherit
-     */
     public $css = [
         'css/all.min.css',
     ];
 
-    /**
-     * @inherit
-     */
     public $publishOptions = [
         'only' => [
             'css/*',
+            'js/*',
             'webfonts/*',
+            // extend and uncomment if your need
+            // 'sprites/*',
+            // 'svgs/*',
         ],
     ];
 }

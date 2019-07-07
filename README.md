@@ -144,35 +144,9 @@ Or inject `CdnFreeAssetBundle` in your view:
 rmrevin\yii\fontawesome\CdnFreeAssetBundle::register($this);
 ```
 
-### NPM
-Be sure that you have the following lines in your composer.json:
-```json
-"repositories": [
-    {
-        "type": "composer",
-        "url": "https://asset-packagist.org"
-    }
-]
-```
+# Composer
 
-And @npm alias in your web config:
-```php
-$config = [
-        ...
-        'aliases' => [
-            '@bower' => '@vendor/bower-asset',
-            '@npm'   => '@vendor/npm-asset',
-        ],
-        ...
-];
-```
-
-Install npm package of font via asset-packagist.org:
-```
-composer require "npm-asset/fortawesome--fontawesome-free:~5.7.1"
-```
-
-And add `NpmFreeAssetBundle` as depends of your app asset bundle:
+Add `NpmFreeAssetBundle` as depends of your app asset bundle:
 ```php
 class AppAsset extends AssetBundle
 {

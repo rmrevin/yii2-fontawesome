@@ -24,6 +24,7 @@
   ],
   "require": {
     "php": ">=5.4.0",
+    "fortawesome/font-awesome": "^5.9.0",
     "yiisoft/yii2": "^2.0.0"
   },
   "require-dev": {
@@ -41,5 +42,11 @@
       "npm-asset-library": "vendor/npm",
       "bower-asset-library": "vendor/bower"
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
 }

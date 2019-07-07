@@ -13,25 +13,20 @@ namespace rmrevin\yii\fontawesome;
  */
 class NpmProAssetBundle extends \yii\web\AssetBundle
 {
-    /**
-     * @inherit
-     */
     public $sourcePath = '@app/node_modules/@fortawesome/fontawesome-pro';
 
-    /**
-     * @inherit
-     */
     public $css = [
         'css/all.min.css',
     ];
 
-    /**
-     * @inherit
-     */
     public $publishOptions = [
         'only' => [
             'css/*',
+            'js/*',
             'webfonts/*',
+            // extend and uncomment if your need
+            // 'sprites/*',
+            // 'svgs/*',
         ],
     ];
 }

@@ -2,7 +2,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-VARIABLES_PATH="${DIR}/../node_modules/@fortawesome/fontawesome-free/scss/_variables.scss"
+VARIABLES_PATH="${DIR}/../vendor/fortawesome/font-awesome/scss/_variables.scss"
 
 RESULT_PATH="${DIR}/result.txt"
 

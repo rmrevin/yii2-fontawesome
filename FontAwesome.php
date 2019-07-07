@@ -41,11 +41,11 @@ class FontAwesome
 
     /**
      * Shortcut for `icon()` method
-     * @see icon()
-     *
      * @param string $name
      * @param array $options
      * @return component\Icon
+     * @see icon()
+     *
      */
     public static function i($name, $options = [])
     {
@@ -65,10 +65,10 @@ class FontAwesome
 
     /**
      * Shortcut for `stack()` method
-     * @see stack()
-     *
      * @param array $options
      * @return component\Stack
+     * @see stack()
+     *
      */
     public static function s($options = [])
     {
@@ -135,6 +135,7 @@ class FontAwesome
     const _ADVERSAL = 'adversal';
     const _AFFILIATETHEME = 'affiliatetheme';
     const _AIR_FRESHENER = 'air-freshener';
+    const _AIRBNB = 'airbnb';
     const _ALGOLIA = 'algolia';
     const _ALIGN_CENTER = 'align-center';
     const _ALIGN_JUSTIFY = 'align-justify';
@@ -206,6 +207,8 @@ class FontAwesome
     const _BACKWARD = 'backward';
     const _BACON = 'bacon';
     const _BALANCE_SCALE = 'balance-scale';
+    const _BALANCE_SCALE_LEFT = 'balance-scale-left';
+    const _BALANCE_SCALE_RIGHT = 'balance-scale-right';
     const _BAN = 'ban';
     const _BAND_AID = 'band-aid';
     const _BANDCAMP = 'bandcamp';
@@ -219,6 +222,7 @@ class FontAwesome
     const _BATTERY_HALF = 'battery-half';
     const _BATTERY_QUARTER = 'battery-quarter';
     const _BATTERY_THREE_QUARTERS = 'battery-three-quarters';
+    const _BATTLE_NET = 'battle-net';
     const _BED = 'bed';
     const _BEER = 'beer';
     const _BEHANCE = 'behance';
@@ -228,6 +232,7 @@ class FontAwesome
     const _BEZIER_CURVE = 'bezier-curve';
     const _BIBLE = 'bible';
     const _BICYCLE = 'bicycle';
+    const _BIKING = 'biking';
     const _BIMOBJECT = 'bimobject';
     const _BINOCULARS = 'binoculars';
     const _BIOHAZARD = 'biohazard';
@@ -256,6 +261,10 @@ class FontAwesome
     const _BOOK_OPEN = 'book-open';
     const _BOOK_READER = 'book-reader';
     const _BOOKMARK = 'bookmark';
+    const _BOOTSTRAP = 'bootstrap';
+    const _BORDER_ALL = 'border-all';
+    const _BORDER_NONE = 'border-none';
+    const _BORDER_STYLE = 'border-style';
     const _BOWLING_BALL = 'bowling-ball';
     const _BOX = 'box';
     const _BOX_OPEN = 'box-open';
@@ -269,6 +278,7 @@ class FontAwesome
     const _BROOM = 'broom';
     const _BRUSH = 'brush';
     const _BTC = 'btc';
+    const _BUFFER = 'buffer';
     const _BUG = 'bug';
     const _BUILDING = 'building';
     const _BULLHORN = 'bullhorn';
@@ -357,6 +367,7 @@ class FontAwesome
     const _CHEVRON_UP = 'chevron-up';
     const _CHILD = 'child';
     const _CHROME = 'chrome';
+    const _CHROMECAST = 'chromecast';
     const _CHURCH = 'church';
     const _CIRCLE = 'circle';
     const _CIRCLE_NOTCH = 'circle-notch';
@@ -528,6 +539,7 @@ class FontAwesome
     const _ETHERNET = 'ethernet';
     const _ETSY = 'etsy';
     const _EURO_SIGN = 'euro-sign';
+    const _EVERNOTE = 'evernote';
     const _EXCHANGE_ALT = 'exchange-alt';
     const _EXCLAMATION = 'exclamation';
     const _EXCLAMATION_CIRCLE = 'exclamation-circle';
@@ -544,6 +556,7 @@ class FontAwesome
     const _FACEBOOK_F = 'facebook-f';
     const _FACEBOOK_MESSENGER = 'facebook-messenger';
     const _FACEBOOK_SQUARE = 'facebook-square';
+    const _FAN = 'fan';
     const _FANTASY_FLIGHT_GAMES = 'fantasy-flight-games';
     const _FAST_BACKWARD = 'fast-backward';
     const _FAST_FORWARD = 'fast-forward';
@@ -640,6 +653,7 @@ class FontAwesome
     const _GIFT = 'gift';
     const _GIFTS = 'gifts';
     const _GIT = 'git';
+    const _GIT_ALT = 'git-alt';
     const _GIT_SQUARE = 'git-square';
     const _GITHUB = 'github';
     const _GITHUB_ALT = 'github-alt';
@@ -769,6 +783,7 @@ class FontAwesome
     const _I_CURSOR = 'i-cursor';
     const _ICE_CREAM = 'ice-cream';
     const _ICICLES = 'icicles';
+    const _ICONS = 'icons';
     const _ID_BADGE = 'id-badge';
     const _ID_CARD = 'id-card';
     const _ID_CARD_ALT = 'id-card-alt';
@@ -788,6 +803,7 @@ class FontAwesome
     const _INVISION = 'invision';
     const _IOXHOST = 'ioxhost';
     const _ITALIC = 'italic';
+    const _ITCH_IO = 'itch-io';
     const _ITUNES = 'itunes';
     const _ITUNES_NOTE = 'itunes-note';
     const _JAVA = 'java';
@@ -939,7 +955,6 @@ class FontAwesome
     const _NEUTER = 'neuter';
     const _NEWSPAPER = 'newspaper';
     const _NIMBLR = 'nimblr';
-    const _NINTENDO_SWITCH = 'nintendo-switch';
     const _NODE = 'node';
     const _NODE_JS = 'node-js';
     const _NOT_EQUAL = 'not-equal';
@@ -1001,9 +1016,12 @@ class FontAwesome
     const _PHOENIX_FRAMEWORK = 'phoenix-framework';
     const _PHOENIX_SQUADRON = 'phoenix-squadron';
     const _PHONE = 'phone';
+    const _PHONE_ALT = 'phone-alt';
     const _PHONE_SLASH = 'phone-slash';
     const _PHONE_SQUARE = 'phone-square';
+    const _PHONE_SQUARE_ALT = 'phone-square-alt';
     const _PHONE_VOLUME = 'phone-volume';
+    const _PHOTO_VIDEO = 'photo-video';
     const _PHP = 'php';
     const _PIED_PIPER = 'pied-piper';
     const _PIED_PIPER_ALT = 'pied-piper-alt';
@@ -1078,6 +1096,7 @@ class FontAwesome
     const _REDO = 'redo';
     const _REDO_ALT = 'redo-alt';
     const _REGISTERED = 'registered';
+    const _REMOVE_FORMAT = 'remove-format';
     const _RENREN = 'renren';
     const _REPLY = 'reply';
     const _REPLY_ALL = 'reply-all';
@@ -1108,6 +1127,7 @@ class FontAwesome
     const _SAD_CRY = 'sad-cry';
     const _SAD_TEAR = 'sad-tear';
     const _SAFARI = 'safari';
+    const _SALESFORCE = 'salesforce';
     const _SASS = 'sass';
     const _SATELLITE = 'satellite';
     const _SATELLITE_DISH = 'satellite-dish';
@@ -1189,18 +1209,26 @@ class FontAwesome
     const _SOLAR_PANEL = 'solar-panel';
     const _SORT = 'sort';
     const _SORT_ALPHA_DOWN = 'sort-alpha-down';
+    const _SORT_ALPHA_DOWN_ALT = 'sort-alpha-down-alt';
     const _SORT_ALPHA_UP = 'sort-alpha-up';
+    const _SORT_ALPHA_UP_ALT = 'sort-alpha-up-alt';
     const _SORT_AMOUNT_DOWN = 'sort-amount-down';
+    const _SORT_AMOUNT_DOWN_ALT = 'sort-amount-down-alt';
     const _SORT_AMOUNT_UP = 'sort-amount-up';
+    const _SORT_AMOUNT_UP_ALT = 'sort-amount-up-alt';
     const _SORT_DOWN = 'sort-down';
     const _SORT_NUMERIC_DOWN = 'sort-numeric-down';
+    const _SORT_NUMERIC_DOWN_ALT = 'sort-numeric-down-alt';
     const _SORT_NUMERIC_UP = 'sort-numeric-up';
+    const _SORT_NUMERIC_UP_ALT = 'sort-numeric-up-alt';
     const _SORT_UP = 'sort-up';
     const _SOUNDCLOUD = 'soundcloud';
     const _SOURCETREE = 'sourcetree';
     const _SPA = 'spa';
     const _SPACE_SHUTTLE = 'space-shuttle';
     const _SPEAKAP = 'speakap';
+    const _SPEAKER_DECK = 'speaker-deck';
+    const _SPELL_CHECK = 'spell-check';
     const _SPIDER = 'spider';
     const _SPINNER = 'spinner';
     const _SPLOTCH = 'splotch';
@@ -1212,6 +1240,7 @@ class FontAwesome
     const _SQUARESPACE = 'squarespace';
     const _STACK_EXCHANGE = 'stack-exchange';
     const _STACK_OVERFLOW = 'stack-overflow';
+    const _STACKPATH = 'stackpath';
     const _STAMP = 'stamp';
     const _STAR = 'star';
     const _STAR_AND_CRESCENT = 'star-and-crescent';
@@ -1256,6 +1285,7 @@ class FontAwesome
     const _SWATCHBOOK = 'swatchbook';
     const _SWIMMER = 'swimmer';
     const _SWIMMING_POOL = 'swimming-pool';
+    const _SYMFONY = 'symfony';
     const _SYNAGOGUE = 'synagogue';
     const _SYNC = 'sync';
     const _SYNC_ALT = 'sync-alt';
@@ -1413,6 +1443,7 @@ class FontAwesome
     const _VINE = 'vine';
     const _VK = 'vk';
     const _VNV = 'vnv';
+    const _VOICEMAIL = 'voicemail';
     const _VOLLEYBALL_BALL = 'volleyball-ball';
     const _VOLUME_DOWN = 'volume-down';
     const _VOLUME_MUTE = 'volume-mute';
@@ -1425,6 +1456,8 @@ class FontAwesome
     const _WALLET = 'wallet';
     const _WAREHOUSE = 'warehouse';
     const _WATER = 'water';
+    const _WAVE_SQUARE = 'wave-square';
+    const _WAZE = 'waze';
     const _WEEBLY = 'weebly';
     const _WEIBO = 'weibo';
     const _WEIGHT = 'weight';
@@ -1462,6 +1495,7 @@ class FontAwesome
     const _XING_SQUARE = 'xing-square';
     const _Y_COMBINATOR = 'y-combinator';
     const _YAHOO = 'yahoo';
+    const _YAMMER = 'yammer';
     const _YANDEX = 'yandex';
     const _YANDEX_INTERNATIONAL = 'yandex-international';
     const _YARN = 'yarn';
