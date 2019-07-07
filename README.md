@@ -156,6 +156,8 @@ rmrevin\yii\fontawesome\CdnFreeAssetBundle::register($this);
 
 # Composer
 
+Free version of package `fortawesome/font-awesome` already installed in vendor.
+
 Add `NpmFreeAssetBundle` as depends of your app asset bundle:
 ```php
 class AppAsset extends AssetBundle
