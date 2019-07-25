@@ -87,7 +87,7 @@ class AppAsset extends AssetBundle
 Or inject `CdnProAssetBundle` in your view:
 
 ```php
-rmrevin\yii\fontawesome\CdnProAssetBundle::register($this);
+\rmrevin\yii\fontawesome\CdnProAssetBundle::register($this);
 ```
 
 ### NPM
