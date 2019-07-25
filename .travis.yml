@@ -24,12 +24,12 @@ install:
   - travis_retry composer global require "fxp/composer-asset-plugin:~1.1"
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - travis_retry composer install --prefer-dist --no-interaction
+  - travis_retry wget https://scrutinizer-ci.com/ocular.phar
 
 script:
   - phpunit --verbose --coverage-clover=coverage/coverage.clover
 
 after_script: >
-    if [ $(phpenv version-name) = '7.1' ]; then
-      travis_retry wget https://scrutinizer-ci.com/ocular.phar
-      php ocular.phar code-coverage:upload --format=php-clover coverage/coverage.clover
-    ; fi
+  if [ $(phpenv version-name) = '7.1' ]; then
+    php ocular.phar code-coverage:upload --format=php-clover coverage/coverage.clover
+  ; fi
