@@ -28,6 +28,8 @@ install:
 script:
   - phpunit --verbose --coverage-clover=coverage/coverage.clover
 
-after_script:
-  - travis_retry wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage/coverage.clover
+after_script: >
+    if [ $(phpenv version-name) = '7.1' ]; then
+      travis_retry wget https://scrutinizer-ci.com/ocular.phar
+      php ocular.phar code-coverage:upload --format=php-clover coverage/coverage.clover
+    ; fi
