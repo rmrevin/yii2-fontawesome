@@ -288,6 +288,7 @@ class FontAwesome
     const _BUS = 'bus';
     const _BUS_ALT = 'bus-alt';
     const _BUSINESS_TIME = 'business-time';
+    const _BUY_N_LARGE = 'buy-n-large';
     const _BUYSELLADS = 'buysellads';
     const _CALCULATOR = 'calculator';
     const _CALENDAR = 'calendar';
@@ -422,6 +423,7 @@ class FontAwesome
     const _COOKIE_BITE = 'cookie-bite';
     const _COPY = 'copy';
     const _COPYRIGHT = 'copyright';
+    const _COTTON_BUREAU = 'cotton-bureau';
     const _COUCH = 'couch';
     const _CPANEL = 'cpanel';
     const _CREATIVE_COMMONS = 'creative-commons';
@@ -740,6 +742,8 @@ class FontAwesome
     const _HANUKIAH = 'hanukiah';
     const _HARD_HAT = 'hard-hat';
     const _HASHTAG = 'hashtag';
+    const _HAT_COWBOY = 'hat-cowboy';
+    const _HAT_COWBOY_SIDE = 'hat-cowboy-side';
     const _HAT_WIZARD = 'hat-wizard';
     const _HAYKAL = 'haykal';
     const _HDD = 'hdd';
@@ -900,6 +904,7 @@ class FontAwesome
     const _MASK = 'mask';
     const _MASTODON = 'mastodon';
     const _MAXCDN = 'maxcdn';
+    const _MDB = 'mdb';
     const _MEDAL = 'medal';
     const _MEDAPPS = 'medapps';
     const _MEDIUM = 'medium';
@@ -946,6 +951,7 @@ class FontAwesome
     const _MOSQUE = 'mosque';
     const _MOTORCYCLE = 'motorcycle';
     const _MOUNTAIN = 'mountain';
+    const _MOUSE = 'mouse';
     const _MOUSE_POINTER = 'mouse-pointer';
     const _MUG_HOT = 'mug-hot';
     const _MUSIC = 'music';
@@ -973,6 +979,7 @@ class FontAwesome
     const _OPENID = 'openid';
     const _OPERA = 'opera';
     const _OPTIN_MONSTER = 'optin-monster';
+    const _ORCID = 'orcid';
     const _OSI = 'osi';
     const _OTTER = 'otter';
     const _OUTDENT = 'outdent';
@@ -1087,6 +1094,7 @@ class FontAwesome
     const _README = 'readme';
     const _REBEL = 'rebel';
     const _RECEIPT = 'receipt';
+    const _RECORD_VINYL = 'record-vinyl';
     const _RECYCLE = 'recycle';
     const _RED_RIVER = 'red-river';
     const _REDDIT = 'reddit';
@@ -1283,6 +1291,7 @@ class FontAwesome
     const _SURPRISE = 'surprise';
     const _SUSE = 'suse';
     const _SWATCHBOOK = 'swatchbook';
+    const _SWIFT = 'swift';
     const _SWIMMER = 'swimmer';
     const _SWIMMING_POOL = 'swimming-pool';
     const _SYMFONY = 'symfony';
@@ -1378,6 +1387,7 @@ class FontAwesome
     const _UBER = 'uber';
     const _UBUNTU = 'ubuntu';
     const _UIKIT = 'uikit';
+    const _UMBRACO = 'umbraco';
     const _UMBRELLA = 'umbrella';
     const _UMBRELLA_BEACH = 'umbrella-beach';
     const _UNDERLINE = 'underline';

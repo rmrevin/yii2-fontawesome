@@ -24,9 +24,8 @@ class NpmProAssetBundle extends \yii\web\AssetBundle
             'css/*',
             'js/*',
             'webfonts/*',
-            // extend and uncomment if your need
-            // 'sprites/*',
-            // 'svgs/*',
+            'sprites/*',
+            'svgs/*',
         ],
     ];
 }
