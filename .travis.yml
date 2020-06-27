@@ -3,7 +3,6 @@ dist: trusty
 language: php
 
 php:
-  - 7.0
   - 7.1
   - 7.2
   - 7.3
@@ -24,7 +23,7 @@ install:
   - travis_retry composer install --prefer-dist --no-interaction
 
 script:
-  - phpunit --verbose --coverage-clover=coverage/coverage.clover
+  - ./vendor/bin/phpunit --verbose --coverage-clover=coverage/coverage.clover
 
 after_script:
   - travis_retry wget https://scrutinizer-ci.com/ocular.phar
