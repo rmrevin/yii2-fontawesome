@@ -1,3 +1,7 @@
+2020-06-27 - 3.6.0
+------------------
+* `Font Awesome` updated to version `5.13.0`.
+
 2019-09-20 - 3.5.0
 ------------------
 * `Font Awesome` updated to version `5.11.0`.
