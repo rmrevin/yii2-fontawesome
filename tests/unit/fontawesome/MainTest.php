@@ -200,8 +200,7 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
 
     public function testIconSizeException()
     {
-        $this->setExpectedException(
-            'yii\base\InvalidConfigException',
+        $this->expectExceptionMessage(
             'FontAwesome::size() - invalid value. Use one of the constants: lg, sm, xs, 2x, 3x, 4x, 5x, 6x, 7x, 8x, 9x, 10x.'
         );
 
@@ -210,8 +209,7 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
 
     public function testIconRotateException()
     {
-        $this->setExpectedException(
-            'yii\base\InvalidConfigException',
+        $this->expectExceptionMessage(
             'FontAwesome::rotate() - invalid value. Use one of the constants: 90, 180, 270.'
         );
 
@@ -220,8 +218,7 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
 
     public function testIconFlipException()
     {
-        $this->setExpectedException(
-            'yii\base\InvalidConfigException',
+        $this->expectExceptionMessage(
             'FontAwesome::flip() - invalid value. Use one of the constants: horizontal, vertical.'
         );
 
@@ -233,10 +230,7 @@ class MainTest extends \rmrevin\yii\fontawesome\tests\unit\TestCase
         $this->assertEquals(FAR::$cssPrefix, 'far');
         $this->assertEquals((string)FAR::icon('cog')->addCssClass('highlight', true), '<i class="far fa-cog highlight"></i>');
 
-        $this->setExpectedException(
-            'yii\base\InvalidConfigException',
-            'Condition is false'
-        );
+        $this->expectExceptionMessage('Condition is false');
 
         FAR::icon('cog')->addCssClass('highlight', false, true);
     }
