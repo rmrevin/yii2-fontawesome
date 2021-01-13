@@ -17,6 +17,6 @@ class CdnProAssetBundle extends \yii\web\AssetBundle
      * @inherit
      */
     public $css = [
-        'https://pro.fontawesome.com/releases/v5.11.1/css/all.css',
+        'https://pro.fontawesome.com/releases/v5.15.1/css/all.css',
     ];
 }
